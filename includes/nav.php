@@ -7,13 +7,13 @@
           <?php
             foreach($navItems as $item)
             {
-             echo "<li class='nav-item active'><a class='nav-link' href=\"$item[slug]\">$item[title]</a></li>";
+             echo "<li class='nav-item'><a class='nav-link' href=\"$item[slug]\">$item[title]</a></li>";
             }
           ?>
           <li class="nav-item">
                 <a href="mailto:tamjidahmed958@gmail.com">
-                    <button class="btn btn-outline-success my-2 my-sm-0">Contact</button>
-                    </a>
+                    <button class="btn btn-contact"><i class="fa fa-phone" aria-hidden="true"></i> Contact</button>
+                </a>
             </li>
           </ul>
         </div>

@@ -3,6 +3,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
     margin: 0;
     padding: 0;
+    color: #0F0402;
 }
 
 /* color to be used mandatory
@@ -20,3 +21,20 @@ address bar color = #00c4cc
 .Blue-Sky-4-rgba { color: rgba(127, 177, 239, 1); }
 .Blue-Sky-5-rgba { color: rgba(173, 212, 247, 1); }
 */
+
+.btn-contact{
+
+  border: 2px solid #00c4cc;  
+}
+.btn-contact:hover, .btn-contact:active{
+    border: 2px solid transparent;
+    background-color: #00c4cc;
+    color: white;
+
+}
+
+
+.nav-link
+{
+    font-size: 17px;
+}
