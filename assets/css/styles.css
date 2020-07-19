@@ -1,0 +1,23 @@
+*{
+    font-family: 'Oswald', sans-serif;
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+    margin: 0;
+    padding: 0;
+}
+
+/* color to be used mandatory
+
+.Blue-Sky-1-hex { color: #16193B; }
+.Blue-Sky-2-hex { color: #35478C; }
+.Blue-Sky-3-hex { color: #4E7AC7; }
+.Blue-Sky-4-hex { color: #7FB2F0; }
+.Blue-Sky-5-hex { color: #ADD5F7; }
+
+
+.Blue-Sky-1-rgba { color: rgba(21, 24, 58, 1); }
+.Blue-Sky-2-rgba { color: rgba(53, 70, 140, 1); }
+.Blue-Sky-3-rgba { color: rgba(77, 122, 198, 1); }
+.Blue-Sky-4-rgba { color: rgba(127, 177, 239, 1); }
+.Blue-Sky-5-rgba { color: rgba(173, 212, 247, 1); }
+*/
+
