@@ -5,6 +5,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
 <script language="JavaScript" type="text/javascript" src="./assets/js/app.js"></script>
 
-
-</body>
 </html>

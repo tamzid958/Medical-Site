@@ -1,3 +1,9 @@
+<?php
+   include('./includes/arrays.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,17 +25,16 @@
 
     <link rel="stylesheet" href="./assets/css/styles.css">
 
-
-
-    <title>Home</title>
-</head>
-<body>
-    <header>
-
-
-
-</header>
-    
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
        <?php include('./includes/nav.php'); ?>
     </nav>
+    <?php
+            foreach($navItems as $item)
+            {
+                echo "<title> OSCA | $item[title]</title>";
+            }
+    ?>
+</head>
+
+    
+   

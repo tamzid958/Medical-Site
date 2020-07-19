@@ -4,16 +4,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="./about.php">About Us <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./timetable.php">Timetable</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./appointment.php">Appointment</a>
-            </li>
-            <li class="nav-item">
+          <?php
+            foreach($navItems as $item)
+            {
+             echo "<li class='nav-item active'><a class='nav-link' href=\"$item[slug]\">$item[title]</a></li>";
+            }
+          ?>
+          <li class="nav-item">
                 <a href="mailto:tamjidahmed958@gmail.com">
                     <button class="btn btn-outline-success my-2 my-sm-0">Contact</button>
                     </a>
