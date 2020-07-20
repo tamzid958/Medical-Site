@@ -21,20 +21,160 @@ address bar color = #00c4cc
 .Blue-Sky-4-rgba { color: rgba(127, 177, 239, 1); }
 .Blue-Sky-5-rgba { color: rgba(173, 212, 247, 1); }
 */
-
+.navbar{
+       background-color: transparent !important;
+       box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+       padding-right: 200px;
+       padding-left: 200px;
+       z-index: 200;
+}
+.mobile_logo{
+    display: none !important;
+}
 .btn-contact{
 
+  color: white;
   border: 2px solid #00c4cc;  
+
 }
 .btn-contact:hover, .btn-contact:active{
     border: 2px solid transparent;
-    background-color: #00c4cc;
-    color: white;
+    background-color: white;
+    color:#00c4cc ;
 
 }
 
 
 .nav-link
 {
+    color: white !important;
     font-size: 17px;
+}
+.navbar-toggler{
+    background-color: #00c4cc;
+    
+}
+
+
+.carousel
+{
+    margin-top: -120px; 
+    overflow: hidden;
+    
+   
+}
+.carousel-inner{
+    max-height: 700px;
+    background: black;
+    opacity: 0.9;
+  
+}
+.carousel-item{
+    z-index: -1; 
+    opacity: 0.5;
+   
+}
+
+.container{
+
+   max-width: 100%;
+   padding-left: 10%;
+   padding-right: 10%;
+   padding-bottom: 80px; 
+   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+}
+.card-title{
+    font-weight: 300;
+}
+
+.fa { 
+    padding-top:35px;
+    padding-left:65%;
+    color: #00c4cc;
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 992px) {
+    .navbar{      
+        padding-left:10px;
+        padding-right: 40px;
+    }
+    .carousel
+    {
+         margin-top: 0px;
+    }
+    .nav-link
+    {
+        color: #0F0402 !important;
+    }
+    .btn-contact{
+
+        color: black;
+    }
+    .btn-contact:hover, .btn-contact:active{
+        color: white;
+        background-color:#00c4cc ;
+    }
+    .desktop_logo
+    {
+        display: none !important;
+    }
+    .mobile_logo{
+        display: inline-block !important;
+    }
+
+    .fa {
+    
+        padding-top:0px;
+        padding-left:20px;
+    }
+    .card-title{
+       
+        font-size: 18px;
+
+    }
+    .card-text{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 480px)  {
+    .navbar{
+        padding-left:10px;
+        padding-right: 40px;
+    }
+    .carousel
+    {
+         margin-top: 0px;
+    }
+    .nav-link
+    {
+        color: #0F0402 !important;
+    }
+    .btn-contact{
+
+        color: black;
+    }
+    .btn-contact:hover, .btn-contact:active{
+        color: white;
+        background-color:#00c4cc ;
+    }
+    .desktop_logo
+    {
+        display: none !important;
+    }
+    .mobile_logo{
+        display: inline-block !important;
+    }
+    .fa {
+        padding-top:0px;
+        padding-left:20px;
+    }
+    .card-title{
+        font-size: 18px;
+
+    }
+    .card-text{
+        font-size: 14px;
+    }
+
 }
