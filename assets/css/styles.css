@@ -404,6 +404,7 @@ address bar color = #00c4cc
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
   }
   .brand li {
     display: inline-block;
@@ -522,6 +523,11 @@ address bar color = #00c4cc
   .parallax {
       min-height: 300px;
   }
+  .partner
+  {
+      padding-bottom: 2%;
+      padding-left: 70px;
+  }
  
 }
 @media screen and (max-width: 480px)  {
@@ -585,5 +591,11 @@ address bar color = #00c4cc
   .testi-img
   {
       display: none;
+  }
+  .partner
+  {
+      padding-bottom: 2%;
+      padding-left: 0px;
+      text-align: center;
   }
 }

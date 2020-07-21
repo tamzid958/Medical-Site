@@ -5,7 +5,7 @@
   <div class="row">
 
     <div class="col-sm">  
-    <div class="card" style="width: 18rem;">
+    <div class="card" >
   <img src="./assets/images/2.jpg" class="card-img-top" alt="">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
@@ -19,7 +19,7 @@
 
     </div>
     <div class="col-sm">
-    <div class="card" style="width: 18rem;">
+    <div class="card">
   <img src="./assets/images/3-1.jpg" class="card-img-top" alt="">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
@@ -32,7 +32,7 @@
 </div>
     </div>
     <div class="col-sm">
-    <div class="card" style="width: 18rem;">
+    <div class="card">
   <img src="./assets/images/2-1.jpg" class="card-img-top" alt="">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>

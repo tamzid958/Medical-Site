@@ -93,3 +93,17 @@
 </div>
 
 </section>
+<section>
+  
+<h4 class="partner prof">Partners</h4></h6>
+<ul class="brand">
+   
+    <li><a><img src="./assets/images/black_logo.png" ></a>
+    <li><a><img src="./assets/images/black_logo.png" ></a>
+    <li><a><img src="./assets/images/black_logo.png" ></a>
+    <li><a><img src="./assets/images/black_logo.png" ></a>
+    <li><a><img src="./assets/images/black_logo.png" ></a>
+    <li><a><img src="./assets/images/black_logo.png" ></a>
+</ul>
+
+</section>
