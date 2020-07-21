@@ -198,7 +198,6 @@ address bar color = #00c4cc
 
 .news-cour{
     padding-top: 40px;
-    max-width: 70%;
     margin-bottom: 40px;
 }
 .page-item
@@ -505,8 +504,6 @@ address bar color = #00c4cc
         max-width: 100%;
     }
  
-
-    
     .side-news{
         display: none;
    }
@@ -577,6 +574,7 @@ address bar color = #00c4cc
     .jumbotron-contain{
         max-width: 100%;
     }
+    
     .side-news{
         display: none;
    }
