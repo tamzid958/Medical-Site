@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     color: #0F0402;
+    
 }
 
 /* color to be used mandatory
@@ -75,10 +76,10 @@ address bar color = #00c4cc
    
 }
 
-.container{
+.blurb{
 
    max-width: 100%;
-   padding-left: 10%;
+   padding-left: 5%;
    padding-right: 10%;
    padding-bottom: 80px; 
    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
@@ -93,7 +94,189 @@ address bar color = #00c4cc
     color: #00c4cc;
 }
 
+.fa-envelope{
 
+    color: #4E7AC7;
+}
+
+.fa-map-marker{
+      color: #35478C;
+}
+
+.box_card
+{
+    margin-top: -70px;
+}
+
+.card_box{
+
+   min-height:285px;
+}
+
+.card_box_1{
+   
+    background-color: #4E7AC7;
+}
+.card_box_2{
+    background-color: #35478C;
+}
+
+.card_box_3, .list-group-flush {
+    background-color: #16193B !important;
+    color: whitesmoke !important;
+    width: 100% !important;
+}
+
+.card-body-title , .card-body-text, .card-body-title2
+{
+    color: whitesmoke !important;
+}
+
+.card-body-title{
+    padding-bottom: 10%;
+}
+
+.box_card{
+
+    max-width: 70%;
+
+}
+
+.card-body-text-li{
+    border-bottom-style: solid;
+    border-bottom-color: whitesmoke;
+ 
+}
+
+
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+
+.box-col
+{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.jumbtron-head
+{
+    color:#35478C;
+ 
+}
+
+.jumbotron-fluid{
+    background-color: transparent !important;
+    
+}
+.jumbotron-contain{
+    max-width: 70%;
+}
+.card-img-top-four-blurb
+{
+    padding-left: 2px;
+    width: 60px;
+    height: 60px;
+    align-items: center;
+}
+.four-blurb-card
+{
+  border:none;
+}
+
+.four-blurb-contain
+{
+    max-width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+
+}
+
+.news-cour{
+    padding-top: 40px;
+    max-width: 70%;
+    margin-bottom: 40px;
+}
+.page-item
+{
+    float: right;
+}
+.side-news{
+    background-color: #16193B !important;
+    color: whitesmoke;
+    padding-top: 5%;
+    max-width:25% ;
+}
+
+.side-news li{
+    background-color: #16193B !important;
+    color: whitesmoke;
+}
+.cat-main-news{
+   font-size: 30px;
+}
+.cour-news{
+   max-width: 100%;
+}
+.news-card
+{
+    max-width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.pagination
+{
+    padding-right: 0.4em;
+}
+.news-serv{
+    margin-top: -65px;
+}
+.news-head{
+    color:#35478C;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("../images/health-workers-wearing-face-mask-3957987.jpg");
+    opacity: 0.9;
+    /* Full height */
+    min-height: 500px;
+    background-color: black;
+    
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .testi-row
+  {
+       max-width: 95%;
+       
+  }
+
+.testi-head
+  {
+      padding-top: 40px;
+     color: white;
+  }
+  .testi-head-sec{
+      padding-bottom: 40px;
+
+  }
+  .testi-img
+  {
+      height: 400px;
+  
+  }
+  .testi-card
+  {
+    margin-bottom: 40px;
+  }
 @media screen and (min-width: 481px) and (max-width: 992px) {
     .navbar{      
         padding-left:10px;
@@ -135,7 +318,41 @@ address bar color = #00c4cc
     }
     .card-text{
         font-size: 14px;
+      
     }
+    .box_card{
+
+        max-width: 100%;
+    
+    }
+    .jumbotron-contain{
+        max-width: 100%;
+    }
+    .card-news-three
+    {
+        display: none;
+    }
+    .news-card
+{
+    max-width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+    
+    .side-news{
+        display: none;
+   }
+   .parallax {
+    background-attachment: scroll;
+  }
+  .news-head{
+  display: none;
+}
+.testi-img
+  {
+      display: none;
+  }
+ 
 }
 @media screen and (max-width: 480px)  {
     .navbar{
@@ -176,5 +393,36 @@ address bar color = #00c4cc
     .card-text{
         font-size: 14px;
     }
+    .box_card{
 
+        max-width: 100%;
+    
+    }
+    .jumbotron-contain{
+        max-width: 100%;
+    }
+    .card-news-three, .card-news-two
+    {
+        display: none;
+    }
+    .side-news{
+        display: none;
+   }
+   .news-card
+   {
+       max-width: 100%;
+       margin-left: 0px;
+       margin-right: 0px;
+   }
+  .news-head{
+    display: none;
+  }
+    
+   .parallax {
+    background-attachment: scroll;
+  }
+  .testi-img
+  {
+      display: none;
+  }
 }
