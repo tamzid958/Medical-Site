@@ -596,6 +596,14 @@ address bar color = #00c4cc
     text-align: justify;
 
   }
+
+  .about-lottie
+  {
+    max-width: 600px; max-height: 600px;
+    margin-top: -100px;
+    margin-bottom: -100px;
+  }
+ 
   .about-us-sec
   {
     max-width: 65%;
@@ -603,11 +611,7 @@ address bar color = #00c4cc
     overflow: hidden;
   }
  
-  .about-sec-one-img{
-    background-image: url("../images/person-getting-his-blood-check-1350560.jpg");
-    height: 400px;
-    max-width: 600px;
-  }
+  
   .about-section-four
   {
     max-width: 600px;

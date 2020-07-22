@@ -18,6 +18,9 @@
     <div class="col-sm-6">
     <div class="jumbotron jumbotron-fluid about-sec-one-img">
   <div class="container">
+
+   <lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_4FGi6N.json"  background="transparent"  speed="1" class="about-lottie"  loop autoplay></lottie-player>
+
   </div>
 </div>
 
