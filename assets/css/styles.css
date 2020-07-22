@@ -427,6 +427,9 @@ address bar color = #00c4cc
   .subscriber-section p, .footer-form{
       color: white;
   }
+  .mailchimp{
+    display: flex;
+  }
 
   .prefooter{
       padding-top: 50px;

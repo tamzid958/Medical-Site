@@ -22,8 +22,7 @@
     
   </div>
   <div class="form-group mx-sm-3 mb-2">
-    <label for="inputPassword2" class="sr-only">Password</label>
-    <input type="email" class="form-control" id="inputPassword2" placeholder="Email">
+    <input type="email" class="form-control mailchimp" id="email" placeholder="Email">
   </div>
   <button type="submit" class="btn btn-primary mb-2">Subscribe</button>
 </form>
