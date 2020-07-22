@@ -43,7 +43,7 @@
   padding: 20px;
   padding-top:200px;
   margin-top:-120px; 
-  background-color:#35478C;
+  background-color: #16193B;
 }
 
 #formContent {
@@ -133,6 +133,12 @@ input[type=text2]:focus , input[type=password2] :focus , input[type=email2]:focu
 
 #icon {
   width:60%;
+}
+@media screen and (max-width: 992px) {
+    .wrapper {
+    margin-top:0px; 
+    padding-top:20px;
+    }
 }
 
 </style>
