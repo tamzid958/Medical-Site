@@ -94,15 +94,14 @@
 
 </section>
 <section>
-  
 <h4 class="partner prof">Partners</h4></h6>
-<ul class="brand">
-   
-    <li><a  ><img src="./assets/images/black_logo.png" ></a>
-    <li><a  ><img src="./assets/images/black_logo.png" ></a>
-    <li><a  ><img src="./assets/images/black_logo.png" ></a>
-    <li><a  ><img src="./assets/images/black_logo.png" ></a>
-    <li><a  ><img src="./assets/images/black_logo.png" ></a>
-    <li><a  ><img src="./assets/images/black_logo.png" ></a>
+<ul class="brand brand-carousel section-padding owl-carousel">
+    <li><a  class="single-logo"><img src="./assets/images/black_logo.png" ></a>
+    <li><a  class="single-logo"><img src="./assets/images/black_logo.png" ></a>
+    <li><a  class="single-logo"><img src="./assets/images/black_logo.png" ></a>
+    <li><a  class="single-logo"><img src="./assets/images/black_logo.png" ></a>
+    <li><a  class="single-logo"><img src="./assets/images/black_logo.png" ></a>
+    <li><a  class="single-logo"><img src="./assets/images/black_logo.png" ></a>
 </ul>
 </section>
+

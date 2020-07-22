@@ -5,7 +5,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
 <script language="JavaScript" type="text/javascript" src="./assets/js/app.js"></script>
 
-
 <footer>
 <section class="subscriber-section">
 <div class="container ">

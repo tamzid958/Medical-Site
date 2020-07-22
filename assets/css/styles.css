@@ -1,6 +1,5 @@
 *{
     font-family: 'Oswald', sans-serif;
-    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
     margin: 0;
     padding: 0;
     color: #0F0402;
@@ -608,8 +607,8 @@ address bar color = #00c4cc
 
 
   .testimonials{
-      margin: -10px 0;
-      padding-left: 10%;
+      margin: -10px auto;
+      padding-left: 10vw;
   }
   .testimonials-three
   {
@@ -697,8 +696,8 @@ p{
 
   }
   .testimonials{
-    margin: -10px 0;
-    padding-left: 5%;
+    margin: -10px auto;
+    padding-left: 9vw;
 }
   .testimonials-three,.testimonials-two
   {
