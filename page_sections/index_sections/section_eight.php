@@ -93,7 +93,7 @@
 </div>
 
 </section>
-<section>
+<section class="brand-section">
 <h4 class="partner prof">Partners</h4></h6>
 <ul class="brand brand-carousel section-padding owl-carousel">
     <li><a  class="single-logo"><img src="./assets/images/black_logo.png" ></a>

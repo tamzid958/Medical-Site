@@ -744,9 +744,7 @@ address bar color = #00c4cc
  
     .four-blurb-contain
     {
-        max-width: 100%;
-      
-       
+        max-width: 100%;      
     
     }
     
@@ -758,7 +756,9 @@ address bar color = #00c4cc
     
     background-attachment: fixed;
   }
-
+  .brand-section{
+        display: none;
+  }
 
   .testimonials{
       margin: -10px auto;
@@ -879,5 +879,9 @@ p{
     max-width: 100%;
     margin-bottom: 40px;
   }
+  .brand-section{
+    display: none;
+}
+
  
 }
