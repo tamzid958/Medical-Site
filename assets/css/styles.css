@@ -73,8 +73,12 @@ address bar color = #00c4cc
     opacity: 0.5;
    
 }
-
-
+.fb_dialog {
+  position: -webkit-sticky !important;
+  position: fixed !important;
+  bottom: 95px !important;
+  right: 30px !important;
+  }
 .blurb{
 
    max-width: 100%;
