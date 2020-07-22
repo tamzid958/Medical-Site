@@ -80,16 +80,19 @@ address bar color = #00c4cc
 .blurb{
 
    max-width: 100%;
- 
    padding-bottom: 80px; 
    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+}
+.box_card
+{
+    margin-top: -30px;
 }
 .card-title{
     font-weight: 300;
 }
 
 .fa { 
-    padding-top:35px;
+    padding-top:20px;
     padding-left:65%;
     color: #00c4cc;
 }
@@ -103,10 +106,7 @@ address bar color = #00c4cc
       color: #35478C;
 }
 
-.box_card
-{
-    margin-top: -70px;
-}
+
 
 .card_box{
 
@@ -192,7 +192,7 @@ address bar color = #00c4cc
 }
 .four-blurb-contain
 {
-    max-width: 87%;
+    max-width: 70%;
   
    
 
@@ -239,7 +239,7 @@ address bar color = #00c4cc
     /* Full height */
     min-height: 500px;
     background-color: black;
-    
+    overflow: hidden;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
@@ -259,17 +259,89 @@ address bar color = #00c4cc
       padding-bottom: 40px;
 
   }
-  .testi-img
-  {
-      height: 400px;
+  
+.testimonials{
+    max-width:1080px;  margin:-10px auto;
+    padding-left:2rem;
+  }
+  .snip1192 {
+    font-family: 'Raleway', Arial, sans-serif;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 0px 1%;
+    min-width: 220px;
+    max-width: 310px;
+    width: 100%;
+    text-align: left;
+    box-shadow: none !important;
+  }
+  .snip1192 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
   
   }
-  .testi-card
-  {
-    margin-bottom: 40px;
+  .snip1192 img {
+    max-width: 100%;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    display: inline-block;
+    z-index: 1;
+    position: relative;
   }
-
-
+  .snip1192 blockquote {
+    margin: 0;
+    display: block;
+    border-radius: 8px;
+    position: relative;
+    background-color: #fafafa;
+    padding: 30px 50px 65px 50px;
+    font-size: 0.8em;
+    font-weight: 500;
+    margin: 0 0 -50px;
+    line-height: 1.6em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  }
+  .snip1192 blockquote:before,
+  .snip1192 blockquote:after {
+    font-family: 'FontAwesome';
+    content: "\201C";
+    position: absolute;
+    font-size: 50px;
+    opacity: 0.3;
+    font-style: normal;
+  }
+  .snip1192 blockquote:before {
+    top: 35px;
+    left: 20px;
+  }
+  .snip1192 blockquote:after {
+    content: "\201D";
+    right: 20px;
+    bottom: 35px;
+  }
+  .snip1192 .author {
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;
+    
+  }
+  .snip1192 .author h5 {
+    opacity: 0.8;
+    margin: 0;
+    font-weight: 800;
+    color:white;
+  }
+  .snip1192 .author h5 span {
+    font-weight: 400;
+    text-transform: none;
+    display: block;
+    color:white;
+  }
+  
   
   .fullWidth {
     width: 100% !important;
@@ -509,11 +581,31 @@ address bar color = #00c4cc
         max-width: 100%;
     }
  
+    .four-blurb-contain
+    {
+        max-width: 100%;
+      
+       
+    
+    }
+    
+
     .side-news{
         display: none;
    }
    .parallax {
-    background-attachment: scroll;
+    
+    background-attachment: fixed;
+  }
+
+
+  .testimonials{
+      margin: -10px 0;
+      padding-left: 10%;
+  }
+  .testimonials-three
+  {
+      display: none;
   }
   .news-head{
   display: none;
@@ -521,13 +613,8 @@ address bar color = #00c4cc
 p{
     margin-bottom: 0 !important;
  }
-.testi-img
-  {
-      display: none;
-  }
-  .parallax {
-      min-height: 300px;
-  }
+
+
   .partner
   {
       padding-bottom: 2%;
@@ -583,6 +670,12 @@ p{
         max-width: 100%;
     }
     
+    .four-blurb-contain
+    {
+        max-width: 100%;     
+    
+    }
+    
     .side-news{
         display: none;
    }
@@ -593,8 +686,9 @@ p{
     
    .parallax {
     background-attachment: scroll;
+
   }
-  .testi-img
+  .testimonials-three,.testimonials-two
   {
       display: none;
   }
