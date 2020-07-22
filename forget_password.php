@@ -14,15 +14,13 @@
 
    
     <form>
-      <input type="text2" id="register" class="fadeIn second register-field" name="register" placeholder="user">
-      <input type="email2" id="register" class="fadeIn second register-field" name="register" placeholder="email address">
-      <input type="password" id="password" class="fadeIn third register-field" name="login" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Register">
+    <input type="mail2" id="forget" class="fadeIn second forget-field" name="forget-mail" placeholder="email address">
+      <input type="submit" class="fadeIn fourth" value="Reset">
     </form>
 
 
     <div id="formFooter">
-      <a class="underlineHover" href="login.php">Have an account?</a>
+      <a class="underlineHover alignright" href="login.php">Back to Login Page</a>
     </div>
 
   </div>
@@ -68,7 +66,7 @@
   border-radius: 0 0 10px 10px;
 }
 
-.register-field::placeholder {
+.forget-field::placeholder {
     
     color: #00c4cc !important;
 
@@ -102,7 +100,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text2], input[type=password] , input[type=email2] {
+input[type=mail2] {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
@@ -118,7 +116,7 @@ input[type=text2], input[type=password] , input[type=email2] {
   border-radius: 5px 5px 5px 5px;
 }
 
-input[type=text2]:focus , input[type=password] :focus , input[type=email2]:focus{
+input[type=mail2]:focus {
   background-color: #fff;
   border-bottom: 2px solid #00c4cc;
 }
@@ -140,6 +138,7 @@ input[type=text2]:focus , input[type=password] :focus , input[type=email2]:focus
     padding-top:20px;
     }
 }
+
 
 </style>
 </body>

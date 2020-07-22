@@ -21,7 +21,7 @@
 
 
     <div id="formFooter">
-      <a class="underlineHover alignleft" href="#">Forgot Password?</a> 
+      <a class="underlineHover alignleft" href="forget_password.php">Forgot Password?</a> 
       <a class="underlineHover alignright" href="register.php">Don't Have an account?</a>
     </div>
 

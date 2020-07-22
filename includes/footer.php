@@ -33,23 +33,23 @@
 
 <section class="prefooter">
 <div class="container">
+ 
   <div class="row">
     <div class="col-sm">
-    <ul class="list-group list-group-flush">
-  <li class="list-group-item footer-li">Cras justo odio</li>
-  <li class="list-group-item footer-li">Dapibus ac facilisis in</li>
-  <li class="list-group-item footer-li">Morbi leo risus</li>
-  <li class="list-group-item footer-li">Porta ac consectetur ac</li>
-  <li class="list-group-item footer-li">Vestibulum at eros</li>
+    <h5 style="color:white"> Important Links </h5>
+    <ul class="list-group list-group-flush important-links">
+  <li class="list-group-item footer-li"><a href="about.php">About Us</a></li>
+  <li class="list-group-item footer-li"><a href="appointment.php">Appointment</a></li>
+  <li class="list-group-item footer-li"><a href="timetable.php">Timetables</a></li>
+  <li class="list-group-item footer-li"><a href="login.php">Account Login</a></li>
 </ul>
     </div>
     <div class="col-sm">
-    <ul class="list-group list-group-flush">
-  <li class="list-group-item footer-li">Cras justo odio</li>
-  <li class="list-group-item footer-li">Dapibus ac facilisis in</li>
-  <li class="list-group-item footer-li">Morbi leo risus</li>
-  <li class="list-group-item footer-li">Porta ac consectetur ac</li>
-  <li class="list-group-item footer-li">Vestibulum at eros</li>
+    <h5 style="color:white"> Social Networks </h5>
+    <ul class="list-group list-group-flush social-links">
+  <li class="list-group-item footer-li"><a href="#">Facebook</a></li>
+  <li class="list-group-item footer-li"><a href="#">Twitter</a></li>
+  <li class="list-group-item footer-li"><a href="#">LinkedIn</a></li>
 </ul>
     </div>
     <div class="col-sm footer-form-col">

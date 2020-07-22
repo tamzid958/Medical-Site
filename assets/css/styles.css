@@ -530,7 +530,13 @@ address bar color = #00c4cc
       color: white;
   }
 
-  
+  .important-links a , .social-links a{
+    text-decoration: none;
+    color: white;
+  }
+  .important-links a:hover, .important-links a:active, .social-links a:hover, .social-links a:active {
+    color: rgb(202, 199, 199);
+  }
 @media screen and (min-width: 481px) and (max-width: 992px) {
     .navbar{      
         padding-left:10px;
