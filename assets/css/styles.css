@@ -690,6 +690,10 @@ p{
     background-attachment: scroll;
 
   }
+  .testimonials{
+    margin: -10px 0;
+    padding-left: 5%;
+}
   .testimonials-three,.testimonials-two
   {
       display: none;
