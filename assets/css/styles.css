@@ -529,6 +529,8 @@ address bar color = #00c4cc
       padding-top: 10px;
       color: white;
   }
+
+  
 @media screen and (min-width: 481px) and (max-width: 992px) {
     .navbar{      
         padding-left:10px;
