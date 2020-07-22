@@ -5,7 +5,7 @@
     <p class="lead">Medical Clinic site was created to offer a perfect solution for medical websites.</p>
   </div>
 </div>
-
+<div class="four-blurb-back">
 <div class="container four-blurb-contain">
   <div class="row ">
     <div class="col-sm">
@@ -62,5 +62,5 @@
     </div>
   </div>
 </div>
-
+</div>
 </section>

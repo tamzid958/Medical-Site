@@ -15,6 +15,10 @@
                         "slug" => "appointment.php",
                         "title" => "Appointment",
                     ),
+                    array(
+                        "slug" => "login.php",
+                        "title" => "Login",
+                    )
 
  );
 

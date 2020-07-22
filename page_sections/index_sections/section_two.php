@@ -11,8 +11,8 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h6 class="card-title">Give us a Call</h6>
+        <h5 class="card-text">1-888-123-4567</h5>
     </div>
   </div>
 </div>
@@ -26,8 +26,8 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <h6 class="card-title">Send us a Message</h6>
+        <h5 class="card-text">medical-clinic@mail.com</h5>
     
     </div>
   </div>
@@ -42,10 +42,8 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
- 
-    </div>
+      <h6 class="card-title">Visit our Location</h6>
+        <h5 class="card-text">3213 Suitland Street</h5>
   </div>
 </div>
 
@@ -53,7 +51,7 @@
   </div>
 </div>
 
-
+</div>
 <div class="container box_card">
   <div class="row">
     <div class="col-sm box-col">

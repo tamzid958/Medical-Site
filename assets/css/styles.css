@@ -1,6 +1,5 @@
 *{
     font-family: 'Oswald', sans-serif;
-    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
     margin: 0;
     padding: 0;
     color: #0F0402;
@@ -76,20 +75,23 @@ address bar color = #00c4cc
    
 }
 
+
 .blurb{
 
    max-width: 100%;
-   padding-left: 5%;
-   padding-right: 10%;
    padding-bottom: 80px; 
    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+}
+.box_card
+{
+    margin-top: -30px;
 }
 .card-title{
     font-weight: 300;
 }
 
 .fa { 
-    padding-top:35px;
+    padding-top:20px;
     padding-left:65%;
     color: #00c4cc;
 }
@@ -103,10 +105,7 @@ address bar color = #00c4cc
       color: #35478C;
 }
 
-.box_card
-{
-    margin-top: -70px;
-}
+
 
 .card_box{
 
@@ -186,19 +185,20 @@ address bar color = #00c4cc
 {
   border:none;
 }
-
+.four-blurb-back
+{
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+}
 .four-blurb-contain
 {
-    max-width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
-    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+    max-width: 70%;
+  
+   
 
 }
 
 .news-cour{
     padding-top: 40px;
-    max-width: 70%;
     margin-bottom: 40px;
 }
 .page-item
@@ -219,15 +219,7 @@ address bar color = #00c4cc
 .cat-main-news{
    font-size: 30px;
 }
-.cour-news{
-   max-width: 100%;
-}
-.news-card
-{
-    max-width: 100%;
-    margin-left: 20px;
-    margin-right: 20px;
-}
+
 .pagination
 {
     padding-right: 0.4em;
@@ -246,19 +238,17 @@ address bar color = #00c4cc
     /* Full height */
     min-height: 500px;
     background-color: black;
-    
+    overflow: hidden;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
-  .testi-row
+.news-card
   {
-       max-width: 95%;
-       
+    padding-bottom: 10px;
   }
-
 .testi-head
   {
       padding-top: 40px;
@@ -268,14 +258,283 @@ address bar color = #00c4cc
       padding-bottom: 40px;
 
   }
-  .testi-img
-  {
-      height: 400px;
+  
+.testimonials{
+    max-width:1080px;  margin:-10px auto;
+    padding-left:2rem;
+  }
+  .snip1192 {
+    font-family: 'Raleway', Arial, sans-serif;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 0px 1%;
+    min-width: 220px;
+    max-width: 310px;
+    width: 100%;
+    text-align: left;
+    box-shadow: none !important;
+  }
+  .snip1192 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
   
   }
-  .testi-card
+  .snip1192 img {
+    max-width: 100%;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    display: inline-block;
+    z-index: 1;
+    position: relative;
+  }
+  .snip1192 blockquote {
+    margin: 0;
+    display: block;
+    border-radius: 8px;
+    position: relative;
+    background-color: #fafafa;
+    padding: 30px 50px 65px 50px;
+    font-size: 0.8em;
+    font-weight: 500;
+    margin: 0 0 -50px;
+    line-height: 1.6em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  }
+  .snip1192 blockquote:before,
+  .snip1192 blockquote:after {
+    font-family: 'FontAwesome';
+    content: "\201C";
+    position: absolute;
+    font-size: 50px;
+    opacity: 0.3;
+    font-style: normal;
+  }
+  .snip1192 blockquote:before {
+    top: 35px;
+    left: 20px;
+  }
+  .snip1192 blockquote:after {
+    content: "\201D";
+    right: 20px;
+    bottom: 35px;
+  }
+  .snip1192 .author {
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;
+    
+  }
+  .snip1192 .author h5 {
+    opacity: 0.8;
+    margin: 0;
+    font-weight: 800;
+    color:white;
+  }
+  .snip1192 .author h5 span {
+    font-weight: 400;
+    text-transform: none;
+    display: block;
+    color:white;
+  }
+  
+  
+  .fullWidth {
+    width: 100% !important;
+    display: table;
+    float: none;
+    padding: 0;
+    min-height: 1px;
+    height: 100%;
+    position: relative;
+  }
+
+  
+  .projectFactsWrap{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  
+  #projectFacts .fullWidth{
+    padding: 0;
+  }
+  
+  .projectFactsWrap .item{
+    width: 25%;
+    height: 100%;
+    padding: 10px 0px;
+    text-align: center;
+  }
+  
+  .projectFactsWrap {
+    background-color:#00c4cc;
+  }
+  
+  .projectFactsWrap .item p.number{
+    font-size: 40px;
+    padding: 0;
+    font-weight: bold;
+  }
+  
+  .projectFactsWrap .item p{
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    margin: 0;
+    padding: 10px;
+  
+  }
+  
+  
+  .projectFactsWrap .item span{
+    width: 60px;
+    background: rgba(255, 255, 255, 0.8);
+    height: 2px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  
+  .projectFactsWrap .item i{
+    vertical-align: middle;
+    font-size: 50px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .fa-smile-o, .fa-hospital-o, .fa-users,.fa-briefcase
   {
-    margin-bottom: 40px;
+      padding-left: 0%;
+  }
+  .projectFactsWrap .item:hover i, .projectFactsWrap .item:hover p{
+    color: white;
+  }
+  
+  .projectFactsWrap .item:hover span{
+    background: white;
+  }
+  
+  @media (max-width: 786px){
+    .projectFactsWrap .item {
+       flex: 0 0 50%;
+    }
+  }
+  
+  .doctor-container{
+      margin-top: 80px;
+      
+  }
+
+  .doctor-section{
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+    padding-bottom: 30px;
+  }
+
+  .prof{
+    color:#35478C;
+  }
+
+.form-section{
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+}
+  .form-container{
+
+    margin-top: 50px;
+   
+    
+
+  }
+  .form-row{
+      background-color: #16193B;
+      padding: 60px;
+      padding-top: 70px;
+      padding-bottom: 70px;
+  }
+
+  .form-trans{
+      background-color: transparent !important;
+      margin-bottom: 30px;
+      color: white;
+
+  }
+
+  ::placeholder {
+    color: white !important;
+  }
+
+  .appointment-head{
+    color: white;
+    padding-bottom: 50px;
+  }
+
+  .brand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .brand li {
+    display: inline-block;
+    white-space: nowrap;
+   
+  }
+  .partner
+  {
+      padding-bottom: 2%;
+      padding-left: 220px;
+  }
+
+  .subscriber-section
+  {
+
+    padding-top: 30px;
+    background-color: #00c4cc;
+  }
+  .subscriber-section p, .footer-form{
+      color: white;
+  }
+  .mailchimp{
+    display: flex;
+  }
+
+  .prefooter{
+      padding-top: 50px;
+      padding-bottom: 50px;
+        background-color: #16193B;
+  }
+
+  .footer-li
+  {
+    color: white;
+      background-color: transparent;
+  }
+
+  .footer-form-col
+  {
+      padding-top: 30px;
+  }
+
+  .copyright
+  {
+    border-top: 2px solid whitesmoke;
+      background-color: #24201A;
+  }
+  .copyright p{
+      padding-top: 10px;
+      color: white;
+  }
+
+  .important-links a , .social-links a{
+    text-decoration: none;
+    color: white;
+  }
+  .important-links a:hover, .important-links a:active, .social-links a:hover, .social-links a:active {
+    color: rgb(202, 199, 199);
   }
 @media screen and (min-width: 481px) and (max-width: 992px) {
     .navbar{      
@@ -328,29 +587,45 @@ address bar color = #00c4cc
     .jumbotron-contain{
         max-width: 100%;
     }
-    .card-news-three
+ 
+    .four-blurb-contain
     {
-        display: none;
-    }
-    .news-card
-{
-    max-width: 100%;
-    margin-left: 0px;
-    margin-right: 0px;
-}
+        max-width: 100%;
+      
+       
     
+    }
+    
+
     .side-news{
         display: none;
    }
    .parallax {
-    background-attachment: scroll;
+    
+    background-attachment: fixed;
+  }
+
+
+  .testimonials{
+      margin: -10px auto;
+      padding-left: 10vw;
+  }
+  .testimonials-three
+  {
+      display: none;
   }
   .news-head{
   display: none;
 }
-.testi-img
+p{
+    margin-bottom: 0 !important;
+ }
+
+
+  .partner
   {
-      display: none;
+      padding-bottom: 2%;
+      padding-left: 70px;
   }
  
 }
@@ -401,28 +676,37 @@ address bar color = #00c4cc
     .jumbotron-contain{
         max-width: 100%;
     }
-    .card-news-three, .card-news-two
+    
+    .four-blurb-contain
     {
-        display: none;
+        max-width: 100%;     
+    
     }
+    
     .side-news{
         display: none;
    }
-   .news-card
-   {
-       max-width: 100%;
-       margin-left: 0px;
-       margin-right: 0px;
-   }
+
   .news-head{
     display: none;
   }
     
    .parallax {
     background-attachment: scroll;
+
   }
-  .testi-img
+  .testimonials{
+    margin: -10px auto;
+    padding-left: 9vw;
+}
+  .testimonials-three,.testimonials-two
   {
       display: none;
+  }
+  .partner
+  {
+      padding-bottom: 2%;
+      padding-left: 0px;
+      text-align: center;
   }
 }
