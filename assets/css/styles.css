@@ -89,6 +89,16 @@ address bar color = #00c4cc
    padding-bottom: 80px; 
    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
 }
+
+.appointment-blurb{
+
+  padding-bottom: 30px; 
+  margin-bottom:30px;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+}
+.appointment-faq{
+  margin-bottom: 50px;
+}
 .box_card
 {
     margin-top: -30px;
@@ -599,6 +609,27 @@ address bar color = #00c4cc
     background-size: cover;
     margin-top: -120px;
   
+  }
+
+
+
+  .appointment-hero{
+    background-image: url("../images/blue-and-silver-stetoscope-40568.jpg");
+    opacity: 1;
+    /* Full height */
+    min-height: 700px;
+    overflow: hidden;
+    /* Create the parallax scrolling effect */
+    background-attachment: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -120px; 
+  }
+
+  .appointment-form{
+    margin-top: 100px;
+    float:  left !important;
   }
   .timetable-hero-title{
     padding-top: 70px;

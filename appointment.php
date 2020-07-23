@@ -4,7 +4,36 @@
 
 <body>
 
-<h1>Appointments</h1>
+<?php
+
+include('page_sections/appointment_sections/section_one.php');
+include('page_sections/appointment_sections/section_two.php');
+include('page_sections/appointment_sections/section_three.php');
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
