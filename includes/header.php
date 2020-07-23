@@ -1,5 +1,5 @@
 <?php
-   include('./includes/arrays.php');
+   include('includes/arrays.php');
 
 ?>
 
@@ -19,7 +19,7 @@
     <meta name="theme-color" content="#00c4cc">
     <!-- favicon-->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://<?php echo $_SERVER['HTTP_HOST']?>/assets/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
 
     <!-- stylesheet connected-->
@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
     
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-       <?php include('./includes/nav.php'); ?>
+       <?php include('includes/nav.php'); ?>
     </nav>
     <?php
 
