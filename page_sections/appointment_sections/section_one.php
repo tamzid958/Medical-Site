@@ -5,13 +5,13 @@
 
   <div class="container">
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-6 appointment-form-left">
     
 
 
 
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6 appointment-form-right">
     <form>
   <div class="form-row appointment-form">
      <h2 class="appointment-head">Book an Appointment</h2>

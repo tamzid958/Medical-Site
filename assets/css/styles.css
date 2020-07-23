@@ -930,7 +930,12 @@ p{
  
     font-size:1.7vw;
 }
-
+.appointment-form-left{
+  display: none;
+}
+.appointment-hero{
+margin-top: 0px;
+}
 }
 @media screen and (max-width: 480px)  {
     .navbar{
@@ -1036,4 +1041,10 @@ p{
 .timetable-box-week{
  display: none; 
 }
+.appointment-form-left{
+  display: none;
+}
+.appointment-hero{
+  margin-top: 0px;
+  }
 }
