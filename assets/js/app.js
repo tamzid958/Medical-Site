@@ -66,27 +66,28 @@ $(document).ready(function () {
      var captionText2 = document.getElementById("caption2");
      var captionText3 = document.getElementById("caption");
      
-     img.onclick = function(){
+
+     $(img).click( function(){
        modal.style.display = "block";
        modalImg.src = this.src;
        modalImg2.src = this.src;
        captionText.innerHTML = this.alt;
-     }
+     });
      
      
-     img2.onclick = function(){
+     $(img2).click( function(){
        modal.style.display = "block";
        modalImg.src = this.src;
        modalImg2.src = this.src;
        captionText.innerHTML = this.alt;
-     }
+     });
      
-     img3.onclick = function(){
+     $(img3).click( function(){
        modal.style.display = "block";
        modalImg.src = this.src;
        modalImg2.src = this.src;
        captionText.innerHTML = this.alt;
-     }
+     });
      
      // Get the <span> element that closes the modal
      var span = document.getElementsByClassName("close")[0];
@@ -103,6 +104,6 @@ $(document).ready(function () {
        modal.style.display = "none";
      }
   
-
+   
     })
        
