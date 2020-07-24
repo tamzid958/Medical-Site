@@ -44,7 +44,7 @@
       <input type="email" class="form-control form-trans" placeholder="Email Address">
     </div>
     <div class="col-md-6">
-      <input type="date" class="form-control form-trans" placeholder="Date">
+      <input type="date" class="form-control form-trans"  placeholder="Date">
     </div>
     <div class="col-md-6">
     <input type="time"class="form-control form-trans" name="time"/>

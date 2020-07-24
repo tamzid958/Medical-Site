@@ -13,6 +13,8 @@ $(document).ready(function () {
     }
     );*/
     
+ 
+
     $(".single-blog-direct").click( function() {
       window.location.href="/templates/blog_post_template.php";
      });
@@ -94,15 +96,19 @@ $(document).ready(function () {
      var span2 = document.getElementsByClassName("close2")[0];
      var span3 = document.getElementsByClassName("close3")[0];
      // When the user clicks on <span> (x), close the modal
-     span.onclick = function() {
-       modal.style.display = "none";
-     }
-     span2.onclick = function() {
-       modal.style.display = "none";
-     }
-     span3.onclick = function() {
-       modal.style.display = "none";
-     }
+
+     $(span).click( function(){
+  
+      modal.style.display = "none";
+    });
+    $(span2).click( function(){
+  
+      modal.style.display = "none";
+    });
+    $(span3).click( function(){
+  
+      modal.style.display = "none";
+    });
   
    
     })
