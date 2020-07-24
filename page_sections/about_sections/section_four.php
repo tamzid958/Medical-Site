@@ -13,7 +13,7 @@
     <div class="col-sm">
      
 <!-- Trigger the Modal -->
-<img id="myImg" src="./assets/images/certificate01.jpg" alt="" style="width:100%;max-width:600px">
+<img id="myImg" src="/assets/images/certificate01.jpg" alt="" style="width:100%;max-width:600px">
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -32,7 +32,7 @@
     <div class="col-sm">
      
 <!-- Trigger the Modal -->
-<img id="myImg2" src="./assets/images/certificate02.jpg" alt="" style="width:100%;max-width:600px">
+<img id="myImg2" src="/assets/images/certificate02.jpg" alt="" style="width:100%;max-width:600px">
 
 <!-- The Modal -->
 <div id="myModal2" class="modal2">
@@ -54,7 +54,7 @@
     <div class="col-sm">
     
 <!-- Trigger the Modal -->
-<img id="myImg3" src="./assets/images/certificate03.jpg" alt="" style="width:100%;max-width:600px">
+<img id="myImg3" src="/assets/images/certificate03.jpg" alt="" style="width:100%;max-width:600px">
 
 <!-- The Modal -->
 <div id="myModal3" class="modal3">

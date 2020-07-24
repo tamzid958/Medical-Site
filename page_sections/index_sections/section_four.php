@@ -40,7 +40,7 @@
     Our Services<span><p>
 
     <div class="card card-news" >
-  <img src="./assets/images/20-mg-label-blister-pack-208512.jpg" class="card-img-top" alt="">
+  <img src="/assets/images/20-mg-label-blister-pack-208512.jpg" class="card-img-top" alt="">
   <div class="card-body">
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
@@ -48,7 +48,7 @@
     </div>
     <div class="col-sm news-card">
     <div class="card card-news-two">
-  <img src="./assets/images/person-in-white-hand-gloves-writing-on-white-paper-207601.jpg" class="card-img-top" alt="">
+  <img src="/assets/images/person-in-white-hand-gloves-writing-on-white-paper-207601.jpg" class="card-img-top" alt="">
   <div class="card-body">
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
@@ -56,7 +56,7 @@
     </div>
     <div class="col-sm news-card">
     <div class="card card-news-three ">
-  <img src="./assets/images/person-getting-his-blood-check-1350560.jpg" class="card-img-top" alt="">
+  <img src="/assets/images/person-getting-his-blood-check-1350560.jpg" class="card-img-top" alt="">
   <div class="card-body">
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>

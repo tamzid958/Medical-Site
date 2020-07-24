@@ -13,28 +13,6 @@ include('page_sections/appointment_sections/section_three.php');
 ?>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
       <script>

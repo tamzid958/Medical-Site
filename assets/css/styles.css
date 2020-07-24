@@ -250,7 +250,7 @@ address bar color = #00c4cc
 
 .parallax {
     /* The image used */
-    background-image: url("../images/health-workers-wearing-face-mask-3957987.jpg");
+    background-image: url("/assets/images/health-workers-wearing-face-mask-3957987.jpg");
     opacity: 0.9;
     /* Full height */
     min-height: 500px;
@@ -583,7 +583,7 @@ address bar color = #00c4cc
   }
 
   .about-hero{
-    background-image: url("../images/technology-lens-laboratory-medical-60022.jpg");
+    background-image: url("/assets/images/technology-lens-laboratory-medical-60022.jpg");
     opacity: 1;
     /* Full height */
     min-height: 500px;
@@ -597,7 +597,7 @@ address bar color = #00c4cc
   
   }
   .timetable-hero{
-    background-image: url("../images/time-lapse-photo-of-stars-on-night-924824.jpg");
+    background-image: url("/assets/images/time-lapse-photo-of-stars-on-night-924824.jpg");
     opacity: 1;
     /* Full height */
     min-height: 300px;
@@ -614,7 +614,7 @@ address bar color = #00c4cc
 
 
   .appointment-hero{
-    background-image: url("../images/blue-and-silver-stetoscope-40568.jpg");
+    background-image: url("/assets/images/blue-and-silver-stetoscope-40568.jpg");
     opacity: 1;
     /* Full height */
     min-height: 700px;

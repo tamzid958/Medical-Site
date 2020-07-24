@@ -9,7 +9,7 @@
 
   
     <div class="fadeIn first">
-      <img src="./assets/images/black_logo.png" id="icon" alt="" />
+      <img src="/assets/images/black_logo.png" id="icon" alt="" />
     </div>
 
    

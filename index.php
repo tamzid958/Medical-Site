@@ -3,10 +3,9 @@
 ?>
 <body>
 
+
 <?php
-
-
-  include('page_sections/index_sections/section_one.php');
+ include('page_sections/index_sections/section_one.php');
 
   include('page_sections/index_sections/section_two.php');
 

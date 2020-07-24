@@ -7,17 +7,17 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="./assets/images/two-person-doing-surgery-inside-room-1250655.jpg" class="d-block w-100" alt="">
+      <img src="/assets/images/two-person-doing-surgery-inside-room-1250655.jpg" class="d-block w-100" alt="">
       <div class="carousel-caption d-none d-md-block">
       </div>
     </div>
     <div class="carousel-item">
-      <img src="./assets/images/person-in-white-hand-gloves-writing-on-white-paper-207601.jpg" class="d-block w-100" alt="">
+      <img src="/assets/images/person-in-white-hand-gloves-writing-on-white-paper-207601.jpg" class="d-block w-100" alt="">
       <div class="carousel-caption d-none d-md-block">
       </div>
     </div>
     <div class="carousel-item">
-      <img src="./assets/images/adult-business-care-chair-305565.jpg" class="d-block w-100" alt="">
+      <img src="/assets/images/adult-business-care-chair-305565.jpg" class="d-block w-100" alt="">
       <div class="carousel-caption d-none d-md-block">
       </div>
     </div>
