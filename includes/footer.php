@@ -38,10 +38,10 @@
     <div class="col-sm">
     <h5 style="color:white"> Important Links </h5>
     <ul class="list-group list-group-flush important-links">
-  <li class="list-group-item footer-li"><a href="about.php">About Us</a></li>
-  <li class="list-group-item footer-li"><a href="appointment.php">Appointment</a></li>
-  <li class="list-group-item footer-li"><a href="timetable.php">Timetables</a></li>
-  <li class="list-group-item footer-li"><a href="login.php">Account Login</a></li>
+  <li class="list-group-item footer-li"><a href="/about.php">About Us</a></li>
+  <li class="list-group-item footer-li"><a href="/appointment.php">Appointment</a></li>
+  <li class="list-group-item footer-li"><a href="/timetable.php">Timetables</a></li>
+  <li class="list-group-item footer-li"><a href="/login.php">Account Login</a></li>
 </ul>
     </div>
     <div class="col-sm">
@@ -95,6 +95,7 @@
 <button onclick="topFunction(1000)" id="scrollTop" title="Go to top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></button>
 
 <script>
+     
   //Get the button
 var mybutton = document.getElementById("scrollTop");
 
@@ -115,7 +116,6 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-
 </script>
 
 </footer>

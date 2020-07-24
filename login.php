@@ -15,8 +15,8 @@
    
     <form>
       <input type="text2" id="login" class="fadeIn second login-field" name="login" placeholder="user">
-<input type="password" id="password" class="fadeIn third login-field" name="login" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
+      <input type="password" id="password" class="fadeIn third login-field" name="login" placeholder="password">
+      <input type="button" class="fadeIn fourth login-btn" value="Log In">
     </form>
 
 

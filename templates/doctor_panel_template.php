@@ -9,7 +9,7 @@
 
   <div class="container">
    
-  <h1 class="display-4 patient-post-title ">Dummy Patient Name</h1>
+  <h1 class="display-4 patient-post-title ">Dummy Doctor Name</h1>
 
   <div class="container d-flex justify-content-left patient-card">
     <div class="card p-3 patient-single-card">
@@ -18,8 +18,8 @@
         <div class="card-bottom pt-3 px-3 mb-2 patient-single-card-bottom">
             <div class="d-flex flex-row justify-content-between text-align-center">
                
-                    <p> <span class="text-white">12:30 PM</span></p>
-           
+                    <p> <span class="text-white">12:30 PM</span> <button type="button" class="btn btn-danger cancel-power-doc-btn">Cancel</button></p>
+                   
             </div>
          </div>
        </div>
