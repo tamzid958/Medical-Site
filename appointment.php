@@ -2,8 +2,7 @@
   include('includes/header.php');
 ?>
 
-<body>
-
+<body>  
 <?php
 
 include('page_sections/appointment_sections/section_one.php');
