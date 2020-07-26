@@ -154,6 +154,14 @@ $(document).ready(function () {
         
         });
 
+           
+        $(".btn-logout").click(function(){
+        
+         window.open("/login.php","_self");
+          
+          
+          });
+
  
     })
        

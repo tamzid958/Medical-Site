@@ -23,7 +23,7 @@
 <button type="button" class="btn btn-danger btn-user-cancelled">
   Cancalled <span class="badge badge-light"> 6</span>
 </button>
-    
+<button type="button" class="btn btn-dark btn-logout">Log Out</button>  
   </h1>
 
 

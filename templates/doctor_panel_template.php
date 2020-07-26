@@ -30,6 +30,7 @@
   Add New Post <span class="badge badge-light"> 10</span>
 </button>
 
+<button type="button" class="btn btn-dark btn-logout">Log Out</button>
 
 
 </h1>

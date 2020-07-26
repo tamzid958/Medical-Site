@@ -31,7 +31,8 @@ body {
 .sidebar-sticky {
   position: relative;
   top: 0;
-  background-color: #00c4cc;
+  background-color: #16193B;
+
   height: calc(100vh - 48px);
   padding-top: .5rem;
   overflow-x: hidden;
@@ -62,6 +63,7 @@ body {
 .nav-link{
   cursor: pointer;
   font-size: 20px;
+  color: whitesmoke !important;
 }
 .sidebar .nav-link:hover .feather,
 .sidebar .nav-link.active .feather {
