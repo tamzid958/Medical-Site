@@ -9,7 +9,34 @@
 
   <div class="container">
    
-  <h1 class="display-4 patient-post-title ">Dummy Doctor Name</h1>
+  <h1 class="display-4 patient-post-title ">Dummy Doctor Name 
+  
+  
+  
+  
+  <button type="button" class="btn btn-info btn-doctor-new">
+  New <span class="badge badge-light"> 4</span>
+</button> 
+
+<button type="button" class="btn btn-success btn-doctor-completed">
+  Completed <span class="badge badge-light"> 3</span>
+</button>
+
+<button type="button" class="btn btn-danger btn-doctor-cancelled">
+  Cancelled <span class="badge badge-light"> 6</span>
+</button>
+
+<button type="button" class="btn btn-secondary btn-add-new-post">
+  Add New Post <span class="badge badge-light"> 10</span>
+</button>
+
+
+
+</h1>
+
+  <div id="doctor-panel-switcher">
+  
+
 
   <div class="container d-flex justify-content-left patient-card">
     <div class="card p-3 patient-single-card">
@@ -26,7 +53,27 @@
 
     </div>
  </div>
+
+
+
+
+
+
+  
+  </div>
+  
 </div>
+
+
+<script>
+$(document).ready(function(){
+  
+
+
+
+
+
+</script>
 
 
 <!-- Load Facebook SDK for JavaScript -->

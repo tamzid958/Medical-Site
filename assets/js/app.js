@@ -111,5 +111,49 @@ $(document).ready(function () {
     });
   
    
+    $(".btn-doctor-new").click(function(){
+
+      $("#doctor-panel-switcher").load("/page_sections/doctor_panel_sections/new_appointment.php");
+      
+      });
+      $(".btn-doctor-completed").click(function(){
+      
+      $("#doctor-panel-switcher").load("/page_sections/doctor_panel_sections/completed_appointment.php");
+      
+      });
+      
+      $(".btn-doctor-cancelled").click(function(){
+      
+      $("#doctor-panel-switcher").load("/page_sections/doctor_panel_sections/cancelled_appointment.php");
+      
+      
+      });
+      
+      $(".btn-add-new-post").click(function(){
+      
+      $("#doctor-panel-switcher").load("/page_sections/doctor_panel_sections/add_new_post.php");
+      
+      });
+      
+      
+      $(".btn-user-new").click(function(){
+
+        $("#user-panel-switcher").load("/page_sections/user_panel_sections/new_appointment.php");
+        
+        });
+        $(".btn-user-completed").click(function(){
+        
+        $("#user-panel-switcher").load("/page_sections/user_panel_sections/completed_appointment.php");
+        
+        });
+        
+        $(".btn-user-cancelled").click(function(){
+        
+        $("#user-panel-switcher").load("/page_sections/user_panel_sections/cancelled_appointment.php");
+        
+        
+        });
+
+
     })
        
