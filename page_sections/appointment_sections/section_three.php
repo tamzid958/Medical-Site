@@ -6,6 +6,8 @@
 <h4>Have some Questions?</h4></h6>
   <div class="row">
     <div class="col-sm-6">
+
+
     <div class="accordion" id="accordionExample">
   <div class="card">
     <div class="card-header" id="headingOne">
@@ -51,9 +53,13 @@
     </div>
   </div>
 </div>
+
+
+
 
     </div>
     <div class="col-sm-6">
+  
     <div class="accordion" id="accordionExample">
   <div class="card">
     <div class="card-header" id="headingOne">
@@ -99,6 +105,7 @@
     </div>
   </div>
 </div>
+
 
     </div>
   </div>
