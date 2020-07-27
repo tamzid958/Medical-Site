@@ -159,7 +159,9 @@ float: left;
 }
 .admin-service-category{
 
-  margin-top: 60px;
+  margin-top: 80px;
+  width: 100%;
+ 
 
 }
 
@@ -174,7 +176,12 @@ float: left;
 
   #blah{
       
-    max-width:300px;
+    max-width:350px;
   
   }
+
+  .admin-service-category{
+    margin-left: -20px;
+  }
+  
 }

@@ -70,7 +70,7 @@
 
   </div>
 
-  <div class="container admin-service-category">
+  <div class="container admin-service-category" >
       <hr>
   <div class="row">
     <div class="col-sm-6">
@@ -114,25 +114,21 @@
 
     </div>
     <div class="col-sm-6">
+   
     <h4>All Services</h4>
-    
-    <div class="card">
-    <div class="card-body">
 
-  <div class="container">
-  <div class="row">
-    <div class="col-sm">
-    <h6 >Ear Problem</h6>
-    </div>
-    <div class="col-sm">
-    <h6>Time: <span> 1:30 min </span></h6>
-    </div>
-    <div class="col-sm">
-    <h6>Cost: <span></span> $50 </h6> 
-    </div>
-  </div>
-  <a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+
+    <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Service One</h5>
+     <h6>Time: <span>1 h 30 min</span></h6>
+     <h6>Cost: <span> $60</span></h6>
+    <a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></a>
     <a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
+  </div>
+
+
+
 </div>
    
   </div>
