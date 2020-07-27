@@ -140,9 +140,12 @@ body {
 }
 
 
-#admin-new-service{
+#admin-new-service,#old-post-list{
   width:98%;
 
+}
+#old-post-list{
+margin-top: 60px;
 }
 
 #left{
@@ -158,4 +161,20 @@ float: left;
 
   margin-top: 60px;
 
+}
+
+
+#blah{
+      
+  max-width:450px;
+
+}
+@media screen and (max-width: 480px)  {
+
+
+  #blah{
+      
+    max-width:300px;
+  
+  }
 }

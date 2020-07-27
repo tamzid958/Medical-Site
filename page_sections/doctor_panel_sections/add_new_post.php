@@ -1,7 +1,7 @@
 <div class="container">
 
 
-<img id="blah" src="https://dummyimage.com/900X400/000/ffffff.png" alt="" />
+<img id="blah" src="https://dummyimage.com/900X400/cfcfcf.png" alt="" />
 
 <br><br><br>
 <label for=""><h3>Featured Image</h3></label>
