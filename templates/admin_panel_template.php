@@ -101,37 +101,8 @@
 
       <div id="admin-panel-switcher">
       <div>
-<canvas id="myChart" class="my-4 w-100" max-width="100%" max-height="650"></canvas>
-</div>
-<script data-require="jquery@*" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script data-require="chart.js@0.2.0" data-semver="0.2.0" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-
-
-
-<script>
-     var ctx = document.getElementById('myChart').getContext('2d');
-                        var chart = new Chart(ctx, {
-                            // The type of chart we want to create
-                            type: 'line',
-                        
-                            // The data for our dataset
-                            data: {
-                                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August','September','October','November','December'],
-                                datasets: [{
-                                    label: 'Appointment',
-                                    backgroundColor: 'transparent',
-                                    borderColor: '#007bff',
-                                    data: [0, 10, 5, 2, 20, 30, 45,91,23,23,41,45,12]
-                                }]
-                            },
-                        
-                            // Configuration options go here
-                            options: {}
-          });
-</script>
-
-        
+<canvas id="myChart" class="my-4 w-100" max-width="100%" min-height="650px"></canvas>
+</div>     
     </div>
     
     </main>
@@ -141,8 +112,7 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>  
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
- 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js" integrity="sha512-G8JE1Xbr0egZE5gNGyUm1fF764iHVfRXshIoUWCTPAbKkkItp/6qal5YAHXrxEu4HNfPTQs6HOu3D5vCGS1j3w==" crossorigin="anonymous"></script>
 
 <script src="/assets/js/dashboard.js"></script></body>
 
