@@ -121,7 +121,7 @@
     <div class="card" style="max-width: 50rem;">
   <div class="card-body">
     <h5 class="card-title">Service One</h5>
-     <h6>Time: <span>1 h 30 min</span></h6>
+     <h6> Time: <span> 1 h 30 min</span></h6>
      <h6>Cost: <span> $60</span></h6>
      <h6>Category: <span> Category one</span></h6>
     <a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></a>
