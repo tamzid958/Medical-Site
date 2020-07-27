@@ -19,7 +19,7 @@ body {
   left: 0;
   z-index: 100; /* Behind the navbar */
   padding: 48px 0 0; /* Height of navbar */
-  box-shadow: inset -1px 0 0 rgba(23, 157, 247, 0.1);
+
 }
 
 @media (max-width: 767.98px) {
@@ -31,8 +31,10 @@ body {
 .sidebar-sticky {
   position: relative;
   top: 0;
-  background-color: #16193B;
-
+  
+  background: linear-gradient(145deg, #e5e5e5, #c1c1c1);
+  box-shadow:  20px 20px 60px #b6b6b6, 
+               -20px -20px 60px #f6f6f6;
   height: calc(100vh - 48px);
   padding-top: .5rem;
   overflow-x: hidden;
@@ -63,11 +65,19 @@ body {
 .nav-link{
   cursor: pointer;
   font-size: 20px;
-  color: whitesmoke !important;
 }
+.side-link:hover{
+  background-color:#007bff !important;
+  color:white !important;
+  padding-left: 50px;
+  transform: scale(1.09);
+}
+
+
 .sidebar .nav-link:hover .feather,
 .sidebar .nav-link.active .feather {
-  color: inherit;
+  color: #999;
+
 }
 
 .sidebar-heading {
@@ -82,9 +92,7 @@ body {
 .navbar-brand {
   padding-top: .75rem;
   padding-bottom: .75rem;
-  font-size: 1rem;
-  background-color: rgba(0, 0, 0, .25);
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+  
 }
 
 .navbar .navbar-toggler {
@@ -111,3 +119,10 @@ body {
 .admin-ham-btn{
   margin-top: 25px;
 }
+.active{
+  background-color:#007bff;
+  color:#fff !important;
+  transform: scale(1);
+
+}
+ 

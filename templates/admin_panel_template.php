@@ -60,32 +60,32 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link admin-appointment-section-link" href="#">
+            <a class="nav-link admin-appointment-section-link side-link" href="#">
               <span data-feather="appointment"></span>
               <i class="fa fa-file" aria-hidden="true"></i>   Appointment
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link admin-services-section-link">
+            <a class="nav-link admin-services-section-link side-link">
               <span data-feather="services"></span>
               <i class="fa fa-medkit" aria-hidden="true"></i> Services
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link admin-doctors-section-link">
+            <a class="nav-link admin-doctors-section-link side-link">
               <span data-feather="doctors"></span>
               <i class="fa fa-user-md" aria-hidden="true"></i>  Doctors
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link admin-patient-section-link">
+            <a class="nav-link admin-patient-section-link side-link">
               <span data-feather="Patients"></span>
               <i class="fa fa-user" aria-hidden="true"></i> Patients
             </a>
           </li>
          
           <li class="nav-item">
-            <a class="nav-link admin-post-section-link" >
+            <a class="nav-link admin-post-section-link side-link" >
               <span data-feather="Patients"></span>
               <i class="fa fa-newspaper-o" aria-hidden="true"></i> Posts
             </a>
