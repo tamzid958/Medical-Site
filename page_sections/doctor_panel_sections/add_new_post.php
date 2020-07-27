@@ -7,10 +7,12 @@
 <label for=""><h3>Featured Image</h3></label>
 
 
-<input type='file' onchange="readURL(this);" />
-<br><br><br>
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="inputGroupFile02" onchange="readURL(this);" >  
+    <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
+  </div>
 
-
+  <br><br><br>
 <label for=""><h3>Add a new Post Title</h3></label>
 
 <input class="form-control form-control-lg" type="text" placeholder="Post Title">
