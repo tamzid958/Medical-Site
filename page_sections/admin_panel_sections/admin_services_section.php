@@ -2,13 +2,13 @@
   
     <div id="left">
     
-    <h3>Services <span class="badge badge-light"> 10</span> Total  </h3>
+    <h3 class="total-admin-badge">Services <span class="badge badge-light"> 10</span> Total  </h3>
 
     </div>
 
     <div id="right">
     
-    <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"  data-toggle="modal" data-target="#exampleModalLong"> + Add New Service </a>
+    <a href="#" class="btn btn-primary btn-lg active admin-add-new-service-btn" role="button" aria-pressed="true"  data-toggle="modal" data-target="#exampleModalLong"> + Add New Service </a>
     </div>
 
 

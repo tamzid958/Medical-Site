@@ -2,13 +2,13 @@
   
   <div id="left">
   
-  <h3>Posts <span class="badge badge-light"> 10</span> Total  </h3>
+  <h3 class="total-admin-badge">Posts <span class="badge badge-light"> 10</span> Total  </h3>
 
   </div>
 
   <div id="right">
   
-  <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"  data-toggle="modal" data-target="#exampleModalLongpost"> + Add New Post </a>
+  <a href="#" class="btn btn-primary btn-lg active admin-add-new-post-btn" role="button" aria-pressed="true"  data-toggle="modal" data-target="#exampleModalLongpost"> + Add New Post </a>
   </div>
 
 
