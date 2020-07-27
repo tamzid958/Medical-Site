@@ -17,7 +17,7 @@
 
 <hr><hr>
 <label for=""><h3>Post Description</h3></label>
-<textarea id=""  class="form-control form-control-lg" name="" rows="35" cols="50"></textarea>
+<textarea id=""  class="form-control form-control-lg" name="" rows="20" cols="50"></textarea>
 
 <br><br><br>
 
