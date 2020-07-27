@@ -54,7 +54,13 @@ address bar color = #00c4cc
     background-color: #00c4cc;
     
 }
+.active,.nav-link:hover{
 
+  color:rgb(155, 155, 155) !important;
+  cursor: pointer;
+
+}
+ 
 
 .carousel
 {

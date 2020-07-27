@@ -5,6 +5,8 @@
 
 
 <?php
+
+
  include('page_sections/index_sections/section_one.php');
 
   include('page_sections/index_sections/section_two.php');
@@ -21,6 +23,11 @@
 
   include('page_sections/index_sections/section_eight.php');
 ?>
+
+
+
+
+
 
 
 <!-- Load Facebook SDK for JavaScript -->
