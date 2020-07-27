@@ -125,4 +125,37 @@ body {
   transform: scale(1);
 
 }
- 
+
+#admin-panel-switcher{
+  max-width: 100%;
+  min-height: 600px;
+  margin: 5px; 
+  padding: 20px 0px 20px 20px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #e5e5e5, #c1c1c1);
+  box-shadow:  20px 20px 60px #b6b6b6, 
+               -20px -20px 60px #f6f6f6;
+  overflow-x: hidden;
+          
+}
+
+
+#admin-new-service{
+  width:98%;
+
+}
+
+#left{
+
+float: left;
+}
+
+#right {
+
+  float: right;
+}
+.admin-service-category{
+
+  margin-top: 60px;
+
+}
