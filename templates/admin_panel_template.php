@@ -9,8 +9,7 @@
     <title>OCAS HOSPITAL CENTER</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-   
-
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js" integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <meta name="theme-color" content="#00c4cc">
     <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
@@ -52,11 +51,11 @@
   <div class="row">
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div class="sidebar-sticky pt-3">
-        <ul class="nav flex-column">
+        <ul class="nav flex-column admin-panel-ul">
           <li class="nav-item">
-            <a class="nav-link active" href="#">
-              <span data-feather="home"></span>
-              Dashboard <span class="sr-only">(current)</span>
+            <a class="nav-link active side-link" href="admin_panel_template.php">
+              <span data-feather="dashboard"></span>
+              <i class="fa fa-bar-chart" aria-hidden="true"></i>   Dashboard <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
@@ -101,7 +100,38 @@
       
 
       <div id="admin-panel-switcher">
-          Good Morning
+      <div>
+<canvas id="myChart" class="my-4 w-100" max-width="100%" max-height="650"></canvas>
+</div>
+<script data-require="jquery@*" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script data-require="chart.js@0.2.0" data-semver="0.2.0" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+
+
+<script>
+     var ctx = document.getElementById('myChart').getContext('2d');
+                        var chart = new Chart(ctx, {
+                            // The type of chart we want to create
+                            type: 'line',
+                        
+                            // The data for our dataset
+                            data: {
+                                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August','September','October','November','December'],
+                                datasets: [{
+                                    label: 'Appointment Ratio',
+                                    backgroundColor: 'transparent',
+                                    borderColor: '#007bff',
+                                    data: [0, 10, 5, 2, 20, 30, 45,91,23,23,41,45,12]
+                                }]
+                            },
+                        
+                            // Configuration options go here
+                            options: {}
+          });
+</script>
+
+        
     </div>
     
     </main>
@@ -109,12 +139,13 @@
 </div>
 
 
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-     
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>  
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>     
-
+ 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+
 <script src="/assets/js/dashboard.js"></script></body>
+
+
+
 </html>

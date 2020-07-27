@@ -73,7 +73,9 @@ body {
   transform: scale(1.09);
 }
 
-
+.admin-panel-ul{
+  margin-top: 55px;
+}
 .sidebar .nav-link:hover .feather,
 .sidebar .nav-link.active .feather {
   color: #999;
@@ -136,6 +138,7 @@ body {
   box-shadow:  20px 20px 60px #b6b6b6, 
                -20px -20px 60px #f6f6f6;
   overflow-x: hidden;
+  
           
 }
 
@@ -170,6 +173,10 @@ float: left;
       
   max-width:450px;
 
+}
+
+#myChart{
+  padding-right: 30px;
 }
 @media screen and (max-width: 480px)  {
 

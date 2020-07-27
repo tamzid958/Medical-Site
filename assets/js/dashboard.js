@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+ 
 
     $(".admin-appointment-section-link").click(function(){
         
@@ -41,4 +41,6 @@ $(document).ready(function () {
                             $('li a').removeClass("active");
                             $(this).addClass("active");
                         });  
+
+                     
 });
