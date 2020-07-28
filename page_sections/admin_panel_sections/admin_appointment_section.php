@@ -4,6 +4,7 @@
                 <div class="row">
                     <div class="col-md-10">
                         <h4 class="card-title">OSCA | Appointment </h4>
+                        
                     </div>
                     <div class="col-md-2">
                         <button type="submit" class="btn btn-primary my-1" data-toggle="modal" data-target="#appointModal">New Appointment </button>

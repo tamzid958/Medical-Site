@@ -1,3 +1,4 @@
+
 body {
   font-size: .875rem;
   
@@ -23,6 +24,9 @@ body {
 
 }
 
+ .admin-doctor-section{
+   width: 100%;
+ }
 @media (max-width: 767.98px) {
   .sidebar {
     top: 5rem;
