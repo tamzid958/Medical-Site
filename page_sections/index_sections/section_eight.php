@@ -7,21 +7,28 @@
      <h2 class="appointment-head">Book an Appointment</h2>
     <div class="col-md-6">
     <select class="custom-select mr-sm-2 form-trans" id="inlineFormCustomSelect">
-        <option selected>Choose...</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+    <option value="" disabled selected>Select Category</option>
+                                                <option>Category one</option>
+                                                <option>Category two</option>
+                                                </select>
       </select>
     </div>
     <div class="col-md-6">
     <select class="custom-select mr-sm-2 form-trans" id="inlineFormCustomSelect">
-        <option selected>Choose...</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+    <option value="" disabled selected>Select Service</option>
+                                                <option>Service one</option>
+                                                <option>Service two</option>
+                                                </select>
       </select>
   </div>
+  <div class="col-md-6">
+  <select class="custom-select mr-sm-2 form-trans" id="inlineFormCustomSelect">
+                <option value="" disabled selected>Select Doctor</option>
+                                                <option>Doctor one</option>
+                                                <option>Doctor two</option>
+                                                </select>
 
+  </div>
 
     <div class="col-md-6">
       <input type="text" class="form-control form-trans" placeholder="Full name">
@@ -40,8 +47,9 @@
     <input type="time"class="form-control form-trans" name="time">
     </div>
     <div class="col-md-6">
-    </div>
     <button type="submit" class="btn btn-outline-light">Submit</button>
+    </div>
+   
     </form>
     </div>  
   </div>

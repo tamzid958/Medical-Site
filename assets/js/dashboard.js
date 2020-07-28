@@ -77,7 +77,7 @@ $(document).ready(function () {
                             options: {
 				responsive: true,
 				title: {
-					display: true,
+					display: false,
 					text: 'Appoinment'
 				},
 				tooltips: {
