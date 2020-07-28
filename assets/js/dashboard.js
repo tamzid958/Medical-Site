@@ -52,7 +52,7 @@ $(document).ready(function () {
                                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August','September','October','November','December'],
                                 datasets: [{
                                     label: 'Appointment',
-                                    backgroundColor: '#55b9f3',
+                                    backgroundColor: '#007bff',
                                     borderColor: '#007bff',
                                     fill: false,
                                     data: [0, 10, 5, 2, 20, 30, 45,91,23,23,41,45,12]
