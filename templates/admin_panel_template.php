@@ -101,7 +101,7 @@
 
       <div id="admin-panel-switcher">
       <div>
-        <h1 class="display">Appointment</h1>
+        <h2 class="display">Appointment</h1>
 <canvas id="myChart" max-width="100%" min-height="650px"></canvas>
 </div>     
     </div>
