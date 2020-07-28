@@ -51,15 +51,23 @@ $(document).ready(function () {
                             data: {
                                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August','September','October','November','December'],
                                 datasets: [{
-                                    label: 'Appointment',
-                                    backgroundColor: '#007bff',
-                                    borderColor: '#007bff',
+                                    label: 'Completed Appointment',
+                                    backgroundColor: '#24452E',
+                                    borderColor: '#24452E',
                                     fill: false,
                                     data: [0, 10, 5, 2, 20, 30, 45,91,23,23,41,45,12]
-                                }]
+                                
                                        
                             },
+                            {
+                                label: 'Cancelled Appointment',
+                                backgroundColor: '#B22929',
+                                borderColor: '#B22929',
+                                fill: false,
+                                data: [1,23,5,7,2,5,9,34,0,9,10,17]
                             
+                            
+                        }]},
                             // Configuration options go here
                             options: {
 				responsive: true,
