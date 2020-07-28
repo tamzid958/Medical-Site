@@ -1,36 +1,47 @@
-<div id="admin-new-service">
-  
-    <div id="left">
-    
-    <h3 class="total-admin-badge">Patients <span class="badge badge-light"> 10</span> Total  </h3>
-
+<div class="card">
+        <div class="card-body">
+            <div class="">
+                <div class="row">
+                    <div class="col-md-10">
+                    <h3 class="total-admin-badge">Patients <span class="badge badge-light"> 10</span> Total  </h3>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary my-1" data-toggle="modal" data-target="#exampleModalLongpatient">Add New Patient</button>
+                    </div>
+                </div>
+            <div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <td>#ID</td>
+                                        <td>NAME</td>
+                                        <td>PHONE</td>
+                                        <td>EMAIL</td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                      
+                                <tbody>
+                                    <tr>
+                                        <td>01</td>
+                                        <td>Doe</td>
+                                        <td>01854545454</td>
+                                        <td>sidoe@email.com</td>
+                                        <td>
+                                            <button class="btn btn-outline-primary editButton" data-toggle="modal" data-target="#editAppointModal">Edit</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div id="right">
-    
-    <a href="#" class="btn btn-primary btn-lg active admin-add-new-service-btn" role="button" aria-pressed="true"  data-toggle="modal" data-target="#exampleModalLongpatient"> + Add New Patient </a>
-    </div>
-</div>
-
-<table>
-<tr>
-    <th>Patient Name</th>
-    <th>Email Address</th>
-    <th>Phone Number</th>
-    <th></th>
-  </tr>
-  <tr class="patient-list">
-     
-    <th>Patient one</th>
-    <th>example@gmail.com</th>
-    <th>+990323121</th>
-    <th> <a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-    <a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
-</th> 
-</tr>
-</table>
-
-
 <div class="modal fade" id="exampleModalLongpatient" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
