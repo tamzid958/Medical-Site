@@ -31,7 +31,7 @@
                                         <td>01854545454</td>
                                         <td>sidoe@email.com</td>
                                         <td>
-                                            <button class="btn btn-outline-primary editButton" data-toggle="modal" data-target="#editAppointModal">Edit</button>
+                                            <button class="btn btn-outline-primary editButton" data-toggle="modal" data-target="#exampleModalLongpatient">Edit</button>
                                         </td>
                                     </tr>
                                 </tbody>

@@ -33,12 +33,6 @@
       </select>
 
       <br>
-      <select class="form-control">
-      <option value="" disabled selected>Duration</option>
-      <option value="one">1 Hour</option>
-      <option value="two">2 Hour</option>
-      </select>
-      <br>
 
       <input class="form-control" type="number" placeholder="Cost">
 
@@ -56,6 +50,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" disabled>Delete</button>
         <button type="button" class="btn btn-primary">Create</button>
       </div>
     </div>
@@ -73,14 +68,14 @@
   <div class="container admin-service-category" >
       <hr>
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-4">
 
     <h4>Categories</h4>
       
     <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">Category one</h5>
-    <a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+    <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-pencil" aria-hidden="true" ></i></a>
     <a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
   </div>
 
@@ -113,21 +108,45 @@
 </div>
 
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-8">
    
     <h4>All Services</h4>
+    <div class="card">
+        <div class="card-body">
+  <div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <td>SERVICE NAME</td>
+                                        <td>CATEGORY</td>
+                                        <td>COST</td>
+                                        <td>ASSIGNED TO</td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                      
+                                <tbody>
+                                    <tr>
+                                        <td>SERVICE ONE</td>
+                                        <td>CATEGORY ONE</td>
+                                        <td>$60</td>
+                                        <td>DOCTOR ONE</td>
+                                        <td> 
+                                        <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalLong"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-
-    <div class="card" style="max-width: 50rem;">
-  <div class="card-body">
-    <h5 class="card-title">Service One</h5>
-     <h6> Time: <span> 1 h 30 min</span></h6>
-     <h6>Cost: <span> $60</span></h6>
-     <h6>Category: <span> Category one</span></h6>
-    <a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-    <a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
-  </div>
-
+</div>
+</div>
 
 
 </div>
