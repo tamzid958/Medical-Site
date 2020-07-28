@@ -61,6 +61,7 @@ body {
 }
 
 
+
 .nav-link{
   cursor: pointer;
   font-size: 20px;
@@ -150,6 +151,25 @@ body {
 #old-post-list{
 margin-top: 60px;
 }
+table {
+  margin-top: 70px;
+  margin-left: -10px;
+  border-collapse: collapse;
+  width: 100%;
+
+}
+
+td, th {
+  
+  text-align: left;
+  padding: 8px;
+}
+.patient-list{
+  background: #ffffff;
+  box-shadow:  20px 20px 60px #d9d9d9, 
+               -20px -20px 60px #ffffff;
+}
+
 
 #left{
 

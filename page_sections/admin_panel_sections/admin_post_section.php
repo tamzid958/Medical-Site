@@ -81,7 +81,7 @@ function readURL(input) {
   </div>
 </div>
 
-        </div>
+</div>
 
 
 <div id="old-post-list">
