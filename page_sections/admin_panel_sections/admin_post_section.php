@@ -91,7 +91,7 @@ function readURL(input) {
   <div class="card-body">
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 
-    <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalLongpost"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+    <a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"  data-toggle="modal" data-target="#exampleModalLongpost"></i></a>
     <a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
   </div>
  </div>

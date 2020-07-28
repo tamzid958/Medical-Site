@@ -38,12 +38,11 @@
 
 
       <br>
-
-      <select class="form-control">
-      <option value="" disabled selected>Select Doctor</option>
-      <option value="one">Doctor One</option>
-      <option value="two">Doctor Two</option>
-      </select>
+      <select multiple class="form-control" id="exampleFormControlSelect1" >
+                <option value="" disabled selected>Select Doctor--Use (CTRL or command) + Left click</option>
+                <option value="one">Doctor One</option>
+                <option value="two">Doctor Two</option>
+                                                </select>
 
       <br>
 
