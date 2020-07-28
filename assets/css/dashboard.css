@@ -1,5 +1,6 @@
 body {
   font-size: .875rem;
+  
 }
 
 .feather {
@@ -59,14 +60,13 @@ body {
   color: #999;
 }
 
-.sidebar .nav-link.active {
-  color: #007bff;
-}
+
 .nav-link{
   cursor: pointer;
   font-size: 20px;
 }
 .side-link:hover{
+ 
   background-color:#007bff !important;
   color:white !important;
   padding-left: 50px;

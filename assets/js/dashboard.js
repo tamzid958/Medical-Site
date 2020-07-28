@@ -54,6 +54,8 @@ $(document).ready(function () {
                                     label: 'Completed',
                                     backgroundColor: '#2DB26A',
                                     borderColor: '#2DB26A',
+                                    pointStyle: 'rectRot',
+                                    pointRadius: 5,
                                     fill: false,
                                     data: [0, 10, 5, 2, 20, 30, 45,91,23,23,41,45,12]
                  
@@ -64,6 +66,8 @@ $(document).ready(function () {
                                 label: 'Cancelled',
                                 backgroundColor: '#7A2F4E',
                                 borderColor: '#7A2F4E',
+                                pointStyle: 'rectRot',
+                                pointRadius: 5,
                                 fill: false,
                                 data: [1,23,5,7,2,5,9,34,0,9,10,17]
                             
