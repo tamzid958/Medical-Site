@@ -52,17 +52,18 @@ $(document).ready(function () {
                                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August','September','October','November','December'],
                                 datasets: [{
                                     label: 'Completed',
-                                    backgroundColor: '#24452E',
-                                    borderColor: '#24452E',
+                                    backgroundColor: '#2DB26A',
+                                    borderColor: '#2DB26A',
                                     fill: false,
                                     data: [0, 10, 5, 2, 20, 30, 45,91,23,23,41,45,12]
+                 
                                 
                                        
                             },
                             {
                                 label: 'Cancelled',
-                                backgroundColor: '#B22929',
-                                borderColor: '#B22929',
+                                backgroundColor: '#7A2F4E',
+                                borderColor: '#7A2F4E',
                                 fill: false,
                                 data: [1,23,5,7,2,5,9,34,0,9,10,17]
                             
