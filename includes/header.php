@@ -36,6 +36,9 @@
         <a class="nav-link" href="/about.php">About Us</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="/posts.php">Blog</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="/appointment.php">Appointment</a>
       </li>
       <li class="nav-item">

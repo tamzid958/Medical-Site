@@ -4,7 +4,8 @@
     <h1 class="display-4 about-hero-title">About our Clinic</h1>
     <p class="lead about-hero-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum massa vel enim feugiat gravida. 
     Phasellus velit risus, euismod a lacus et, mattis condimentum augue. Vivamus fermentum ex quis imperdiet sodales.</p>
-    <button type="button" class="btn btn-light">View all our department</button>
+    <a href="/doctors.php">
+    <button type="button" class="btn btn-light">View all our department</button></a>
   </div>
 </div>
 
