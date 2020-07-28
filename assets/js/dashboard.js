@@ -51,7 +51,7 @@ $(document).ready(function () {
                             data: {
                                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August','September','October','November','December'],
                                 datasets: [{
-                                    label: 'Completed Appointment',
+                                    label: 'Completed',
                                     backgroundColor: '#24452E',
                                     borderColor: '#24452E',
                                     fill: false,
@@ -60,7 +60,7 @@ $(document).ready(function () {
                                        
                             },
                             {
-                                label: 'Cancelled Appointment',
+                                label: 'Cancelled',
                                 backgroundColor: '#B22929',
                                 borderColor: '#B22929',
                                 fill: false,
@@ -72,8 +72,8 @@ $(document).ready(function () {
                             options: {
 				responsive: true,
 				title: {
-					display: false,
-					text: 'Appoinment Total'
+					display: true,
+					text: 'Appoinment'
 				},
 				tooltips: {
 					mode: 'index',

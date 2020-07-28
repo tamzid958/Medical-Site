@@ -101,7 +101,7 @@
 
       <div id="admin-panel-switcher">
       <div>
-<canvas id="myChart" class="my-4 w-100" max-width="100%" min-height="650px"></canvas>
+<canvas id="myChart" max-width="100%" min-height="650px"></canvas>
 </div>     
     </div>
     
