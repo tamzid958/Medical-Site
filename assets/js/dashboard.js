@@ -52,8 +52,8 @@ $(document).ready(function () {
                                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August','September','October','November','December'],
                                 datasets: [{
                                     label: 'Completed',
-                                    backgroundColor: '#2DB26A',
-                                    borderColor: '#2DB26A',
+                                    backgroundColor: '#00A484',
+                                    borderColor: '#00A484',
                                     pointStyle: 'rectRot',
                                     pointRadius: 5,
                                     fill: false,
@@ -64,8 +64,8 @@ $(document).ready(function () {
                             },
                             {
                                 label: 'Cancelled',
-                                backgroundColor: '#7A2F4E',
-                                borderColor: '#7A2F4E',
+                                backgroundColor: '#E83309',
+                                borderColor: '#E83309',
                                 pointStyle: 'rectRot',
                                 pointRadius: 5,
                                 fill: false,

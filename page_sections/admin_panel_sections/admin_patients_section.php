@@ -14,9 +14,9 @@
 
 <table>
 <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Phone</th>
+    <th>Patient Name</th>
+    <th>Email Address</th>
+    <th>Phone Number</th>
     <th></th>
   </tr>
   <tr class="patient-list">
