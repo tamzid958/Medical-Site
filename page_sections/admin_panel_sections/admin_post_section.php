@@ -45,7 +45,7 @@
 
 <br><br>
 
-<textarea id=""  class="form-control form-control-lg" name="" rows="20" cols="20" placeholder="Post Description"></textarea>
+<textarea id=""  class="form-control form-control-lg" name="" rows="5" cols="5" placeholder="Post Description"></textarea>
 
 
 
