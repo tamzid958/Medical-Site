@@ -14,7 +14,7 @@
 
    
     <form>
-      <input type="text2" id="register" class="fadeIn second register-field" name="register" placeholder="user">
+      <input type="text2" id="register" class="fadeIn second register-field" name="register" placeholder="Full Name">
       <input type="email2" id="register" class="fadeIn second register-field" name="register" placeholder="email address">
       <input type="password" id="password" class="fadeIn third register-field" name="login" placeholder="password">
       <input type="submit" class="fadeIn fourth" value="Register">

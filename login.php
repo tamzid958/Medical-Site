@@ -14,7 +14,7 @@
 
    
     <form>
-      <input type="text2" id="login" class="fadeIn second login-field" name="login" placeholder="user">
+      <input type="email" id="login" class="fadeIn second login-field" name="login" placeholder="email address">
       <input type="password" id="password" class="fadeIn third login-field" name="login" placeholder="password">
       <input type="button" class="fadeIn fourth login-btn" value="Log In">
     </form>
@@ -102,7 +102,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text2], input[type=password] {
+input[type=email], input[type=password] {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
@@ -118,7 +118,7 @@ input[type=text2], input[type=password] {
   border-radius: 5px 5px 5px 5px;
 }
 
-input[type=text2]:focus , input[type=password] :focus {
+input[type=email]:focus , input[type=password] :focus {
   background-color: #fff;
   border-bottom: 2px solid #00c4cc;
 }
