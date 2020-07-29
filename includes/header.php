@@ -33,7 +33,7 @@
           <ul class="navbar-nav ml-auto" id="nav">
          
       <li class="nav-item">
-        <a class="nav-link" href="/about.php">About Us</a>
+        <a class="nav-link" href="/about.php">About</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/posts.php">Blog</a>
