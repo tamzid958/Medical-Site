@@ -243,14 +243,13 @@ address bar color = #00c4cc
 .cat-main-news{
    font-size: 30px;
 }
-
-.pagination
-{
-    padding-right: 0.4em;
+.news-cat{
+  margin-top: -20px;
 }
 .news-serv{
-    margin-top: -65px;
+    margin-top: -35px;
 }
+
 .news-head{
     color:#35478C;
 }

@@ -14,34 +14,17 @@
     </ul>
     </div>
 
-
-
     <div class="col-sm">
-    <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-end">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Next</a>
-    </li>
-    </ul>
-    </nav>
    
 
-    <div class="container cour-news">
-  <div class="row ">
+    <div class="container cour-news ">
+    <div class="row  ">
     <div class="col-sm news-card">
-    <p class = "news-serv news-head">Innovation<br>
-    <span>
-    Our Services<span><p>
-
     <div class="card card-news single-blog-direct" >
+  
   <img src="/assets/images/20-mg-label-blister-pack-208512.jpg" class="card-img-top" alt="">
   <div class="card-body">
+  <h5 class="card-title">Dummy Blog title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 </div>
@@ -50,6 +33,7 @@
     <div class="card card-news-two">
   <img src="/assets/images/person-in-white-hand-gloves-writing-on-white-paper-207601.jpg" class="card-img-top" alt="">
   <div class="card-body">
+  <h5 class="card-title">Dummy Blog title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 </div>
@@ -58,6 +42,7 @@
     <div class="card card-news-three">
   <img src="/assets/images/person-getting-his-blood-check-1350560.jpg" class="card-img-top" alt="">
   <div class="card-body">
+  <h5 class="card-title">Dummy Blog title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 </div>
