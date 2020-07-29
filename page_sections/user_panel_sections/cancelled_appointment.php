@@ -5,7 +5,11 @@
         <div class="card-bottom pt-3 px-3 mb-2 patient-single-card-bottom">
             <div class="d-flex flex-row justify-content-between text-align-center">
                
-                    <p><span class="text-white">Date: 12 Dec '20 || Time: 12:30 PM</span> <button type="button" class="btn btn-success">Take Appointment Again</button></p>
+                    <p> <span class="text-white">Appointment Created: 12 Dec '20 || Time: 11:30 PM</span> <br>
+                   <span class="text-white">Cancelled at: 12 Dec '20 || Time: 11:30 PM</span>
+                    
+                    
+                    <a href="/appointment.php" target="_blank" rel="noopener noreferrer"><button type="button" class="btn btn-success">Take Appointment Again</button></a> </p>
            
             </div>
          </div>
