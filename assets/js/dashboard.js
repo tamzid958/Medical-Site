@@ -36,6 +36,14 @@ $(document).ready(function () {
                         
                         
                         });
+
+                        $(".admin-settings-section-link").click(function(){
+        
+                            $("#admin-panel-switcher").load("/page_sections/admin_panel_sections/admin_settings_seciton.php");
+                            
+                            
+                            });
+               
            
                         $('ul li a').click(function(){
                             $('li a').removeClass("active");

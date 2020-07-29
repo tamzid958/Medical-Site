@@ -26,10 +26,7 @@
   Cancelled <span class="badge badge-light"> 6</span>
 </button>
 
-<button type="button" class="btn btn-secondary btn-add-new-post">
-  Add New Post <span class="badge badge-light"> 10</span>
-</button>
-
+<button type="button" class="btn btn-dark btn-secondary btn-change-pass-doc">Settings</button>
 <button type="button" class="btn btn-dark btn-logout">Log Out</button>
 
 

@@ -121,6 +121,8 @@
                                                 </select>
 
     <br>
+    <textarea id=""  class="form-control" name="" rows="5" cols="5" placeholder="Doctor Description"></textarea>
+    <br>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         <button type="button" class="btn btn-danger" data-dismiss="modal" disabled>Delete</button>

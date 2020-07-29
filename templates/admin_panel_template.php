@@ -89,6 +89,14 @@
               <i class="fa fa-newspaper-o" aria-hidden="true"></i> Posts
             </a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link admin-settings-section-link side-link" >
+              <span data-feather="Settings"></span>
+              <i class="fa fa-cog" aria-hidden="true"></i> Settings
+            </a>
+          </li>
+         
          
         </ul>
 

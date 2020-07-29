@@ -129,11 +129,11 @@ $(document).ready(function () {
       
       });
       
-      $(".btn-add-new-post").click(function(){
+      $(".btn-change-pass-doc").click(function(){
       
-      $("#doctor-panel-switcher").load("/page_sections/doctor_panel_sections/add_new_post.php");
-      
-      });
+        $("#doctor-panel-switcher").load("/page_sections/doctor_panel_sections/settings.php");
+        
+        });
       
       
       $(".btn-user-new").click(function(){
@@ -153,6 +153,14 @@ $(document).ready(function () {
         
         
         });
+
+        $(".btn-settings-user").click(function(){
+        
+          $("#user-panel-switcher").load("/page_sections/user_panel_sections/settings.php");
+          
+          
+          });
+  
 
            
         $(".btn-logout").click(function(){
