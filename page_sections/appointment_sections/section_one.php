@@ -58,11 +58,9 @@
 
     </div>
     <div class="col-md-6">
-    <button type="submit" class="btn btn-outline-light">Submit</button>
+    <button type="submit" class="btn btn-outline-light" id="payBtn">Book an Appointment</button>
     </div>
-   
-    </form>
-    </form>
+   </form>
     </div>  
     </div>
   </div>
@@ -71,4 +69,60 @@
   </div>
 </div>
 
+
+<!-- Modal -->
+<div class="modal fade pay-modal" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Proccess Payment <span class=lead>Powered by T&C <span></h4>
+            </div>
+            <div class="modal-body">
+                
+              <input type="number" class="form-control pay-form" placeholder="Card Number"> <br>
+              <input type="password" class="form-control pay-form" placeholder="Card Pin">
+            
+    
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary" id="continuebtn">Pay</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+
+
+  .pay-modal
+  {
+    z-index:99999999999999999999;
+  }
+  .pay-form::placeholder{
+    color:black !important;
+  }
+</style>
+
+
+
+<script>
+
+$('document').ready(function(){
+    
+    $('#payBtn').on('click',function(e){
+      e.preventDefault();
+      $('#myModal').modal('toggle');
+  
+    });
+  
+    $('#continuebtn').on('click',function(){
+  
+      $('form').submit();
+    });
+  });
 </script>
