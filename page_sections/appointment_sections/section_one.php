@@ -80,9 +80,12 @@
                 <h4 class="modal-title">Proccess Payment <span class=lead>Powered by T&C <span></h4>
             </div>
             <div class="modal-body">
-              <p class="lead"> Your bill : <span><b> $00.00 </b><span></P> <br>
-              <input type="number" class="form-control pay-form" placeholder="Card Number"> <br>
-              <input type="password" class="form-control pay-form" placeholder="Card Pin">
+            <p class="lead"> Your bill : <span><b> $00.00 </b><span> <br>
+            Please complete your payment at first.<br>
+            Payment Number: 018999999127
+            </P> <br>
+              <input type="tel" class="form-control pay-form" placeholder="Phone Number"> <br>
+              <input type="text" class="form-control pay-form" placeholder="Transaction ID">
             
     
                 
@@ -94,6 +97,7 @@
         </div>
     </div>
 </div>
+
 
 
 <style>

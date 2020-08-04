@@ -154,6 +154,7 @@
                                                 </select>
                    
                                                 <br>
+                <input type="tel" class="form-control form-trans" placeholder="Phone Number"> <br>
                 <input type="text" class="form-control form-trans" placeholder="Transaciton ID">
                 <br>
       <div class="modal-footer">
