@@ -135,7 +135,7 @@
             Please complete your payment at first. <br>
             Payment Number: 018999999127 
             </P> <br>
-              <input type="number" class="form-control pay-form" placeholder="Phone Number"> <br>
+              <input type="number" class="form-control pay-form" placeholder="Payment Number"> <br>
               <input type="text" class="form-control pay-form" placeholder="Transaction ID">
             
     
