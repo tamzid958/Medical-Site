@@ -1,44 +1,34 @@
 <?php
+$servername = "localhost";
+$db_username = "root";
+$db_password = "";
+$db_name = "osca_new";
 
-$connection_string = "localhost";
+function execute($query)
+{ //this one is for insert, update ,delete,
+  global $servername, $db_username, $db_password, $db_name;
+  $conn = mysqli_connect($servername, $db_username, $db_password, $db_name);
+  $result = mysqli_query($conn, $query);
+}
+function getResult($query)
+{ //this one is for select query
+  global $servername, $db_username, $db_password, $db_name;
+  $conn = mysqli_connect($servername, $db_username, $db_password, $db_name);
+  $result = mysqli_query($conn, $query);
+  return $result;
+}
+function getArray($query)
+{
+  global $servername, $db_username, $db_password, $db_name;
+  $conn = mysqli_connect($servername, $db_username, $db_password, $db_name);
+  $result = mysqli_query($conn, $query);
 
-$database_name = "osca";
-
-$username ="root";
-
-$pass= "";
-
-
-
-
-$connect = mysqli_connect($connection_string,$username,$pass,$database_name);
-
-
-if ($connect->connect_error) {
-    die("Connection failed: " . $connect->connect_error);
+  if (mysqli_num_rows($result) < 2) {
+    return mysqli_fetch_assoc($result);
   }
-  
-  $sql = "SELECT `userType`, `userName`, `userPass` FROM `user` WHERE 1";
-  $result = $connect->query($sql);
-  
-  if ($result->num_rows > 0) {
-   
-    while($row = $result->fetch_assoc()) {
-      echo "userType: " . $row["userType"]. " - userName: " . $row["userName"]. " -userPass: " . $row["userPass"]. "<br>";
-
-      $str = 'pass';
-
-     if (sha1($str) === $row["userPass"]) {
-    echo "pass valid";
-     }
-
-     else{
-         echo "invalid";
-     }
-    }
-  } else {
-    echo "0 results";
+  $data = array();
+  while ($row = mysqli_fetch_assoc($result)) {
+    $data[] = $row;
   }
-  $connect->close();
-
-?>
+  return $data;
+}
