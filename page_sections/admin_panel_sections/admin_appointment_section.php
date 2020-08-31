@@ -98,6 +98,7 @@ $appointments = getAllAppointments();
                                         echo "<td>" . $appointment["appointment_id"] . "</td>";
                                         echo "<td>" . $appointment["patient_name"] . "</td>";
                                         echo "<td>" . $appointment["doctor_name"] . "</td>";
+                                        echo "<td>" . $appointment["service_service"] . "</td>";
                                         echo "<td>" . $appointment["service_date"] . "</td>";
                                         echo "<td>" . $appointment["service_time"] . "</td>";
                                         echo "<td>" . $appointment["service_status"] . "</td>";
