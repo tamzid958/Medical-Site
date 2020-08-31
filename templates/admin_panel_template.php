@@ -1,6 +1,13 @@
 <?php
 session_start();
+require_once '../controller/loginController.php';
+//$user_id = $_REQUEST['user_ID'];
+if (!$_SESSION["logged_in"]) {
+  header("Location:/login.php");
+  exit();
+}
 ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -43,13 +50,48 @@ session_start();
     <button class="navbar-toggler position-absolute d-md-none collapsed admin-ham-btn" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search" id="myInput" onkeyup="search()">
     <ul class="navbar-nav px-3">
       <li class="nav-item text-nowrap">
         <a class="nav-link" href="/login.php">Sign out</a>
       </li>
     </ul>
   </nav>
+
+  <script>
+    function search() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
 
   <div class="container-fluid">
     <div class="row">

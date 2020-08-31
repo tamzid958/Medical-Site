@@ -1,7 +1,5 @@
-
 body {
-  font-size: .875rem;
-  
+  font-size: 0.875rem;
 }
 
 .feather {
@@ -21,12 +19,11 @@ body {
   left: 0;
   z-index: 100; /* Behind the navbar */
   padding: 48px 0 0; /* Height of navbar */
-
 }
 
- .admin-doctor-section{
-   width: 100%;
- }
+.admin-doctor-section {
+  width: 100%;
+}
 @media (max-width: 767.98px) {
   .sidebar {
     top: 5rem;
@@ -36,12 +33,11 @@ body {
 .sidebar-sticky {
   position: relative;
   top: 0;
-  
+
   background: linear-gradient(145deg, #e5e5e5, #c1c1c1);
-  box-shadow:  20px 20px 60px #b6b6b6, 
-               -20px -20px 60px #f6f6f6;
+  box-shadow: 20px 20px 60px #b6b6b6, -20px -20px 60px #f6f6f6;
   height: calc(100vh - 48px);
-  padding-top: .5rem;
+  padding-top: 0.5rem;
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
@@ -63,49 +59,46 @@ body {
   margin-right: 4px;
   color: #999;
 }
+.post_admin_loop {
+  margin-right: 7px;
+}
 
-.doctor-avatar
-{
+.doctor-avatar {
   border-radius: 50% !important;
   height: 64px !important;
   width: 64px !important;
 }
-.doctor-name-input
-{
+.doctor-name-input {
   padding-top: 15px !important;
 }
-.doctor-details{
-
+.doctor-details {
   padding-top: 35px !important;
-
 }
-.doctor-details-btn{
+.doctor-details-btn {
   margin-top: 20px !important;
 }
 
-.nav-link{
+.nav-link {
   cursor: pointer;
   font-size: 20px;
 }
-.side-link:hover{
- 
-  background-color:#007bff !important;
-  color:white !important;
+.side-link:hover {
+  background-color: #007bff !important;
+  color: white !important;
   padding-left: 50px;
   transform: scale(1.09);
 }
 
-.admin-panel-ul{
+.admin-panel-ul {
   margin-top: 55px;
 }
 .sidebar .nav-link:hover .feather,
 .sidebar .nav-link.active .feather {
   color: #999;
-
 }
 
 .sidebar-heading {
-  font-size: .75rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
 }
 
@@ -114,117 +107,96 @@ body {
  */
 
 .navbar-brand {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
-  
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .navbar .navbar-toggler {
-  top: .25rem;
+  top: 0.25rem;
   right: 1rem;
 }
 
 .navbar .form-control {
-  padding: .75rem 1rem;
+  padding: 0.75rem 1rem;
   border-width: 0;
   border-radius: 0;
 }
 
 .form-control-dark {
   color: #fff;
-  background-color: rgba(255, 255, 255, .1);
-  border-color: rgba(255, 255, 255, .1);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .form-control-dark:focus {
   border-color: transparent;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
 }
-.admin-ham-btn{
+.admin-ham-btn {
   margin-top: 25px;
 }
-.active{
-  background-color:#007bff;
-  color:#fff !important;
+.active {
+  background-color: #007bff;
+  color: #fff !important;
   transform: scale(1);
-
 }
 
-#admin-panel-switcher{
+#admin-panel-switcher {
   max-width: 100%;
   min-height: 820px;
-  margin: 5px; 
+  margin: 5px;
   padding: 20px 0px 20px 20px;
   border-radius: 10px;
   background: linear-gradient(145deg, #e5e5e5, #c1c1c1);
-  box-shadow:  20px 20px 60px #b6b6b6, 
-               -20px -20px 60px #f6f6f6;
+  box-shadow: 20px 20px 60px #b6b6b6, -20px -20px 60px #f6f6f6;
   overflow-x: hidden;
-  
-          
 }
 
-
-#admin-new-service,#old-post-list{
-  width:98%;
-
+#admin-new-service,
+#old-post-list {
+  width: 98%;
 }
-#old-post-list{
-margin-top: 60px;
+#old-post-list {
+  margin-top: 60px;
 }
 
-
-
-#left{
-
-float: left;
+#left {
+  float: left;
 }
 
 #right {
-
   float: right;
 }
-.admin-service-category{
-
+.admin-service-category {
   margin-top: 80px;
   width: 100%;
- 
-
 }
 
-
-#blah{
-      
-  max-width:450px;
-
+#blah {
+  max-width: 450px;
 }
 
-#myChart{
+#myChart {
   padding-right: 30px;
 }
-@media screen and (max-width: 480px)  {
-
-
-  #blah{
-      
-    max-width:320px;
-  
+@media screen and (max-width: 480px) {
+  #blah {
+    max-width: 320px;
   }
 
-  .admin-service-category{
+  .admin-service-category {
     margin-left: -20px;
   }
-  
-  .total-admin-badge{
+
+  .total-admin-badge {
     font-size: 15px !important;
     margin-left: -15px !important;
     margin-top: 5px;
   }
-  .admin-add-new-service-btn, .admin-add-new-post-btn{
+  .admin-add-new-service-btn,
+  .admin-add-new-post-btn {
     padding: 1px;
     padding-left: 3px;
     padding-right: 2px;
   }
-
-
 }

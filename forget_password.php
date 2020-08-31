@@ -16,6 +16,7 @@ require_once 'controller/loginController.php';
 
       <form action="" method="POST">
         <input type="mail2" id="forget" class="fadeIn second forget-field" name="forget_mail" placeholder="email address" required>
+        <p style="color:green"><?php echo $err_invalid; ?></p>
         <input type="submit" name="forget_pass_btn" class="fadeIn fourth" value="Reset">
       </form>
 

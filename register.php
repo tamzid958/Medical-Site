@@ -17,7 +17,9 @@ require_once 'controller/loginController.php';
       <form action="" method="post">
         <input type="text2" id="register" class="fadeIn second register-field" name="name" placeholder="Full Name" required>
         <input type="email2" id="register" class="fadeIn second register-field" name="email" placeholder="email address" required>
+        <input type="tel" id="register" class="fadeIn second register-field" name="tel" placeholder="Phone Number" required>
         <input type="password" id="register" class="fadeIn third register-field" name="password" placeholder="password" required>
+        <p style="color:red"><?php echo $err_invalid; ?></p>
         <input type="submit" name="register_btn" class="fadeIn fourth" value="Register">
 
       </form>
@@ -110,7 +112,8 @@ require_once 'controller/loginController.php';
 
     input[type=text2],
     input[type=password],
-    input[type=email2] {
+    input[type=email2],
+    input[type=tel] {
       background-color: #f6f6f6;
       border: none;
       color: #0d0d0d;
@@ -128,7 +131,8 @@ require_once 'controller/loginController.php';
 
     input[type=text2]:focus,
     input[type=password] :focus,
-    input[type=email2]:focus {
+    input[type=email2]:focus,
+    input[type=tel]:focus {
       background-color: #fff;
       border-bottom: 2px solid #00c4cc;
     }
