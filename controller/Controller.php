@@ -76,14 +76,28 @@ if (isset($_POST["patient_id"])) {
     editPatient($_POST["patient_id"]);
 }
 if (isset($_POST["admin_patient_edit"])) {
-    updatePatientDetails($_POST["id"], $_POST["name"], $_POST["email"], $_POST["tel"]);
+    duplicateSearch($_POST["email"]);
+    if ($_SESSION['Duplicate'] > 0) {
+        echo "<script type='text/javascript'>";
+        echo "alert('This Email is already registered.')";
+        echo "</script>";
+    } else {
+        updatePatientDetails($_POST["id"], $_POST["name"], $_POST["email"], $_POST["tel"]);
+    }
 }
 if (isset($_POST["doctor_id"])) {
     $output = '';
     editDoctor($_POST["doctor_id"]);
 }
 if (isset($_POST["edit_doctor_btn"])) {
-    updateDoctorDetails($_POST["id"], "pic_dir", $_POST["doctor_name"], $_POST["doctor_email"], $_POST["doctor_phone"], $_POST["doctor_category"], $_POST["doctor_service"], $_POST["doctor_description"]);
+    duplicateSearch($_POST["doctor_email"]);
+    if ($_SESSION['Duplicate'] > 0) {
+        echo "<script type='text/javascript'>";
+        echo "alert('This Email is already registered.')";
+        echo "</script>";
+    } else {
+        updateDoctorDetails($_POST["id"], "pic_dir", $_POST["doctor_name"], $_POST["doctor_email"], $_POST["doctor_phone"], $_POST["doctor_category"], $_POST["doctor_service"], $_POST["doctor_description"]);
+    }
 }
 
 function insertUser($name, $email, $tel, $password)
