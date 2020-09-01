@@ -43,17 +43,18 @@ if (isset($_POST["forget_pass_btn"])) {
 
 if (isset($_POST["login_btn"])) {
     if (authenticate($_POST["email"], $_POST["password"])) {
-        $u_id = $_SESSION['user_ID'];
         $_SESSION["logged_in"] = true;
-        if ($_SESSION['user_Type']  == "patient") {
-            header("Location: templates/user_panel_template.php/uid?=$u_id");
-        } else if ($_SESSION['user_Type']  == "doctor") {
-            header("Location: templates/doctor_panel_template.php/uid?=$u_id");
-        } else if ($_SESSION['user_Type']  == "admin") {
-            header("Location: templates/admin_panel_template.php/uid?=$u_id");
+        if ($_REQUEST['user_Type']  == "patient") {
+            header("Location: templates/user_panel_template.php");
+        } else if ($_REQUEST['user_Type']  == "doctor") {
+            header("Location: templates/doctor_panel_template.php");
+        } else if ($_REQUEST['user_Type']  == "admin") {
+            header("Location: templates/admin_panel_template.php");
+        } else {
+            $err_invalid =  " Invalid Username password";
         }
     } else {
-        $err_invalid =  "Username password invalid";
+        $err_invalid =  " Invalid Username password";
     }
 }
 if (isset($_POST['category_create_btn'])) {
@@ -109,8 +110,11 @@ function authenticate($email, $password)
     $password = base64_encode($password);
     $query = "SELECT `id`, `email`,`user_type` from `user` WHERE `email`='$email' and `password`='$password'";
     $user = getArray($query);
-    $_SESSION['user_ID'] = $user['id'];
-    $_SESSION['user_Type'] = $user['user_type'];
+    if (!empty($user['user_type'])) {
+        $_REQUEST['user_Type'] = $user['user_type'];
+    } else {
+        $_REQUEST['user_Type'] = null;
+    }
     return $user;
 }
 function randomPassword()
