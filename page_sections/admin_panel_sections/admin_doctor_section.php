@@ -129,8 +129,7 @@ $services = getAllService();
                             echo "<option>" . $category["category_name"] . "</option>";
                         } ?>
                     </select>
-                    </select>
-                    <br><br>
+                    <br>
                     <select class="form-control" name="doctor_service" id="exampleFormControlSelect1" required>
                         <option value="" disabled selected>Select Service</option>
                         <?php
@@ -171,9 +170,57 @@ $services = getAllService();
             </div>
             <div class="modal-body">
                 <form action="" method="post">
-                    <div class="doctor_details">
 
+                    <div class="form-row">
+                        <input type="hidden" name="id" id="doctor_edit_id" value="">
+                        <div class="col-md-2">
+                            <img id="blah" class="doctor-avatar" src="https://dummyimage.com/450X300/cfcfcf.png" alt="" />
+                        </div>
+                        <div class="col-md-10 doctor-name-input">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="doctor_pic" value="" id="doctor_edit_pic" placeholder="Featured Image" onchange="readURL(this);" required>
+                                <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
+                            </div>
+
+                        </div>
                     </div>
+                    <br><br>
+                    <input class="form-control" type="text" name="doctor_name" id="doctor_edit_name" value="" placeholder="Doctor Name" required>
+
+                    <br>
+
+                    <input class="form-control" type="email" name="doctor_email" id="doctor_edit_email" value="" placeholder="Email Address" required>
+                    <br>
+                    <input class="form-control" type="tel" name="doctor_phone" id="doctor_edit_phone" value="" placeholder="Phone Number" required>
+                    <br>
+                    <select class="form-control doctor_category_selector" name="doctor_category" id="doctor_edit_category" value="" id="doctor_category_selector" required>
+                        <option value="" disabled>Select Category</option>
+                        <?php
+                        foreach ($categories as  $category) {
+                            if ($category["category_name"] ==  $doctor_details["category"]) {
+                                echo "<option selected>" . $category["category_name"] . "</option>";
+                            } else {
+                                echo "<option>" . $category["category_name"] . "</option>";
+                            }
+                        }
+                        ?>
+                    </select>
+                    <br>
+                    <select class="form-control" name="doctor_service" id="doctor_edit_service" value="" required>
+                        <option value="" disabled>Select Service</option>
+                        <?php
+                        foreach ($services as $service) {
+                            if ($service["service_name"] ==  $doctor_details["service"]) {
+                                echo "<option selected>" . $service["service_name"] . "</option>";
+                            } else {
+                                echo "<option>" . $service["service_name"] . "</option>";
+                            }
+                        } ?>
+                    </select>
+
+                    <br>
+                    <textarea id="doctor_edit_description" class="form-control" name="doctor_description" value="" rows="5" cols="5" placeholder="Doctor Description" required></textarea>
+                    <br>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         <button type="submit" name="edit_doctor_btn" class="btn btn-primary">Edit</button>
@@ -196,15 +243,12 @@ $services = getAllService();
             var reader = new FileReader();
 
             reader.onload = function(e) {
-                $('#blah')
-                    .attr('src', e.target.result);
+                $(' #blah').attr('src', e.target.result);
             };
-
             reader.readAsDataURL(input.files[0]);
         }
     }
 </script>
-
 <script>
     $(document).ready(function() {
         $(".editDoctor_btn").click(function() {
@@ -212,12 +256,20 @@ $services = getAllService();
             $.ajax({
                 url: "../../controller/Controller.php",
                 method: "post",
+                dataType: "json",
                 data: {
                     doctor_id: doctor_id,
                 },
                 success: function(data) {
-
-                    $('.doctor_details').html(data);
+                    console.log(doctor_id);
+                    $('#doctor_edit_id').val(data.id);
+                    $('#doctor_edit_name').val(data.full_name);
+                    $('#doctor_edit_email').val(data.email);
+                    $('#doctor_edit_phone').val(data.phone);
+                    $('#doctor_edit_category').val(data.category);
+                    $('#doctor_edit_service').val(data.service);
+                    // $('#doctor_edit_pic').val(data.profile_picture);
+                    $('#doctor_edit_description').val(data.description);
                     $("#doctorEditModal").modal("show");
                 }
             });

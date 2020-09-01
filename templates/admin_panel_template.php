@@ -2,10 +2,10 @@
 session_start();
 require_once '../controller/Controller.php';
 //$user_id = $_REQUEST['user_ID'];
-if (!$_SESSION["logged_in"]) {
-  header("Location:/login.php");
-  exit();
-}
+//if (!$_SESSION["logged_in"]) {
+// header("Location:/login.php");
+//exit();
+//}
 ?>
 
 <!doctype html>

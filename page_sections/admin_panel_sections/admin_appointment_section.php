@@ -132,7 +132,7 @@ $appointments = getAllAppointments();
                 <form action="" method="post">
                     <div class="modal-body">
 
-                        <select class="form-control" id="exampleFormControlSelect1" name="patient_name">
+                        <select class="form-control" name="patient_name">
                             <option value="" disabled selected>Select Patient</option>
                             <?php
                             foreach ($patients as $patient) {
@@ -141,7 +141,7 @@ $appointments = getAllAppointments();
 
                         </select>
                         <br>
-                        <select class="form-control" id="exampleFormControlSelect1" name="service_category">
+                        <select class="form-control" name="service_category">
                             <option value="" disabled selected>Select Category</option>
                             <?php
                             foreach ($categories as $category) {
@@ -149,7 +149,7 @@ $appointments = getAllAppointments();
                             } ?>
                         </select>
                         <br>
-                        <select class="form-control" id="exampleFormControlSelect1" name="service_service">
+                        <select class="form-control" name="service_service">
                             <option value="" disabled selected>Select Service</option>
                             <?php
 
@@ -159,7 +159,7 @@ $appointments = getAllAppointments();
 
                         </select>
                         <br>
-                        <select class="form-control" id="exampleFormControlSelect1" name="doctor_name">
+                        <select class="form-control" name="doctor_name">
                             <option value="" disabled selected>Select Doctor</option>
 
                             <?php
@@ -173,7 +173,7 @@ $appointments = getAllAppointments();
                         <br>
                         <input type="time" class="form-control form-trans" name="time" placeholder="Time" />
                         <br>
-                        <select class="form-control" id="exampleFormControlSelect1" name="status">
+                        <select class="form-control" name="status">
                             <option value="" disabled selected>Select Status</option>
                             <option>Approved</option>
                             <option>Pending</option>

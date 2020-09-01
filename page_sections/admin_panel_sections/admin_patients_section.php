@@ -93,7 +93,13 @@ $patients = getAllPatients();
                     <div class="container">
                         <form action="" method="post">
                             <div class="patient_details">
-
+                                <input type="hidden" name="id" id="patient_id" value="">
+                                <input class="form-control form-control-lg" id="edit_name" type="text" name="name" value="" placeholder="Patient Name" required>
+                                <br>
+                                <input class="form-control form-control-lg" id="edit_mail" type="email" name="email" value="" placeholder="Email Address" required>
+                                <br>
+                                <input class="form-control form-control-lg" id="edit_tel" type="tel" name="tel" value="" placeholder="Phone Number" required>
+                                <br>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -113,13 +119,17 @@ $patients = getAllPatients();
             $.ajax({
                 url: "../../controller/Controller.php",
                 method: "post",
+                dataType: "json",
                 data: {
                     patient_id: patient_id,
                 },
                 success: function(data) {
-                    //console.log(patient_id);
-                    $('.patient_details').html(data);
+                    $('#patient_id').val(data.id);
+                    $('#edit_name').val(data.full_name);
+                    $('#edit_mail').val(data.email);
+                    $('#edit_tel').val(data.phone);
                     $("#exampleEditModalLongpatient").modal("show");
+
                 }
             });
         });

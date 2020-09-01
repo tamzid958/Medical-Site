@@ -6,7 +6,7 @@ $posts = getAllPost();
 
   <div id="left">
 
-    <h3 class="total-admin-badge">Posts <span class="badge badge-light"><?php echo  $_SESSION['postCounter'] ?></span> Total </h3>
+    <h3 class="total-admin-badge">Posts <span class="badge badge-dark"><?php echo  $_SESSION['postCounter'] ?></span> Total </h3>
 
   </div>
 
@@ -94,10 +94,44 @@ foreach ($posts as $post) {
   echo "<img src='https://dummyimage.com/300x300/cfcfcf.png' class='card-img-top' alt=''>";
   echo " <div class='card-body'>";
   echo "<h3>" . $post["post_title"] . "</h3>";
+  echo "<div class='d-flex justify-content-between'>";
   echo "<a href='#' class='btn btn-warning' data-toggle='modal' data-target=''><i class='fa fa-pencil' aria-hidden='true'></i></a>";
-  echo "<a href='#' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></a>";
-  echo "</div>
+  echo "<button type='button' class='btn btn-danger post_delete_btn'  id=" . $post["post_id"] . "><i class='fa fa-trash' aria-hidden='true'></i></button>";
+  echo "</div></div>
   </div>
 </div>
 </div>";
 } ?>
+
+<div role="alert" style="position: absolute; z-index:100;" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
+  <div class="toast-header">
+    <strong class="mr-auto">Message</strong>
+    <small>1 sec ago</small>
+    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body">
+    Successfully Deleted
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $(".post_delete_btn").click(function() {
+      var post_delete_id = $(this).attr("id");
+      $.ajax({
+        url: "../../controller/Controller.php",
+        method: "post",
+        data: {
+          post_delete_id: post_delete_id,
+        },
+        success: function(data) {
+          $('.toast').toast('show');
+          return false;
+        }
+      });
+    });
+
+  });
+</script>

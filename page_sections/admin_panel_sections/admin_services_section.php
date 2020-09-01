@@ -3,7 +3,18 @@ require_once '../../controller/Controller.php';
 $categories = getAllCategory();
 $services = getAllService();
 ?>
-
+<div style="position: absolute; z-index:100;" role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
+  <div class="toast-header">
+    <strong class="mr-auto">Message</strong>
+    <small>1 sec ago</small>
+    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body">
+    Successfully Deleted
+  </div>
+</div>
 
 <div id="admin-new-service">
 
@@ -13,6 +24,7 @@ $services = getAllService();
 
   </div>
 
+
   <div id="right">
 
     <a href="#" class="btn btn-primary btn-lg active admin-add-new-service-btn" role="button" aria-pressed="true" data-toggle="modal" data-target="#exampleModalLong"> + Add New Service </a>
@@ -20,6 +32,7 @@ $services = getAllService();
       Create New Category
     </button>
   </div>
+
 
 
 
@@ -102,8 +115,8 @@ $services = getAllService();
                         echo " <td>" . $category["category_id"] . "</td>";
                         echo "<td>" . $category["category_name"] . "</td> ";
                         echo "<td>
-                        <a href='#' class='btn btn-warning' data-toggle='modal'><i class='fa fa-pencil' aria-hidden='true'></i></a>
-                        <a href='#' class='btn btn-danger' data-toggle='modal'><i class='fa fa-trash' aria-hidden='true'></i></a>
+                        <button type='button' class='btn btn-warning category_edit' data-toggle='modal' id=" . $category["category_id"] . "><i class='fa fa-pencil' aria-hidden='true'></i></button>
+                        <button type='button' class='btn btn-danger category_delete_btn' id=" . $category["category_id"] . "><i class='fa fa-trash' aria-hidden='true'></i></button>
                       </td>";
                         echo "</tr>";
                       } ?>
@@ -178,8 +191,8 @@ $services = getAllService();
                       echo "<td>" . $service["category_name"] . "</td>";
                       echo "<td>" . $service["cost"] . "</td>";
                       echo "                      <td>
-                      <a href='#' class='btn btn-warning' data-toggle='modal'><i class='fa fa-pencil' aria-hidden='true'></i></a>
-                      <a href='#' class='btn btn-danger' data-toggle='modal'><i class='fa fa-trash' aria-hidden='true'></i></a>
+                      <button type='button' class='btn btn-warning edit_service_btn' id=" . $service["service_ID"] . " data-toggle='modal'><i class='fa fa-pencil' aria-hidden='true'></i></button>
+                      <button type='button' class='btn btn-danger delete_service_btn' id=" . $service["service_ID"] . "><i class='fa fa-trash' aria-hidden='true'></i></button>
                     </td>";
                       echo "</tr>";
                     } ?>
@@ -198,3 +211,169 @@ $services = getAllService();
 
 </div>
 </div>
+
+
+<div class="modal fade" id="exampleeditCategoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Category Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="">
+
+          <input type="hidden" id="category_edit_id" name="id" value="" required>
+          <input class="form-control" id="category_edit_name" type="text" name="category_name" value="" placeholder="Category Name" required>
+
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" name="category_update_btn" class="btn btn-primary">Edit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+<div class="modal fade" id="exampleeditServiceModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Edit Service Detials</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="" method="post">
+          <input type="hidden" name="service_edit_id" id="service_edit_id" value="">
+          <input class="form-control" type="text" id="service_edit_name" value="" name="service_edit_name" placeholder="Service Name" required>
+          <br>
+          <select class="form-control" id="service_edit_category" value="" name="service_edit_category" required>
+            <option value="" disabled selected>Select Category</option>
+            <?php
+
+            foreach ($categories as $category) {
+              if ($category["category_name"] == $service["category_name"]) {
+                echo "<option selected>" . $category["category_name"] . "</option>";
+              } else {
+                echo "<option>" . $category["category_name"] . "</option>";
+              }
+            } ?>
+
+          </select>
+
+          <br>
+
+          <input class="form-control" id="service_edit_cost" name="service_edit_cost" type="number" placeholder="Cost" required>
+
+
+          <br>
+
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" name="service_update_btn" class="btn btn-primary">Edit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+  $(document).ready(function() {
+    $(".category_edit").click(function() {
+      var category_id = $(this).attr("id");
+      $.ajax({
+        url: "../../controller/Controller.php",
+        method: "post",
+        dataType: "json",
+        data: {
+          category_id: category_id,
+        },
+        success: function(data) {
+          $('#category_edit_id').val(data.category_id);
+          $('#category_edit_name').val(data.category_name);
+          $("#exampleeditCategoryModal").modal("show");
+        }
+      });
+    });
+
+
+
+    $(".category_delete_btn").click(function() {
+      var category_delete_id = $(this).attr("id");
+      $.ajax({
+        url: "../../controller/Controller.php",
+        method: "post",
+        data: {
+          category_delete_id: category_delete_id,
+        },
+        success: function(data) {
+          $('.toast').toast('show');
+          return false;
+        }
+      });
+    });
+
+    $(".edit_service_btn").click(function() {
+      var service_id = $(this).attr("id");
+      $.ajax({
+        url: "../../controller/Controller.php",
+        method: "post",
+        dataType: "json",
+        data: {
+          service_id: service_id,
+        },
+        success: function(data) {
+          //console.log(service_id);
+          $('#service_edit_id').val(data.service_ID);
+          $('#service_edit_name').val(data.service_name);
+          $('#service_edit_category').val(data.category_name);
+          $('#service_edit_cost').val(data.cost);
+          $("#exampleeditServiceModal").modal("show");
+        }
+      });
+    });
+
+
+
+
+
+    $(".delete_service_btn").click(function() {
+      var service_delete_id = $(this).attr("id");
+      $.ajax({
+        url: "../../controller/Controller.php",
+        method: "post",
+        data: {
+          service_delete_id: service_delete_id,
+        },
+        success: function(data) {
+          $('.toast').toast('show');
+          return false;
+        }
+      });
+    });
+
+
+
+  });
+</script>
