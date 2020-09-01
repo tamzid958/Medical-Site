@@ -1,5 +1,5 @@
 <?php
-require_once '../../controller/loginController.php';
+require_once '../../controller/Controller.php';
 $posts = getAllPost();
 ?>
 <div id="admin-new-service">

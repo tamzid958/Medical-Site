@@ -1,5 +1,5 @@
 <?php
-require_once '../../controller/loginController.php';
+require_once '../../controller/Controller.php';
 $doctors = getAllDoctors();
 $categories = getAllCategory();
 $services = getAllService();
@@ -23,17 +23,16 @@ $services = getAllService();
 
         <div class="row">
 
-            <div class="col-md-4">
-                <input class="form-control" type="text" placeholder="Search">
-            </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <select class="form-control" id="exampleFormControlSelect1">
                     <option value="" disabled selected>Select Service</option>
-                    <option>Service one</option>
-                    <option>Service two</option>
+                    <?php
+                    foreach ($services as $service) {
+                        echo "<option>" . $service["service_name"] . "</option>";
+                    } ?>
                 </select>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <select class="form-control" id="exampleFormControlSelect1">
                     <option selected>Ascending</option>
                     <option>Decending</option>
@@ -152,6 +151,45 @@ $services = getAllService();
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="doctorEditModal" tabindex="-1" role="dialog" aria-labelledby="doctorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="appointModalLabel">Edit Doctor Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post">
+                    <div class="doctor_details">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" name="edit_doctor_btn" class="btn btn-primary">Edit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
 <script>
     function readURL(input) {
         if (input.files && input.files[0]) {
@@ -165,4 +203,24 @@ $services = getAllService();
             reader.readAsDataURL(input.files[0]);
         }
     }
+</script>
+
+<script>
+    $(document).ready(function() {
+        $(".editDoctor_btn").click(function() {
+            var doctor_id = $(this).attr("id");
+            $.ajax({
+                url: "../../controller/Controller.php",
+                method: "post",
+                data: {
+                    doctor_id: doctor_id,
+                },
+                success: function(data) {
+
+                    $('.doctor_details').html(data);
+                    $("#doctorEditModal").modal("show");
+                }
+            });
+        });
+    });
 </script>

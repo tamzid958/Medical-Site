@@ -71,6 +71,21 @@ if (isset($_POST["appointment_create_admin"])) {
     createAppointment($_POST["patient_name"], $_POST["service_category"], $_POST["service_service"], $_POST["doctor_name"], $_POST["date"], $_POST["time"], $_POST["status"], $_POST["payment_number"], $_POST["transaction_id"]);
 }
 
+if (isset($_POST["patient_id"])) {
+    $output = '';
+    editPatient($_POST["patient_id"]);
+}
+if (isset($_POST["admin_patient_edit"])) {
+    updatePatientDetails($_POST["id"], $_POST["name"], $_POST["email"], $_POST["tel"]);
+}
+if (isset($_POST["doctor_id"])) {
+    $output = '';
+    editDoctor($_POST["doctor_id"]);
+}
+if (isset($_POST["edit_doctor_btn"])) {
+    updateDoctorDetails($_POST["id"], "pic_dir", $_POST["doctor_name"], $_POST["doctor_email"], $_POST["doctor_phone"], $_POST["doctor_category"], $_POST["doctor_service"], $_POST["doctor_description"]);
+}
+
 function insertUser($name, $email, $tel, $password)
 {
     $password = base64_encode($password);
@@ -219,4 +234,96 @@ function getAllAppointments()
     $appointmentCounter = getArray($query);
     $_SESSION['appointmentCounter'] = $appointmentCounter['count'];
     return $appointments;
+}
+
+function editPatient($patient_id)
+{
+    $query = "SELECT * FROM user WHERE id='$patient_id'";
+    $patient_details = getArray($query);
+    $output = '
+    <input type="hidden" name="id" value="' . $patient_details["id"] . '">
+    <input class="form-control form-control-lg" id="edit_name" type="text" name="name" value="' . $patient_details["full_name"] . '" placeholder="Patient Name" required>
+    <br>
+    <input class="form-control form-control-lg" id="edit_mail" type="email" name="email" value="' . $patient_details["email"] . '" placeholder="Email Address" required>
+    <br>
+    <input class="form-control form-control-lg" id="edit_tel" type="tel" name="tel" value="' . $patient_details["phone"] . '" placeholder="Phone Number" required>
+    <br>       
+    ';
+    echo $output;
+}
+function updatePatientDetails($id, $full_name, $email, $phone)
+{
+    $query = "UPDATE `user` SET `full_name`= '$full_name',`email`='$email',`phone`='$phone' WHERE `id`='$id' ";
+    execute($query);
+}
+
+function editDoctor($doctor_id)
+{
+    $categories = getAllCategory();
+    $services = getAllService();
+    $query = "SELECT * FROM user WHERE id='$doctor_id'";
+    $doctor_details = getArray($query);
+    $output = '
+    <div class="form-row">
+    <input type="hidden" name="id" value="' . $doctor_details["id"] . '">
+    <div class="col-md-2">
+        <img id="blah" class="doctor-avatar" src="https://dummyimage.com/450X300/cfcfcf.png" alt="" />
+    </div>
+    <div class="col-md-10 doctor-name-input">
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" name="doctor_pic" id="inputGroupFile02" placeholder="Featured Image" onchange="readURL(this);" required>
+            <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
+        </div>
+
+    </div>
+</div>
+<br><br>
+<input class="form-control" type="text" name="doctor_name" value="' . $doctor_details["full_name"] . '" placeholder="Doctor Name" required>
+
+<br>
+
+<input class="form-control" type="email" name="doctor_email" value="' . $doctor_details["email"] . '" placeholder="Email Address" required>
+<br>
+<input class="form-control" type="tel" name="doctor_phone" value="' . $doctor_details["phone"] . '" placeholder="Phone Number" required>
+<br>
+<select class="form-control" name="doctor_category" value="' . $doctor_details["category"] . '" id="inlineFormCustomSelect" required>
+    <option value="" disabled selected>Select Category</option>
+     <?php
+    foreach ($categories as $category) {
+        if($category["category_name"]==' . $doctor_details["category"] . '){
+            echo "<option selected>" . $category["category_name"] . "</option>";
+       }
+        else{
+        echo "<option>" . $category["category_name"] . "</option>";
+        }
+    }
+    ?>
+</select>
+</select>
+<br><br>
+<select class="form-control" name="doctor_service" id="exampleFormControlSelect1" value="' . $doctor_details["service"] . '" required>
+    <option value="" disabled selected>Select Service</option>
+    <?php
+    foreach ($services as $service) {
+        if($service["service_name"] == ' . $doctor_details["service"] . ')
+        {
+            echo ""<option selected>" . $service["service_name"] . "</option>"";
+        }
+        else{
+            echo ""<option>" . $service["service_name"] . "</option>"";
+        }
+        
+    } ?>
+</select>
+
+<br>
+<textarea id="" class="form-control" name="doctor_description" value="' . $doctor_details["description"] . '" rows="5" cols="5" placeholder="Doctor Description" required></textarea>
+<br>
+    ';
+    echo $output;
+}
+function  updateDoctorDetails($id, $doctor_pic, $doctor_name, $doctor_email, $doctor_phone, $doctor_category, $doctor_service, $doctor_description)
+{
+    $query = "UPDATE `user` SET `full_name`='$doctor_name',`email`='$doctor_email',`phone`='$doctor_phone',`description`='$doctor_description',`category`='$doctor_category',`service`='$doctor_service',`profile_picture`='$doctor_pic' WHERE `id`='$id'";
+    execute($query);
 }

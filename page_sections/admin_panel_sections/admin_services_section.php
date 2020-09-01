@@ -1,5 +1,5 @@
 <?php
-require_once '../../controller/loginController.php';
+require_once '../../controller/Controller.php';
 $categories = getAllCategory();
 $services = getAllService();
 ?>
@@ -90,7 +90,7 @@ $services = getAllService();
                       <tr>
                         <td>CATEGORY ID</td>
                         <td>CATEGORY NAME</td>
-                        <td></td>
+                        <td>EDIT / DELETE</td>
                       </tr>
                     </thead>
 
@@ -103,6 +103,7 @@ $services = getAllService();
                         echo "<td>" . $category["category_name"] . "</td> ";
                         echo "<td>
                         <a href='#' class='btn btn-warning' data-toggle='modal'><i class='fa fa-pencil' aria-hidden='true'></i></a>
+                        <a href='#' class='btn btn-danger' data-toggle='modal'><i class='fa fa-trash' aria-hidden='true'></i></a>
                       </td>";
                         echo "</tr>";
                       } ?>
@@ -163,7 +164,7 @@ $services = getAllService();
                       <td>SERVICE NAME</td>
                       <td>CATEGORY</td>
                       <td>COST</td>
-                      <td></td>
+                      <td>EDIT / DELETE</td>
                     </tr>
                   </thead>
 
@@ -178,6 +179,7 @@ $services = getAllService();
                       echo "<td>" . $service["cost"] . "</td>";
                       echo "                      <td>
                       <a href='#' class='btn btn-warning' data-toggle='modal'><i class='fa fa-pencil' aria-hidden='true'></i></a>
+                      <a href='#' class='btn btn-danger' data-toggle='modal'><i class='fa fa-trash' aria-hidden='true'></i></a>
                     </td>";
                       echo "</tr>";
                     } ?>

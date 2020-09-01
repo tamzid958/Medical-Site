@@ -1,5 +1,5 @@
 <?php
-require_once '../../controller/loginController.php';
+require_once '../../controller/Controller.php';
 $patients = getAllPatients();
 ?>
 <div class="card">
@@ -97,7 +97,7 @@ $patients = getAllPatients();
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" name="admin_patient_edit" class="btn btn-primary">Edit</button>
+                                <button type="submit" name="admin_patient_edit" class="btn btn-primary">Edit</button>
                             </div>
                         </form>
                     </div>
@@ -111,7 +111,7 @@ $patients = getAllPatients();
         $(".editPatient_btn").click(function() {
             var patient_id = $(this).attr("id");
             $.ajax({
-                url: "../../controller/editController.php",
+                url: "../../controller/Controller.php",
                 method: "post",
                 data: {
                     patient_id: patient_id,

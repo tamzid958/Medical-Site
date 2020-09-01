@@ -1,5 +1,5 @@
 <?php
-require_once '../../controller/loginController.php';
+require_once '../../controller/Controller.php';
 $patients = getAllPatients();
 $doctors = getAllDoctors();
 $categories = getAllCategory();
