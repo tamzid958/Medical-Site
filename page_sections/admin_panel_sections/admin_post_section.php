@@ -30,7 +30,7 @@ $posts = getAllPost();
         <div class="modal-body">
           <div class="container">
 
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
               <img id="blah" src="https://dummyimage.com/450X300/cfcfcf.png" alt="" />
 
               <br><br>
@@ -91,11 +91,11 @@ foreach ($posts as $post) {
   echo "<div id='old-post-list'>
   <div id='left' class='post_admin_loop'>
   <div class='card' style='width: 18rem;'>";
-  echo "<img src='https://dummyimage.com/300x300/cfcfcf.png' class='card-img-top' alt=''>";
+  echo "<img src='../../assets/images/uploaded_images/post_images/" . $post["post_dir"] . "' class='card-img-top' alt=''>";
   echo " <div class='card-body'>";
-  echo "<h3>" . $post["post_title"] . "</h3>";
+  echo "<h6>" . $post["post_title"] . "</h6>";
   echo "<div class='d-flex justify-content-between'>";
-  echo "<a href='#' class='btn btn-warning' data-toggle='modal' data-target=''><i class='fa fa-pencil' aria-hidden='true'></i></a>";
+  echo "<button type='button' class='btn btn-warning post_edit_btn'  id=" . $post["post_id"] . " data-toggle='modal'><i class='fa fa-pencil' aria-hidden='true'></i></a>";
   echo "<button type='button' class='btn btn-danger post_delete_btn'  id=" . $post["post_id"] . "><i class='fa fa-trash' aria-hidden='true'></i></button>";
   echo "</div></div>
   </div>
@@ -133,5 +133,67 @@ foreach ($posts as $post) {
       });
     });
 
+
+
+
+    $(".post_edit_btn").click(function() {
+      var post_edit_id = $(this).attr("id");
+      $.ajax({
+        url: "../../controller/Controller.php",
+        method: "post",
+        dataType: "json",
+        data: {
+          post_edit_id: post_edit_id,
+        },
+        success: function(data) {
+          $('#post_id_edit').val(data.post_id);
+          $('#post_title_edit').val(data.post_title);
+          $('#post_description_edit').val(data.post_description);
+
+          $('#exampleEditModalLongpost').modal('show');
+        }
+      });
+    });
   });
 </script>
+
+
+<div class="modal fade" id="exampleEditModalLongpost" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Edit Post</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+
+          <form action="" method="post" enctype="multipart/form-data">
+
+
+            <input type="hidden" name="post_id_edit" id="post_id_edit">
+
+            <br>
+
+
+            <input class="form-control form-control-lg" type="text" value="" id="post_title_edit" name="post_title_edit" placeholder="Post Title" required>
+
+            <br>
+
+            <textarea class="form-control form-control-lg" name="post_description_edit" id="post_description_edit" value="" rows="5" cols="5" placeholder="Post Description" required></textarea>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" name="post_edit_btn" class="btn btn-primary">Edit</button>
+            </div>
+
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

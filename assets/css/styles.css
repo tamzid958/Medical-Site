@@ -249,8 +249,8 @@ address bar color = #00c4cc
   color: #35478c !important;
   padding-bottom: 40px;
 }
-.single-blog-direct,
-.single-doctor-direct {
+.single-blog-direct-loop,
+.single-doctor-direct-loop {
   cursor: pointer;
 }
 .blog-post-p,
@@ -1051,8 +1051,9 @@ address bar color = #00c4cc
     margin-top: 0px;
     background-size: cover;
     min-height: 300px;
-    background-attachment: scroll;
+    background-attachment: fixed;
   }
+
   #blah {
     max-width: 500px;
   }

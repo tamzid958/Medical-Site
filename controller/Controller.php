@@ -31,8 +31,35 @@ if (isset($_POST["create_doctor_btn"])) {
         echo "</script>";
     } else {
         $password = randomPassword();
+
+        $file = $_FILES['doctor_pic'];
+
+        $fileName = $_FILES['doctor_pic']['name'];
+        $fileTmpName = $_FILES['doctor_pic']['tmp_name'];
+        $fileError = $_FILES['doctor_pic']['error'];
+        $fileExt = explode('.', $fileName);
+        $fileActualExt = strtolower(end($fileExt));
+
+        $allowed = array('jpg', 'jpeg', 'png');
+        if (in_array($fileActualExt, $allowed)) {
+            if ($fileError === 0) {
+                $fileNameNew = uniqid('', true) . "." . $fileActualExt;
+                $fileDestination = '../assets/images/uploaded_images/doctor_images/' . $fileNameNew;
+                move_uploaded_file($fileTmpName, $fileDestination);
+
+                insertDoctorWithoutPassword($fileNameNew, $_POST["doctor_name"], $_POST["doctor_email"], $_POST["doctor_phone"], $_POST["doctor_category"], $_POST["doctor_service"], $_POST["doctor_description"], $password);
+            } else {
+                echo "Error Uploading File";
+            }
+        } else {
+            echo "You cannot upload files of this type!";
+        }
+
+
+
+
         //$target = "/assets/images/uploaded_images/" . basename($_FILES['doctor_pic']['name']);
-        insertDoctorWithoutPassword("pic_dir", $_POST["doctor_name"], $_POST["doctor_email"], $_POST["doctor_phone"], $_POST["doctor_category"], $_POST["doctor_service"], $_POST["doctor_description"], $password);
+
     }
 }
 
@@ -64,7 +91,27 @@ if (isset($_POST['service_create_btn'])) {
     createService($_POST['service_name'], $_POST['service_category'], $_POST['service_cost']);
 }
 if (isset($_POST['post_create'])) {
-    createPost("post_dir", $_POST['post_title'], $_POST['post_description']);
+    $file = $_FILES['post_feature_pic'];
+
+    $fileName = $_FILES['post_feature_pic']['name'];
+    $fileTmpName = $_FILES['post_feature_pic']['tmp_name'];
+    $fileError = $_FILES['post_feature_pic']['error'];
+    $fileExt = explode('.', $fileName);
+    $fileActualExt = strtolower(end($fileExt));
+
+    $allowed = array('jpg', 'jpeg', 'png');
+    if (in_array($fileActualExt, $allowed)) {
+        if ($fileError === 0) {
+            $fileNameNew = uniqid('', true) . "." . $fileActualExt;
+            $fileDestination = '../assets/images/uploaded_images/post_images/' . $fileNameNew;
+            move_uploaded_file($fileTmpName, $fileDestination);
+            createPost($fileNameNew, $_POST['post_title'], $_POST['post_description']);
+        } else {
+            echo "Error Uploading File";
+        }
+    } else {
+        echo "You cannot upload files of this type!";
+    }
 }
 
 if (isset($_POST["appointment_create_admin"])) {
@@ -83,7 +130,7 @@ if (isset($_POST["doctor_id"])) {
 }
 if (isset($_POST["edit_doctor_btn"])) {
 
-    updateDoctorDetails($_POST["id"], "pic_dir", $_POST["doctor_name"], $_POST["doctor_email"], $_POST["doctor_phone"], $_POST["doctor_category"], $_POST["doctor_service"], $_POST["doctor_description"]);
+    updateDoctorDetails($_POST["id"], $_POST["doctor_name"], $_POST["doctor_email"], $_POST["doctor_phone"], $_POST["doctor_category"], $_POST["doctor_service"], $_POST["doctor_description"]);
 }
 if (isset($_POST["category_id"])) {
     editCategory($_POST["category_id"]);
@@ -111,6 +158,39 @@ if (isset($_POST["service_update_btn"])) {
 }
 if (isset($_POST["change_password_admin"])) {
     changePassword($_POST["confirm_password"], $_POST["old_password"]);
+}
+if (isset($_POST["appointment_id"])) {
+    editAppointment($_POST["appointment_id"]);
+}
+if (isset($_POST["appointment_update_admin"])) {
+    updateAppointment($_POST["appointment_edit_id"], $_POST["patient_name_edit"], $_POST["appointment_service_category_edit"], $_POST["appointment_service_service_edit"], $_POST["appointment_doctor_name_edit"], $_POST["appointment_date_edit"], $_POST["appointment_time_edit"], $_POST["appointment_status_edit"], $_POST["appoint_payment_number_edit"], $_POST["appointment_transaction_id_edit"]);
+}
+if (isset($_POST["post_edit_id"])) {
+    editPost($_POST["post_edit_id"]);
+}
+if (isset($_POST["post_edit_btn"])) {
+    updatePost($_POST["post_id_edit"], $_POST["post_title_edit"], $_POST["post_description_edit"]);
+}
+
+function updatePost($post_edit_id, $post_title, $post_description)
+{
+    $query = "UPDATE `post` SET `post_title`= '$post_title',`post_description`= '$post_description' WHERE `post_id`='$post_edit_id'";
+    execute($query);
+}
+
+function editPost($post_id)
+{
+    $query = "SELECT * FROM `post` WHERE `post_id`= '$post_id'";
+    $post_details =  getArray($query);
+    echo json_encode($post_details);
+}
+
+
+function editAppointment($appointment_id)
+{
+    $query = "SELECT * FROM `appointment` WHERE `appointment_id`= '$appointment_id'";
+    $appointment_details =  getArray($query);
+    echo json_encode($appointment_details);
 }
 
 function changePassword($confirm_password, $old_password)
@@ -257,6 +337,11 @@ function createAppointment($patient_name, $service_category, $service_service, $
     $query = "INSERT INTO `appointment`(`appointment_id`, `patient_name`, `service_category`, `service_service`, `doctor_name`, `service_date`, `service_time`, `service_status`, `payment_number`, `transaction_id`) VALUES (NULL,'$patient_name','$service_category','$service_service','$doctor_name','$date','$time','$status','$payment_number','$transaction_id')";
     execute($query);
 }
+function updateAppointment($appointment_id, $patient_name, $service_category, $service_service, $doctor_name, $date, $time, $status, $payment_number, $transaction_id)
+{
+    $query = "UPDATE `appointment` SET `patient_name`='$patient_name',`service_category`='$service_category',`service_service`='$service_service',`doctor_name`='$doctor_name',`service_date`='$date',`service_time`='$time',`service_status`='$status',`payment_number`='$payment_number',`transaction_id`='$transaction_id' WHERE `appointment_id`='$appointment_id'";
+    execute($query);
+}
 function getAllAppointments()
 {
     $query = "SELECT * FROM `appointment`";
@@ -287,9 +372,9 @@ function editDoctor($doctor_id)
     $doctor_details = getArray($query);
     echo json_encode($doctor_details);
 }
-function  updateDoctorDetails($id, $doctor_pic, $doctor_name, $doctor_email, $doctor_phone, $doctor_category, $doctor_service, $doctor_description)
+function  updateDoctorDetails($id, $doctor_name, $doctor_email, $doctor_phone, $doctor_category, $doctor_service, $doctor_description)
 {
-    $query = "UPDATE `user` SET `full_name`='$doctor_name',`email`='$doctor_email',`phone`='$doctor_phone',`description`='$doctor_description',`category`='$doctor_category',`service`='$doctor_service',`profile_picture`='$doctor_pic' WHERE `id`='$id'";
+    $query = "UPDATE `user` SET `full_name`='$doctor_name',`email`='$doctor_email',`phone`='$doctor_phone',`description`='$doctor_description',`category`='$doctor_category',`service`='$doctor_service' WHERE `id`='$id'";
     execute($query);
 }
 
@@ -308,13 +393,15 @@ function editService($service_id)
 
 function updateCategory($id, $category_name)
 {
+    $query = "SELECT `category_name` FROM `category` WHERE `category_id`='$id' ";
+    $category_name_old = getArray($query);
+    $category_name_old = $category_name_old["category_name"];
+
     $query = "UPDATE `category` SET `category_name`= '$category_name' WHERE `category_id`='$id' ";
     execute($query);
-    $query = "SELECT `category_name` FROM `category` WHERE `category_id`='$id' ";
-    $category_name = getArray($query);
-    $category_name = $category_name["category_name"];
-    //not working
-    $query = " UPDATE `service` SET `category_name` = '$category_name' WHERE `category_name` = '$category_name' ";
+
+
+    $query = " UPDATE `service` SET `category_name` = '$category_name' WHERE `category_name` = '$category_name_old' ";
     execute($query);
 }
 
@@ -345,4 +432,17 @@ function updateService($service_id, $service_name, $service_category, $service_c
 {
     $query = "UPDATE `service` SET `service_name`='$service_name',`category_name`='$service_category',`cost`='$service_cost' WHERE `service_ID`='$service_id'";
     execute($query);
+}
+
+function getPost($post_id)
+{
+    $query = "SELECT * FROM `post` WHERE `post_id` = '$post_id' ";
+    $post = getArray($query);
+    return $post;
+}
+function getDoctor($doctor_id)
+{
+    $query = "SELECT * FROM `user` WHERE `id` = '$doctor_id' ";
+    $doctor = getArray($query);
+    return $doctor;
 }

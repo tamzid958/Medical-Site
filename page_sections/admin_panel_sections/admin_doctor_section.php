@@ -67,7 +67,7 @@ $services = getAllService();
                                     echo "<form action='' method='post'>";
                                     echo "<tr>";
                                     echo "<td class='doctor-details'>" . $doctor["id"] . "</td>";
-                                    echo "<td>  <img src='https://dummyimage.com/64x64/cfcfcf' class='doctor-avatar' alt=''> " . $doctor["full_name"] . "</td>";
+                                    echo "<td>  <img src='../../assets/images/uploaded_images/doctor_images/" . $doctor["profile_picture"] . "' class='doctor-avatar' alt=''> " . $doctor["full_name"] . "</td>";
                                     echo "<td class='doctor-details'>" . $doctor["service"]  . "</td>";
                                     echo "<td class='doctor-details'>" . $doctor["email"] . "</td>";
                                     echo "<td class='doctor-details'>" . $doctor["phone"] . "</td>";
@@ -99,7 +99,7 @@ $services = getAllService();
                 </button>
             </div>
             <div class="modal-body">
-                <form action="" method="post">
+                <form action="" method="post" enctype="multipart/form-data">
                     <div class="form-row">
                         <div class="col-md-2">
                             <img id="blah" class="doctor-avatar" src="https://dummyimage.com/450X300/cfcfcf.png" alt="" />
@@ -169,22 +169,12 @@ $services = getAllService();
                 </button>
             </div>
             <div class="modal-body">
-                <form action="" method="post">
+                <form action="" method="post" enctype="multipart/form-data">
 
                     <div class="form-row">
                         <input type="hidden" name="id" id="doctor_edit_id" value="">
-                        <div class="col-md-2">
-                            <img id="blah" class="doctor-avatar" src="https://dummyimage.com/450X300/cfcfcf.png" alt="" />
-                        </div>
-                        <div class="col-md-10 doctor-name-input">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" name="doctor_pic" value="" id="doctor_edit_pic" placeholder="Featured Image" onchange="readURL(this);" required>
-                                <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
-                            </div>
 
-                        </div>
                     </div>
-                    <br><br>
                     <input class="form-control" type="text" name="doctor_name" id="doctor_edit_name" value="" placeholder="Doctor Name" required>
 
                     <br>

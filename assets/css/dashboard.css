@@ -67,6 +67,8 @@ body {
   border-radius: 50% !important;
   height: 64px !important;
   width: 64px !important;
+  image-rendering: pixelated;
+  object-fit: contain;
 }
 .doctor-name-input {
   padding-top: 15px !important;
