@@ -181,7 +181,7 @@ $services = getAllService();
                     </tr>
                   </thead>
 
-                  <tbody>
+                  <tbody id="admin-service-service">
                     <?php
 
                     foreach ($services as $service) {

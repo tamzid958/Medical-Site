@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../controller/Controller.php';
+require_once '../../controller/Controller.php';
 ?>
 <div class="container">
   <form>
