@@ -86,7 +86,7 @@ $posts = getAllPost();
 </div>
 
 <?php
-if ($post > 0) {
+if ($posts > 0) {
   foreach ($posts as $post) {
     echo "<div id='old-post-list'>
   <div id='left' class='post_admin_loop'>

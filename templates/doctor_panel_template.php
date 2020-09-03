@@ -43,54 +43,55 @@ getDoctorNewAppointments($doctor_id);
 
 
       <div class="container d-flex justify-content-left patient-card">
-
-        <?php
-        if ($doctor_appointments > 0) {
-          foreach ($doctor_appointments as $doctor_appointment) {
-            echo "<div class='card p-3 patient-single-card'>";
-            echo " <div class='d-flex flex-row justify-content-between text-align-center'> <img src='/assets/images/black_logo.png'></div>";
-            echo "<p class='text-dark'> #ID- " . $doctor_appointment["appointment_id"] . "<br>
+        <div class="row">
+          <?php
+          if ($doctor_appointments > 0) {
+            foreach ($doctor_appointments as $doctor_appointment) {
+              echo "<div class='col-sm-6'>";
+              echo "<div class='card p-3 patient-single-card'>";
+              echo " <div class='d-flex flex-row justify-content-between text-align-center'> <img src='/assets/images/black_logo.png'></div>";
+              echo "<p class='text-dark'> #ID- " . $doctor_appointment["appointment_id"] . "<br>
           <span class='text-dark'> #STATUS- " . $doctor_appointment["service_status"] . "</span> 
            <span class='text-dark'> #SERVICE- " . $doctor_appointment["service_service"] . "</span> <br>
           <span class='text-dark'>#PATIENT NAME- " . $doctor_appointment["patient_name"] . "</span> </p>";
-            echo " <div class='card-bottom pt-3 px-3 mb-2 patient-single-card-bottom'>
+              echo " <div class='card-bottom pt-3 px-3 mb-2 patient-single-card-bottom'>
           <div class='d-flex flex-row justify-content-between text-align-center'>";
 
-            if ($doctor_appointment["service_status"] === "Approved") {
-              echo "  <p> <span class='text-white'> Date: " . $doctor_appointment["service_date"] . " || Time: " . $doctor_appointment["service_time"] .    " <br>         
+              if ($doctor_appointment["service_status"] === "Approved") {
+                echo "  <p> <span class='text-white'> Date: " . $doctor_appointment["service_date"] . " || Time: " . $doctor_appointment["service_time"] .    " <br>         
             </span> <button type='button' class='btn btn-danger cancel-power-doc-btn' value='Rejected' id=" . $doctor_appointment["appointment_id"] . ">Reject</button>
             <button type='button' class='btn btn-success complete-power-doc-btn' value='Completed' id=" . $doctor_appointment["appointment_id"] . ">Mark As Complete</button>
             </p>";
-            } else if ($doctor_appointment["service_status"] === "Completed") {
-              echo "  <p> <span class='text-white'> Date: " . $doctor_appointment["service_date"] . " || Time: " . $doctor_appointment["service_time"] .    "</p>";
-            } else if ($doctor_appointment["service_status"] === "Cancelled") {
-              echo "  <p> <span class='text-white'> Date: " . $doctor_appointment["service_date"] . " || Time: " . $doctor_appointment["service_time"] .    "</p>";
-            } else if ($doctor_appointment["service_status"] === "Rejected") {
-              echo "  <p> <span class='text-white'> Date: " . $doctor_appointment["service_date"] . " || Time: " . $doctor_appointment["service_time"] .    " <br>
+              } else if ($doctor_appointment["service_status"] === "Completed") {
+                echo "  <p> <span class='text-white'> Date: " . $doctor_appointment["service_date"] . " || Time: " . $doctor_appointment["service_time"] .    "</p>";
+              } else if ($doctor_appointment["service_status"] === "Cancelled") {
+                echo "  <p> <span class='text-white'> Date: " . $doctor_appointment["service_date"] . " || Time: " . $doctor_appointment["service_time"] .    "</p>";
+              } else if ($doctor_appointment["service_status"] === "Rejected") {
+                echo "  <p> <span class='text-white'> Date: " . $doctor_appointment["service_date"] . " || Time: " . $doctor_appointment["service_time"] .    " <br>
             </span> <button type='button' class='btn btn-warning cancel-power-doc-btn'>Pending</button>
             </p>";
-            } else {
-              echo "  <p> <span class='text-white'> Date: " . $doctor_appointment["service_date"] . " || Time: " . $doctor_appointment["service_time"] .    " <br>
+              } else {
+                echo "  <p> <span class='text-white'> Date: " . $doctor_appointment["service_date"] . " || Time: " . $doctor_appointment["service_time"] .    " <br>
             </span> <button type='button' class='btn btn-info cancel-power-doc-btn'>Decision Pending</button>
             </p>";
-            }
+              }
 
-            echo "  </div>
+              echo "  </div></div>
           </div>
         </div>";
-          }
-        } ?>
+            }
+          } ?>
 
+        </div>
       </div>
+
+
+
+
+
+
+
     </div>
-
-
-
-
-
-
-
-  </div>
 
   </div>
 
