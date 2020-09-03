@@ -7,7 +7,7 @@ $post = getPost($post_id);
 
 <body>
 
-  <div class="jumbotron jumbotron-fluid single-blog-hero" style="background-image:url(/assets/images/uploaded_images/post_images/<?php echo $post["post_dir"] ?>)">
+  <div class="jumbotron jumbotron-fluid single-blog-hero" style="background-image:linear-gradient(9deg, rgba(24,25,28,1) 0%, rgba(25,26,30,0.5578606442577031) 100%),url(/assets/images/uploaded_images/post_images/<?php echo $post["post_dir"] ?>)">
     <div class="container">
     </div>
   </div>

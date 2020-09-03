@@ -33,9 +33,11 @@ $doctors = getAllDoctors();
           echo " <img src='../../assets/images/uploaded_images/doctor_images/" . $doctor["profile_picture"] . "' class='card-img-top' alt=''>";
           echo "<div class='card-body'>";
           echo "<h5 class='card-title'>" . $doctor["full_name"] . "</h5>";
-          echo "<p class='card-text'>" . $doctor["description"] .  "</p>";
-          echo " <a href='#' class='card-link'>" . $doctor["phone"] .  "</a>";
-          echo " <a href='#' class='card-link'>" . $doctor["email"] .  "</a>";
+          $truncated = (strlen($doctor["description"]) > 95) ? substr($doctor["description"], 0, 95) . '...' : $doctor["description"];
+          echo "<p class='card-text loop-text'>" . $truncated .  "</p>";
+          echo "<br><br>";
+          echo " <a href='tel:" . $doctor["phone"] . " ' class='card-link'>" . $doctor["phone"] .  "</a>";
+          echo " <a href='mailto: " . $doctor["email"] . " ' class='card-link'>" . $doctor["email"] .  "</a>";
           echo "</div>
           </div>
           </a>

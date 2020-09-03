@@ -90,7 +90,7 @@ $posts = getAllPost();
 foreach ($posts as $post) {
   echo "<div id='old-post-list'>
   <div id='left' class='post_admin_loop'>
-  <div class='card' style='width: 18rem;'>";
+  <div class='card single-blog-direct-loop' style='width: 18rem;'>";
   echo "<img src='../../assets/images/uploaded_images/post_images/" . $post["post_dir"] . "' class='card-img-top' alt=''>";
   echo " <div class='card-body'>";
   echo "<h6>" . $post["post_title"] . "</h6>";

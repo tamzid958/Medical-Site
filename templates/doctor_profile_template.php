@@ -7,7 +7,7 @@ $doctor = getDoctor($doctor_id);
 
 <body>
 
-  <div class="jumbotron jumbotron-fluid single-doctor-hero" style="background-image:url(/assets/images/uploaded_images/doctor_images/<?php echo $doctor["profile_picture"] ?>)">
+  <div class="jumbotron jumbotron-fluid single-doctor-hero" style="background-image:linear-gradient(9deg, rgba(24,25,28,1) 0%, rgba(25,26,30,0.5578606442577031) 100%),url(/assets/images/uploaded_images/doctor_images/<?php echo $doctor["profile_picture"] ?>)">
     <div class="container">
     </div>
   </div>
@@ -18,7 +18,7 @@ $doctor = getDoctor($doctor_id);
       <p class="lead doctor-post-p"> <?php echo $doctor["description"] ?> </p>
       <a href="mailto:<?php echo $doctor["email"] ?> ">
         <button type="button" class="btn btn-primary "><?php echo $doctor["email"] ?> </button></a>
-      <a href="mailto:<?php echo $doctor["phone"] ?> ">
+      <a href="tel:<?php echo $doctor["phone"] ?> ">
         <button type="button" class="btn btn-success"><?php echo $doctor["phone"] ?> </button></a>
       <!-- AddToAny BEGIN -->
       <div class="a2a_kit a2a_kit_size_32 a2a_default_style blog-post-share">

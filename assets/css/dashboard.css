@@ -62,7 +62,9 @@ body {
 .post_admin_loop {
   margin-right: 7px;
 }
-
+.single-blog-direct-loop {
+  min-height: 410px !important;
+}
 .doctor-avatar {
   border-radius: 50% !important;
   height: 64px !important;

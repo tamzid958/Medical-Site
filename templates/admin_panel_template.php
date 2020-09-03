@@ -1,7 +1,8 @@
 <?php
 session_start();
 require_once '../controller/Controller.php';
-//$user_id = $_REQUEST['user_ID'];
+$admin_id = $_REQUEST['user_ID'];
+$_SESSION['admin_id'] = $admin_id;
 //if (!$_SESSION["logged_in"]) {
 // header("Location:/login.php");
 //exit();

@@ -71,12 +71,13 @@ if (isset($_POST["forget_pass_btn"])) {
 if (isset($_POST["login_btn"])) {
     if (authenticate($_POST["email"], $_POST["password"])) {
         $_SESSION["logged_in"] = true;
+        $id = $_SESSION['id'];
         if ($_REQUEST['user_Type']  == "patient") {
-            header("Location: templates/user_panel_template.php");
+            header("Location: templates/user_panel_template.php?id=$id");
         } else if ($_REQUEST['user_Type']  == "doctor") {
-            header("Location: templates/doctor_panel_template.php");
+            header("Location: templates/doctor_panel_template.php?id=$id");
         } else if ($_REQUEST['user_Type']  == "admin") {
-            header("Location: templates/admin_panel_template.php");
+            header("Location: templates/admin_panel_template.php?id=$id");
         } else {
             $err_invalid =  " Invalid Username password";
         }
@@ -171,6 +172,95 @@ if (isset($_POST["post_edit_id"])) {
 if (isset($_POST["post_edit_btn"])) {
     updatePost($_POST["post_id_edit"], $_POST["post_title_edit"], $_POST["post_description_edit"]);
 }
+if (isset($_POST["sub_button"])) {
+    insertSub($_POST["sub_mail"]);
+}
+if (isset($_POST["contact_btn"])) {
+    askforContact($_POST["contact_full_name"], $_POST["contact_email_address"]);
+}
+if (isset($_POST["service"])) {
+
+    serviceCost($_POST["service"]);
+}
+if (isset($_POST["payment_verify"])) {
+    duplicateSearch($_POST["email"]);
+    if ($_SESSION['Duplicate'] > 0) {
+        createAppointmentfromPatientIfmailExist($_POST["category"], $_POST["service"], $_POST["doctor"], $_POST["patient_name"], $_POST["phone_number"], $_POST["email"], $_POST["date"], $_POST["time"], $_POST["payment_number"], $_POST["trans_id"]);
+    } else {
+        createAppointmentfromPatient($_POST["category"], $_POST["service"], $_POST["doctor"], $_POST["patient_name"], $_POST["phone_number"], $_POST["email"], $_POST["date"], $_POST["time"], $_POST["payment_number"], $_POST["trans_id"]);
+    }
+}
+
+if (isset($_POST["appointment_id_doc_side"])) {
+
+    updateAppointmentStatusbyDoc($_POST["appointment_id_doc_side"], $_POST["appointment_status"]);
+}
+
+if (isset($_POST["appointment_id_p_side"])) {
+
+    updateAppointmentStatusbyP($_POST["appointment_id_p_side"], $_POST["appointment_status_p"]);
+}
+
+function updateAppointmentStatusbyP($appointment_id, $appoint_status)
+{
+
+    $query = "UPDATE `appointment` SET `service_status`= '$appoint_status' WHERE `appointment_id` = '$appointment_id' ";
+    execute($query);
+}
+
+
+function updateAppointmentStatusbyDoc($appointment_id, $appoint_status)
+{
+
+    $query = "UPDATE `appointment` SET `service_status`= '$appoint_status' WHERE `appointment_id` = '$appointment_id' ";
+    execute($query);
+}
+
+function createAppointmentfromPatientIfmailExist($category, $service, $doctor, $patient_name, $phone_number, $email, $date, $time, $payment_number, $trans_id)
+{
+
+    $query = "INSERT INTO `appointment`(`appointment_id`, `patient_name`, `service_category`, `service_service`, `doctor_name`, `service_date`, `service_time`, `service_status`, `payment_number`, `transaction_id`) VALUES (NULL,'$patient_name','$category','$service','$doctor','$date','$time','approved','$payment_number','$trans_id')";
+    execute($query);
+}
+
+function createAppointmentfromPatient($category, $service, $doctor, $patient_name, $phone_number, $email, $date, $time, $payment_number, $trans_id)
+{
+    $password = randomPassword();
+    $password = base64_encode($password);
+    $query = "INSERT INTO `user`(`id`, `user_type`, `full_name`, `email`, `phone`, `password`) VALUES (NULL,'patient','$patient_name','$email','$phone_number','$password')";
+    execute($query);
+
+
+    $password = base64_decode($password);
+    $to = $email;
+    $email_subject = "Your Password | OSCA";
+    $email_body = "Your Password is $password";
+    //mail($to, $email_subject, $email_body);
+
+    $query = "INSERT INTO `appointment`(`appointment_id`, `patient_name`, `service_category`, `service_service`, `doctor_name`, `service_date`, `service_time`, `service_status`, `payment_number`, `transaction_id`) VALUES (NULL,'$patient_name','$category','$service','$doctor','$date','$time','approved','$payment_number','$trans_id')";
+    execute($query);
+}
+
+function serviceCost($service)
+{
+    $query = "SELECT * FROM `service` WHERE `service_name` = '$service'";
+    $service_cost = getArray($query);
+    echo json_encode($service_cost);
+}
+
+function askforContact($contact_full_name, $contact_email_address)
+{
+    $to = "tamjidahmed958@gmail.com";
+    $from = $contact_email_address;
+    $email_subject = "ASKING FOR CONTACT";
+    $email_body = "$contact_full_name asking for contact. Email ID: $from";
+    //mail($to, $email_subject, $email_body);
+}
+function insertSub($sub_mail)
+{
+    $query = "INSERT INTO `subscribe`(`subscribe_id`, `subscribe_mail`) VALUES (NULL,'$sub_mail')";
+    execute($query);
+}
 
 function updatePost($post_edit_id, $post_title, $post_description)
 {
@@ -209,6 +299,12 @@ function insertDoctorWithoutPassword($doctor_pic, $doctor_name, $doctor_email, $
     $password = base64_encode($password);
     $query = "INSERT INTO `user`(`id`, `user_type`, `full_name`, `email`, `phone`, `password`, `description`,`category`, `service`, `profile_picture`) VALUES(NULL,'doctor','$doctor_name','$doctor_email','$doctor_phone','$password','$doctor_description','$doctor_category','$doctor_service','$doctor_pic')";
     execute($query);
+
+    $password = base64_decode($password);
+    $to = $doctor_email;
+    $email_subject = "Your Password | OSCA";
+    $email_body = "Your Password is $password";
+    //mail($to, $email_subject, $email_body);
 }
 
 function duplicateSearch($email)
@@ -238,6 +334,7 @@ function authenticate($email, $password)
     $user = getArray($query);
     if (!empty($user['user_type'])) {
         $_REQUEST['user_Type'] = $user['user_type'];
+        $_SESSION['id'] = $user['id'];
     } else {
         $_REQUEST['user_Type'] = null;
     }
@@ -445,4 +542,67 @@ function getDoctor($doctor_id)
     $query = "SELECT * FROM `user` WHERE `id` = '$doctor_id' ";
     $doctor = getArray($query);
     return $doctor;
+}
+
+function getPatient($patient_id)
+{
+    $query = "SELECT * FROM `user` WHERE `id` = '$patient_id' ";
+    $patient = getArray($query);
+    return $patient;
+}
+function getDoctorAppointments($doctor_id)
+{
+    $query = "SELECT * FROM `user` WHERE `id` = '$doctor_id' ";
+    $doctor = getArray($query);
+    $doctor = $doctor['full_name'];
+    $query = "SELECT * FROM `appointment` WHERE `doctor_name` = '$doctor'";
+    $DoctorAppointments = getArray($query);
+    return $DoctorAppointments;
+}
+
+function getPatientAppointments($patient_id)
+{
+    $query = "SELECT * FROM `user` WHERE `id` = '$patient_id' ";
+    $patient = getArray($query);
+    $patient = $patient['full_name'];
+    $query = "SELECT * FROM `appointment` WHERE `patient_name` = '$patient'";
+    $PatientAppointments = getArray($query);
+    return $PatientAppointments;
+}
+function getDoctorNewAppointments($doctor_id)
+{
+    $query = "SELECT * FROM `user` WHERE `id` = '$doctor_id' ";
+    $doctor = getArray($query);
+    $doctor = $doctor['full_name'];
+
+    $query = "SELECT COUNT(*) as count FROM `appointment`  WHERE `doctor_name` = '$doctor' AND `service_status` = 'Approved' ";
+    $appointmentNewCounter = getArray($query);
+    $_SESSION['appointmentNewCounter'] = $appointmentNewCounter['count'];
+
+    $query = "SELECT COUNT(*) as count FROM `appointment`  WHERE `doctor_name` = '$doctor' AND `service_status` = 'Completed' ";
+    $appointmentCompletedCounter = getArray($query);
+    $_SESSION['appointmentCompletedCounter'] = $appointmentCompletedCounter['count'];
+
+    $query = "SELECT COUNT(*) as count FROM `appointment`  WHERE `doctor_name` = '$doctor' AND `service_status` = 'Cancelled' ";
+    $appointmentCancelledCounter = getArray($query);
+    $_SESSION['appointmentCancelledCounter'] = $appointmentCancelledCounter['count'];
+}
+
+function getPatientNewAppointments($patient_id)
+{
+    $query = "SELECT * FROM `user` WHERE `id` = '$patient_id' ";
+    $patient = getArray($query);
+    $patient = $patient['full_name'];
+
+    $query = "SELECT COUNT(*) as count FROM `appointment`  WHERE `patient_name` = '$patient' AND `service_status` = 'Approved' ";
+    $appointmentNewCounter = getArray($query);
+    $_SESSION['pappointmentNewCounter'] = $appointmentNewCounter['count'];
+
+    $query = "SELECT COUNT(*) as count FROM `appointment`  WHERE `patient_name` = '$patient' AND `service_status` = 'Completed' ";
+    $appointmentCompletedCounter = getArray($query);
+    $_SESSION['pappointmentCompletedCounter'] = $appointmentCompletedCounter['count'];
+
+    $query = "SELECT COUNT(*) as count FROM `appointment`   WHERE `patient_name` = '$patient' AND `service_status` = 'Cancelled' ";
+    $appointmentCancelledCounter = getArray($query);
+    $_SESSION['pappointmentCancelledCounter'] = $appointmentCancelledCounter['count'];
 }

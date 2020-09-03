@@ -1,50 +1,43 @@
-<section class= "doctor-section">
-<div class="container doctor-container">
-<h6 class="prof">Professionals
-<h4>Our Doctors</h4></h6>
-  <div class="row">
+<?php
+require_once './controller/Controller.php';
+$doctors = getAllDoctors();
 
-    <div class="col-sm">  
-    <div class="card single-doctor-direct" >
-  <img src="/assets/images/2.jpg" class="card-img-top" alt="">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
+
+?>
+
+
+<section class="doctor-section">
+  <div class="container doctor-container">
+    <h6 class="prof">Professionals
+      <h4>Our Doctors</h4>
+    </h6>
+    <div class="row">
+
+      <?php
+      $limit = 0;
+      foreach ($doctors as $doctor) {
+        if ($limit < 3) {
+          echo "<div class='col-sm-4'>";
+          echo "<a href='templates/doctor_profile_template.php?id=" . $doctor["id"] . "'  name='id'>";
+          echo "<div class='card single-doctor-direct-loop'>";
+          echo " <img src='../../assets/images/uploaded_images/doctor_images/" . $doctor["profile_picture"] . "' class='card-img-top' alt=''>";
+          echo "<div class='card-body'>";
+          echo "<h5 class='card-title'>" . $doctor["full_name"] . "</h5>";
+          $truncated = (strlen($doctor["description"]) > 95) ? substr($doctor["description"], 0, 95) . '...' : $doctor["description"];
+          echo "<p class='card-text loop-text'>" . $truncated .  "</p>";
+          echo "<br><br>";
+          echo " <a href='tel:" . $doctor["phone"] . " ' class='card-link'>" . $doctor["phone"] .  "</a>";
+          echo " <a href='mailto: " . $doctor["email"] . " ' class='card-link'>" . $doctor["email"] .  "</a>";
+          echo "</div>
+             </div>
+               </a>
+             </div>
+                ";
+        }
+        $limit++;
+      } ?>
 
     </div>
-    <div class="col-sm">
-    <div class="card single-doctor-direct">
-  <img src="/assets/images/3-1.jpg" class="card-img-top" alt="">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-    </div>
-    <div class="col-sm">
-    <div class="card single-doctor-direct">
-  <img src="/assets/images/2-1.jpg" class="card-img-top" alt="">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-    </div>
-  </div>
-</div>
 
 </section>

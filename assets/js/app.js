@@ -52,43 +52,9 @@ $(document).ready(function () {
     modal.style.display = "none";
   });
 
-  $(".btn-doctor-new").click(function () {
-    $("#doctor-panel-switcher").load(
-      "/page_sections/doctor_panel_sections/new_appointment.php"
-    );
-  });
-  $(".btn-doctor-completed").click(function () {
-    $("#doctor-panel-switcher").load(
-      "/page_sections/doctor_panel_sections/completed_appointment.php"
-    );
-  });
-
-  $(".btn-doctor-cancelled").click(function () {
-    $("#doctor-panel-switcher").load(
-      "/page_sections/doctor_panel_sections/cancelled_appointment.php"
-    );
-  });
-
   $(".btn-change-pass-doc").click(function () {
     $("#doctor-panel-switcher").load(
       "/page_sections/doctor_panel_sections/settings.php"
-    );
-  });
-
-  $(".btn-user-new").click(function () {
-    $("#user-panel-switcher").load(
-      "/page_sections/user_panel_sections/new_appointment.php"
-    );
-  });
-  $(".btn-user-completed").click(function () {
-    $("#user-panel-switcher").load(
-      "/page_sections/user_panel_sections/completed_appointment.php"
-    );
-  });
-
-  $(".btn-user-cancelled").click(function () {
-    $("#user-panel-switcher").load(
-      "/page_sections/user_panel_sections/cancelled_appointment.php"
     );
   });
 
@@ -105,5 +71,35 @@ $(document).ready(function () {
   $("ul li a").click(function () {
     $("li a").removeClass("active");
     $(this).addClass("active");
+  });
+
+  $(".btn-doctor-new").click(function () {
+    window.location.reload();
+  });
+  $(".btn-doctor-completed").click(function () {
+    location.reload();
+    return false;
+  });
+  $(".btn-doctor-completed").click(function () {
+    location.reload();
+    return false;
+  });
+  $(".btn-doctor-cancelled").click(function () {
+    location.reload();
+    return false;
+  });
+
+  $(".btn-user-new").click(function () {
+    location.reload();
+    return false;
+  });
+  $(".btn-user-completed").click(function () {
+    location.reload();
+    return false;
+  });
+
+  $(".btn-user-cancelled").click(function () {
+    location.reload();
+    return false;
   });
 });

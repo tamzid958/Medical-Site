@@ -20,6 +20,9 @@ address bar color = #00c4cc
 .Blue-Sky-4-rgba { color: rgba(127, 177, 239, 1); }
 .Blue-Sky-5-rgba { color: rgba(173, 212, 247, 1); }
 */
+a {
+  text-decoration: none !important;
+}
 .navbar {
   background-color: transparent !important;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
@@ -252,6 +255,7 @@ address bar color = #00c4cc
 .single-blog-direct-loop,
 .single-doctor-direct-loop {
   cursor: pointer;
+  min-height: 400px !important;
 }
 .blog-post-p,
 .doctor-post-p,
