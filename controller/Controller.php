@@ -182,6 +182,7 @@ if (isset($_POST["service"])) {
 
     serviceCost($_POST["service"]);
 }
+
 if (isset($_POST["payment_verify"])) {
     duplicateSearch($_POST["email"]);
     if ($_SESSION['Duplicate'] > 0) {

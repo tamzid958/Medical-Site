@@ -14,7 +14,7 @@ $appointments = getAllAppointments();
           <div class="form-row">
             <h2 class="appointment-head">Book an Appointment</h2>
             <div class="col-md-6">
-              <select class="custom-select mr-sm-2 form-trans" id="category_select_patient required">
+              <select class="custom-select mr-sm-2 form-trans" id="category_select_patient" required>
                 <option value="" disabled selected>Select Category</option>
                 <?php
                 if ($categories > 0) {
@@ -26,7 +26,7 @@ $appointments = getAllAppointments();
               </select>
             </div>
             <div class="col-md-6">
-              <select class="custom-select mr-sm-2 form-trans" id="service_select_patient required">
+              <select class="custom-select mr-sm-2 form-trans" id="service_select_patient" required>
                 <option value="" disabled selected>Select Service</option>
                 <?php
                 if ($services > 0) {
@@ -39,7 +39,7 @@ $appointments = getAllAppointments();
               </select>
             </div>
             <div class="col-md-6">
-              <select class="custom-select mr-sm-2 form-trans" id="doctor_select_patient required">
+              <select class="custom-select mr-sm-2 form-trans" id="doctor_select_patient" required>
                 <option value="" disabled selected>Select Doctor</option>
                 <?php
                 if ($doctors > 0) {
@@ -52,7 +52,7 @@ $appointments = getAllAppointments();
             </div>
 
             <div class="col-md-6">
-              <input type="text" class="form-control form-trans" placeholder="Full name" id="patient_name_patient">
+              <input type="text" class="form-control form-trans" placeholder="Full name" id="patient_name_patient" required>
             </div>
             <div class="col-md-6">
               <input type="tel" class="form-control form-trans" placeholder="Phone number" id="phone_number_patient" required>
@@ -191,7 +191,6 @@ $appointments = getAllAppointments();
     $('#payBtn').on('click', function(e) {
 
       e.preventDefault();
-
       var category = $("#category_select_patient").val();
       var service = $("#service_select_patient").val();
       var doctor = $("#doctor_select_patient").val();
@@ -210,9 +209,9 @@ $appointments = getAllAppointments();
           service: service,
         },
         success: function(data) {
-          //console.log(data.cost);
+          console.log(data.cost);
           document.getElementById('service_cost').innerHTML = data.cost;
-          //$("#service_cost").innerHTML(data.cost);
+
           $('#myModal').modal('toggle');
         }
       });
