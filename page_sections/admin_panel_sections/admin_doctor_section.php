@@ -27,8 +27,10 @@ $services = getAllService();
                 <select class="form-control" id="exampleFormControlSelect1">
                     <option value="" disabled selected>Select Service</option>
                     <?php
-                    foreach ($services as $service) {
-                        echo "<option>" . $service["service_name"] . "</option>";
+                    if ($services > 0) {
+                        foreach ($services as $service) {
+                            echo "<option>" . $service["service_name"] . "</option>";
+                        }
                     } ?>
                 </select>
             </div>
@@ -63,19 +65,21 @@ $services = getAllService();
                             <tbody>
 
                                 <?php
-                                foreach ($doctors as $doctor) {
-                                    echo "<form action='' method='post'>";
-                                    echo "<tr>";
-                                    echo "<td class='doctor-details'>" . $doctor["id"] . "</td>";
-                                    echo "<td>  <img src='../../assets/images/uploaded_images/doctor_images/" . $doctor["profile_picture"] . "' class='doctor-avatar' alt=''> " . $doctor["full_name"] . "</td>";
-                                    echo "<td class='doctor-details'>" . $doctor["service"]  . "</td>";
-                                    echo "<td class='doctor-details'>" . $doctor["email"] . "</td>";
-                                    echo "<td class='doctor-details'>" . $doctor["phone"] . "</td>";
-                                    echo "<td class='doctor-details'>";
-                                    echo "<button type='button' class='btn btn-outline-primary editDoctor_btn' id=" . $doctor["id"] . ">Edit</button>";
-                                    echo "</td>";
-                                    echo "</tr>";
-                                    echo "</form>";
+                                if ($doctors > 0) {
+                                    foreach ($doctors as $doctor) {
+                                        echo "<form action='' method='post'>";
+                                        echo "<tr>";
+                                        echo "<td class='doctor-details'>" . $doctor["id"] . "</td>";
+                                        echo "<td>  <img src='../../assets/images/uploaded_images/doctor_images/" . $doctor["profile_picture"] . "' class='doctor-avatar' alt=''> " . $doctor["full_name"] . "</td>";
+                                        echo "<td class='doctor-details'>" . $doctor["service"]  . "</td>";
+                                        echo "<td class='doctor-details'>" . $doctor["email"] . "</td>";
+                                        echo "<td class='doctor-details'>" . $doctor["phone"] . "</td>";
+                                        echo "<td class='doctor-details'>";
+                                        echo "<button type='button' class='btn btn-outline-primary editDoctor_btn' id=" . $doctor["id"] . ">Edit</button>";
+                                        echo "</td>";
+                                        echo "</tr>";
+                                        echo "</form>";
+                                    }
                                 } ?>
 
                             </tbody>
@@ -125,16 +129,20 @@ $services = getAllService();
                         <option value="" disabled selected>Select Category</option>
 
                         <?php
-                        foreach ($categories as $category) {
-                            echo "<option>" . $category["category_name"] . "</option>";
+                        if ($categories > 0) {
+                            foreach ($categories as $category) {
+                                echo "<option>" . $category["category_name"] . "</option>";
+                            }
                         } ?>
                     </select>
                     <br>
                     <select class="form-control" name="doctor_service" id="exampleFormControlSelect1" required>
                         <option value="" disabled selected>Select Service</option>
                         <?php
-                        foreach ($services as $service) {
-                            echo "<option>" . $service["service_name"] . "</option>";
+                        if ($services > 0) {
+                            foreach ($services as $service) {
+                                echo "<option>" . $service["service_name"] . "</option>";
+                            }
                         } ?>
                     </select>
 
@@ -186,11 +194,13 @@ $services = getAllService();
                     <select class="form-control doctor_category_selector" name="doctor_category" id="doctor_edit_category" value="" id="doctor_category_selector" required>
                         <option value="" disabled>Select Category</option>
                         <?php
-                        foreach ($categories as  $category) {
-                            if ($category["category_name"] ==  $doctor_details["category"]) {
-                                echo "<option selected>" . $category["category_name"] . "</option>";
-                            } else {
-                                echo "<option>" . $category["category_name"] . "</option>";
+                        if ($categories > 0) {
+                            foreach ($categories as  $category) {
+                                if ($category["category_name"] ==  $doctor_details["category"]) {
+                                    echo "<option selected>" . $category["category_name"] . "</option>";
+                                } else {
+                                    echo "<option>" . $category["category_name"] . "</option>";
+                                }
                             }
                         }
                         ?>
@@ -199,11 +209,13 @@ $services = getAllService();
                     <select class="form-control" name="doctor_service" id="doctor_edit_service" value="" required>
                         <option value="" disabled>Select Service</option>
                         <?php
-                        foreach ($services as $service) {
-                            if ($service["service_name"] ==  $doctor_details["service"]) {
-                                echo "<option selected>" . $service["service_name"] . "</option>";
-                            } else {
-                                echo "<option>" . $service["service_name"] . "</option>";
+                        if ($services > 0) {
+                            foreach ($services as $service) {
+                                if ($service["service_name"] ==  $doctor_details["service"]) {
+                                    echo "<option selected>" . $service["service_name"] . "</option>";
+                                } else {
+                                    echo "<option>" . $service["service_name"] . "</option>";
+                                }
                             }
                         } ?>
                     </select>

@@ -28,8 +28,10 @@ $appointments = getAllAppointments();
                         <option value="" disabled selected>Select Patient</option>
 
                         <?php
-                        foreach ($patients as $patient) {
-                            echo "<option>" . $patient["full_name"] . "</option>";
+                        if ($patients > 0) {
+                            foreach ($patients as $patient) {
+                                echo "<option>" . $patient["full_name"] . "</option>";
+                            }
                         } ?>
 
 
@@ -50,8 +52,10 @@ $appointments = getAllAppointments();
                         <option value="" disabled selected>Select Doctor</option>
 
                         <?php
-                        foreach ($doctors as $doctor) {
-                            echo "<option>" . $doctor["full_name"] . "</option>";
+                        if ($doctors > 0) {
+                            foreach ($doctors as $doctor) {
+                                echo "<option>" . $doctor["full_name"] . "</option>";
+                            }
                         } ?>
                     </select>
                 </div>
@@ -91,22 +95,22 @@ $appointments = getAllAppointments();
                                 <tbody>
 
                                     <?php
-                                    if($appointments>0){
-                                    foreach ($appointments as $appointment) {
-                                        echo "<tr>";
-                                        echo "<td>" . $appointment["appointment_id"] . "</td>";
-                                        echo "<td>" . $appointment["patient_name"] . "</td>";
-                                        echo "<td>" . $appointment["doctor_name"] . "</td>";
-                                        echo "<td>" . $appointment["service_service"] . "</td>";
-                                        echo "<td>" . $appointment["service_date"] . "</td>";
-                                        echo "<td>" . $appointment["service_time"] . "</td>";
-                                        echo "<td>" . $appointment["service_status"] . "</td>";
-                                        echo "<td>
+                                    if ($appointments > 0) {
+                                        foreach ($appointments as $appointment) {
+                                            echo "<tr>";
+                                            echo "<td>" . $appointment["appointment_id"] . "</td>";
+                                            echo "<td>" . $appointment["patient_name"] . "</td>";
+                                            echo "<td>" . $appointment["doctor_name"] . "</td>";
+                                            echo "<td>" . $appointment["service_service"] . "</td>";
+                                            echo "<td>" . $appointment["service_date"] . "</td>";
+                                            echo "<td>" . $appointment["service_time"] . "</td>";
+                                            echo "<td>" . $appointment["service_status"] . "</td>";
+                                            echo "<td>
                                         <button class='btn btn-outline-primary editAppointmentButton' data-toggle='modal' id=" . $appointment["appointment_id"] . ">Edit</button>
                                     </td>";
-                                        echo "</tr>";
+                                            echo "</tr>";
+                                        }
                                     }
-                                }
                                     ?>
 
                                 </tbody>
@@ -135,8 +139,10 @@ $appointments = getAllAppointments();
                         <select class="form-control" name="patient_name" required>
                             <option value="" disabled selected>Select Patient</option>
                             <?php
-                            foreach ($patients as $patient) {
-                                echo "<option>" . $patient["full_name"] . "</option>";
+                            if ($patients > 0) {
+                                foreach ($patients as $patient) {
+                                    echo "<option>" . $patient["full_name"] . "</option>";
+                                }
                             } ?>
 
                         </select>
@@ -144,17 +150,21 @@ $appointments = getAllAppointments();
                         <select class="form-control" name="service_category" required>
                             <option value="" disabled selected>Select Category</option>
                             <?php
-                            foreach ($categories as $category) {
-                                echo "<option>" . $category["category_name"] . "</option>";
+                            if ($categories > 0) {
+                                foreach ($categories as $category) {
+                                    echo "<option>" . $category["category_name"] . "</option>";
+                                }
                             } ?>
                         </select>
                         <br>
                         <select class="form-control" name="service_service" required>
                             <option value="" disabled selected>Select Service</option>
                             <?php
+                            if ($services > 0) {
 
-                            foreach ($services as $service) {
-                                echo "<option>" . $service["service_name"] . "</option>";
+                                foreach ($services as $service) {
+                                    echo "<option>" . $service["service_name"] . "</option>";
+                                }
                             } ?>
 
                         </select>
@@ -163,8 +173,10 @@ $appointments = getAllAppointments();
                             <option value="" disabled selected>Select Doctor</option>
 
                             <?php
-                            foreach ($doctors as $doctor) {
-                                echo "<option>" . $doctor["full_name"] . "</option>";
+                            if ($doctors > 0) {
+                                foreach ($doctors as $doctor) {
+                                    echo "<option>" . $doctor["full_name"] . "</option>";
+                                }
                             } ?>
                         </select>
 
@@ -218,8 +230,10 @@ $appointments = getAllAppointments();
                     <select class="form-control" name="patient_name_edit" value="" id="appointment_patient_name_edit" required>
                         <option value="" disabled selected>Select Patient</option>
                         <?php
-                        foreach ($patients as $patient) {
-                            echo "<option>" . $patient["full_name"] . "</option>";
+                        if ($patients > 0) {
+                            foreach ($patients as $patient) {
+                                echo "<option>" . $patient["full_name"] . "</option>";
+                            }
                         } ?>
 
                     </select>
@@ -227,17 +241,21 @@ $appointments = getAllAppointments();
                     <select class="form-control" name="appointment_service_category_edit" value="" id="appointment_service_category_edit" required>
                         <option value="" disabled selected>Select Category</option>
                         <?php
-                        foreach ($categories as $category) {
-                            echo "<option>" . $category["category_name"] . "</option>";
+                        if ($categories > 0) {
+                            foreach ($categories as $category) {
+                                echo "<option>" . $category["category_name"] . "</option>";
+                            }
                         } ?>
                     </select>
                     <br>
                     <select class="form-control" name="appointment_service_service_edit" value="" id="appointment_service_service_edit" required>
                         <option value="" disabled selected>Select Service</option>
                         <?php
+                        if ($services > 0) {
 
-                        foreach ($services as $service) {
-                            echo "<option>" . $service["service_name"] . "</option>";
+                            foreach ($services as $service) {
+                                echo "<option>" . $service["service_name"] . "</option>";
+                            }
                         } ?>
 
                     </select>
@@ -246,8 +264,12 @@ $appointments = getAllAppointments();
                         <option value="" disabled selected>Select Doctor</option>
 
                         <?php
-                        foreach ($doctors as $doctor) {
-                            echo "<option>" . $doctor["full_name"] . "</option>";
+                        if ($doctors > 0) {
+
+
+                            foreach ($doctors as $doctor) {
+                                echo "<option>" . $doctor["full_name"] . "</option>";
+                            }
                         } ?>
                     </select>
 

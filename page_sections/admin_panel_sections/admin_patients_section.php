@@ -30,17 +30,19 @@ $patients = getAllPatients();
 
                                 <tbody>
                                     <?php
-                                    foreach ($patients as $patient) {
+                                    if ($patients > 0) {
+                                        foreach ($patients as $patient) {
 
-                                        echo "<tr>";
-                                        echo "<td>" . $patient["id"] . "</td>";
-                                        echo "<td>" . $patient["full_name"] . "</td>";
-                                        echo "<td >" . $patient["phone"] . "</td>";
-                                        echo "<td>" . $patient["email"] . "</td>";
-                                        echo "<td>";
-                                        echo "<button type='button' class='btn btn-outline-primary editPatient_btn' id=" . $patient["id"] . ">Edit</button>";
-                                        echo "</td>";
-                                        echo "</tr>";
+                                            echo "<tr>";
+                                            echo "<td>" . $patient["id"] . "</td>";
+                                            echo "<td>" . $patient["full_name"] . "</td>";
+                                            echo "<td >" . $patient["phone"] . "</td>";
+                                            echo "<td>" . $patient["email"] . "</td>";
+                                            echo "<td>";
+                                            echo "<button type='button' class='btn btn-outline-primary editPatient_btn' id=" . $patient["id"] . ">Edit</button>";
+                                            echo "</td>";
+                                            echo "</tr>";
+                                        }
                                     } ?>
                                 </tbody>
                             </table>

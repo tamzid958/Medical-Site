@@ -17,8 +17,10 @@ $appointments = getAllAppointments();
               <select class="custom-select mr-sm-2 form-trans" id="category_select_patient required">
                 <option value="" disabled selected>Select Category</option>
                 <?php
-                foreach ($categories as $category) {
-                  echo "<option>" . $category["category_name"] . "</option>";
+                if ($categories > 0) {
+                  foreach ($categories as $category) {
+                    echo "<option>" . $category["category_name"] . "</option>";
+                  }
                 } ?>
               </select>
               </select>
@@ -27,9 +29,10 @@ $appointments = getAllAppointments();
               <select class="custom-select mr-sm-2 form-trans" id="service_select_patient required">
                 <option value="" disabled selected>Select Service</option>
                 <?php
-
-                foreach ($services as $service) {
-                  echo "<option>" . $service["service_name"] . "</option>";
+                if ($services > 0) {
+                  foreach ($services as $service) {
+                    echo "<option>" . $service["service_name"] . "</option>";
+                  }
                 } ?>
 
               </select>
@@ -39,8 +42,10 @@ $appointments = getAllAppointments();
               <select class="custom-select mr-sm-2 form-trans" id="doctor_select_patient required">
                 <option value="" disabled selected>Select Doctor</option>
                 <?php
-                foreach ($doctors as $doctor) {
-                  echo "<option>" . $doctor["full_name"] . "</option>";
+                if ($doctors > 0) {
+                  foreach ($doctors as $doctor) {
+                    echo "<option>" . $doctor["full_name"] . "</option>";
+                  }
                 } ?>
               </select>
 

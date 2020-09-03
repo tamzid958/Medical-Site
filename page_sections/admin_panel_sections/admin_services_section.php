@@ -53,9 +53,11 @@ $services = getAllService();
             <select class="form-control" name="service_category" required>
               <option value="" disabled selected>Select Category</option>
               <?php
+              if ($categories > 0) {
 
-              foreach ($categories as $category) {
-                echo "<option>" . $category["category_name"] . "</option>";
+                foreach ($categories as $category) {
+                  echo "<option>" . $category["category_name"] . "</option>";
+                }
               } ?>
 
             </select>
@@ -109,16 +111,18 @@ $services = getAllService();
 
                     <tbody>
                       <?php
+                      if ($categories > 0) {
 
-                      foreach ($categories as $category) {
-                        echo "<tr>";
-                        echo " <td>" . $category["category_id"] . "</td>";
-                        echo "<td>" . $category["category_name"] . "</td> ";
-                        echo "<td>
+                        foreach ($categories as $category) {
+                          echo "<tr>";
+                          echo " <td>" . $category["category_id"] . "</td>";
+                          echo "<td>" . $category["category_name"] . "</td> ";
+                          echo "<td>
                         <button type='button' class='btn btn-warning category_edit' data-toggle='modal' id=" . $category["category_id"] . "><i class='fa fa-pencil' aria-hidden='true'></i></button>
                         <button type='button' class='btn btn-danger category_delete_btn' id=" . $category["category_id"] . "><i class='fa fa-trash' aria-hidden='true'></i></button>
                       </td>";
-                        echo "</tr>";
+                          echo "</tr>";
+                        }
                       } ?>
                     </tbody>
                   </table>
@@ -183,18 +187,19 @@ $services = getAllService();
 
                   <tbody id="admin-service-service">
                     <?php
-
-                    foreach ($services as $service) {
-                      echo "<tr>";
-                      echo "<td>" . $service["service_ID"] . "</td>";
-                      echo "<td>" . $service["service_name"] . "</td>";
-                      echo "<td>" . $service["category_name"] . "</td>";
-                      echo "<td>" . $service["cost"] . "</td>";
-                      echo "                      <td>
+                    if ($services > 0) {
+                      foreach ($services as $service) {
+                        echo "<tr>";
+                        echo "<td>" . $service["service_ID"] . "</td>";
+                        echo "<td>" . $service["service_name"] . "</td>";
+                        echo "<td>" . $service["category_name"] . "</td>";
+                        echo "<td>" . $service["cost"] . "</td>";
+                        echo "                      <td>
                       <button type='button' class='btn btn-warning edit_service_btn' id=" . $service["service_ID"] . " data-toggle='modal'><i class='fa fa-pencil' aria-hidden='true'></i></button>
                       <button type='button' class='btn btn-danger delete_service_btn' id=" . $service["service_ID"] . "><i class='fa fa-trash' aria-hidden='true'></i></button>
                     </td>";
-                      echo "</tr>";
+                        echo "</tr>";
+                      }
                     } ?>
                   </tbody>
                 </table>
@@ -261,12 +266,13 @@ $services = getAllService();
           <select class="form-control" id="service_edit_category" value="" name="service_edit_category" required>
             <option value="" disabled selected>Select Category</option>
             <?php
-
-            foreach ($categories as $category) {
-              if ($category["category_name"] == $service["category_name"]) {
-                echo "<option selected>" . $category["category_name"] . "</option>";
-              } else {
-                echo "<option>" . $category["category_name"] . "</option>";
+            if ($services > 0) {
+              foreach ($categories as $category) {
+                if ($category["category_name"] == $service["category_name"]) {
+                  echo "<option selected>" . $category["category_name"] . "</option>";
+                } else {
+                  echo "<option>" . $category["category_name"] . "</option>";
+                }
               }
             } ?>
 

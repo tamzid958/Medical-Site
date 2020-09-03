@@ -86,21 +86,22 @@ $posts = getAllPost();
 </div>
 
 <?php
-
-foreach ($posts as $post) {
-  echo "<div id='old-post-list'>
+if ($post > 0) {
+  foreach ($posts as $post) {
+    echo "<div id='old-post-list'>
   <div id='left' class='post_admin_loop'>
   <div class='card single-blog-direct-loop' style='width: 18rem;'>";
-  echo "<img src='../../assets/images/uploaded_images/post_images/" . $post["post_dir"] . "' class='card-img-top' alt=''>";
-  echo " <div class='card-body'>";
-  echo "<h6>" . $post["post_title"] . "</h6>";
-  echo "<div class='d-flex justify-content-between'>";
-  echo "<button type='button' class='btn btn-warning post_edit_btn'  id=" . $post["post_id"] . " data-toggle='modal'><i class='fa fa-pencil' aria-hidden='true'></i></a>";
-  echo "<button type='button' class='btn btn-danger post_delete_btn'  id=" . $post["post_id"] . "><i class='fa fa-trash' aria-hidden='true'></i></button>";
-  echo "</div></div>
+    echo "<img src='../../assets/images/uploaded_images/post_images/" . $post["post_dir"] . "' class='card-img-top' alt=''>";
+    echo " <div class='card-body'>";
+    echo "<h6>" . $post["post_title"] . "</h6>";
+    echo "<div class='d-flex justify-content-between'>";
+    echo "<button type='button' class='btn btn-warning post_edit_btn'  id=" . $post["post_id"] . " data-toggle='modal'><i class='fa fa-pencil' aria-hidden='true'></i></a>";
+    echo "<button type='button' class='btn btn-danger post_delete_btn'  id=" . $post["post_id"] . "><i class='fa fa-trash' aria-hidden='true'></i></button>";
+    echo "</div></div>
   </div>
 </div>
 </div>";
+  }
 } ?>
 
 <div role="alert" style="position: absolute; z-index:100;" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
