@@ -12,7 +12,7 @@ $appointments = getAllAppointments();
         <div class="">
             <div class="row">
                 <div class="col-md-10">
-                    <h4 class="card-title">OSCA | Appointment </h4>
+                    <h4 class="card-title">Appointments <span class="badge badge-dark"> <?php echo $_SESSION['appointmentCounter'] ?></span> Total </h4>
 
                 </div>
                 <div class="col-md-2">
@@ -91,8 +91,7 @@ $appointments = getAllAppointments();
                                 <tbody>
 
                                     <?php
-
-
+                                    if($appointments>0){
                                     foreach ($appointments as $appointment) {
                                         echo "<tr>";
                                         echo "<td>" . $appointment["appointment_id"] . "</td>";
@@ -102,12 +101,13 @@ $appointments = getAllAppointments();
                                         echo "<td>" . $appointment["service_date"] . "</td>";
                                         echo "<td>" . $appointment["service_time"] . "</td>";
                                         echo "<td>" . $appointment["service_status"] . "</td>";
-                                        echo "
-                                        <td>
-                                        <button class='btn btn-outline-primary editAppointmentButton' data-toggle='modal'id=" . $appointment["appointment_id"] . ">Edit</button>
+                                        echo "<td>
+                                        <button class='btn btn-outline-primary editAppointmentButton' data-toggle='modal' id=" . $appointment["appointment_id"] . ">Edit</button>
                                     </td>";
                                         echo "</tr>";
-                                    } ?>
+                                    }
+                                }
+                                    ?>
 
                                 </tbody>
                             </table>
