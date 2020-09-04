@@ -309,65 +309,73 @@ $appointments = getAllAppointments();
         var email = $("#email_patient").val();
         var date = $("#date_patient").val();
         var time = $("#time_patient").val();
+        if (category == null || category == "", service == null || service == "", doctor == null || doctor == "", phone_number == null || phone_number == "", email == null || email == "", date == null || date == "" || time == null || time == "") {
 
-
-        $.ajax({
-          url: "./controller/Controller.php",
-          method: "post",
-          dataType: "json",
-          data: {
-            service: service,
-          },
-          success: function(data) {
-            //console.log(data.cost);
-            document.getElementById('service_cost').innerHTML = data.cost;
-            //$("#service_cost").innerHTML(data.cost);
-            $('#myModal').modal('toggle');
-          }
-        });
-
-        $('#continuebtn').click(function() {
-          var payment_verify = $('#continuebtn').val();
-          var payment_number = $('#patient_payment_number').val();
-          var trans_id = $('#patient_trans_id').val();
-
+          return false;
+        } else {
 
           $.ajax({
             url: "./controller/Controller.php",
             method: "post",
+            dataType: "json",
             data: {
-              category: category,
               service: service,
-              doctor: doctor,
-              patient_name: patient_name,
-              phone_number: phone_number,
-              email: email,
-              date: date,
-              time: time,
-              payment_verify: payment_verify,
-              payment_number: payment_number,
-              trans_id: trans_id
             },
             success: function(data) {
-
-
-
-              $('form').submit();
-              //console.log(category, service, doctor, patient_name, phone_number, email, date, time);
-              //console.log(payment_verify, payment_number, trans_id);
-
+              //console.log(data.cost);
+              document.getElementById('service_cost').innerHTML = data.cost;
+              //$("#service_cost").innerHTML(data.cost);
+              $('#myModal').modal('toggle');
             }
+          });
+        }
+        if (payment_number == null || payment_number == "", trans_id == null || trans_id == "", payment_verify == null || payment_verify == "") {
+          return false;
+        } else {
+          $('#continuebtn').click(function() {
+            var payment_verify = $('#continuebtn').val();
+            var payment_number = $('#patient_payment_number').val();
+            var trans_id = $('#patient_trans_id').val();
+
+
+            $.ajax({
+              url: "./controller/Controller.php",
+              method: "post",
+              data: {
+                category: category,
+                service: service,
+                doctor: doctor,
+                patient_name: patient_name,
+                phone_number: phone_number,
+                email: email,
+                date: date,
+                time: time,
+                payment_verify: payment_verify,
+                payment_number: payment_number,
+                trans_id: trans_id
+              },
+              success: function(data) {
+
+
+
+                $('form').submit();
+                //console.log(category, service, doctor, patient_name, phone_number, email, date, time);
+                //console.log(payment_verify, payment_number, trans_id);
+
+              }
 
 
 
 
-          })
-
-
-        });
+            })
 
 
 
+
+          });
+
+
+        }
       });
 
     });
