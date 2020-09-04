@@ -191,6 +191,7 @@ if (isset($_POST["payment_verify"])) {
     if ($_SESSION['Duplicate'] > 0) {
         createAppointmentfromPatientIfmailExist($_POST["category"], $_POST["service"], $_POST["doctor"], $_POST["patient_name"], $_POST["phone_number"], $_POST["email"], $_POST["date"], $_POST["time"], $_POST["payment_number"], $_POST["trans_id"]);
     } else {
+
         createAppointmentfromPatient($_POST["category"], $_POST["service"], $_POST["doctor"], $_POST["patient_name"], $_POST["phone_number"], $_POST["email"], $_POST["date"], $_POST["time"], $_POST["payment_number"], $_POST["trans_id"]);
     }
 }
@@ -203,6 +204,41 @@ if (isset($_POST["appointment_id_doc_side"])) {
 if (isset($_POST["appointment_id_p_side"])) {
 
     updateAppointmentStatusbyP($_POST["appointment_id_p_side"], $_POST["appointment_status_p"]);
+}
+if (isset($_POST["category_val"])) {
+    findService($_POST["category_val"]);
+}
+
+if (isset($_POST["service_val"])) {
+    findDoctor($_POST["service_val"]);
+}
+
+if (isset($_POST["time_checker"])) {
+    duplicateAppointment($_POST["doctor_checker"], $_POST["date_checker"], $_POST["time_checker"]);
+}
+
+
+function duplicateAppointment($doctor_name, $date, $time)
+{
+    $query = "SELECT COUNT(*) as count FROM `appointment` WHERE `service_date` = '$date' AND `service_time` ='$time' AND `doctor_name` ='$doctor_name'";
+    $duplicate_appointment = getArray($query);
+    $_SESSION['DuplicateAppointment'] = $duplicate_appointment['count'];
+    echo json_encode($duplicate_appointment);
+}
+
+
+function findService($category)
+{
+    $query = "SELECT `service_name` FROM `service` WHERE `category_name`='$category' ";
+    $findService = getArray($query);
+    echo json_encode($findService);
+}
+
+function findDoctor($service)
+{
+    $query = "SELECT `full_name` FROM `user` WHERE `service`='$service' ";
+    $findDoctor = getArray($query);
+    echo json_encode($findDoctor);
 }
 
 function updateAppointmentStatusbyP($appointment_id, $appoint_status)

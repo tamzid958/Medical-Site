@@ -125,7 +125,7 @@ $services = getAllService();
                     <br>
                     <input class="form-control" type="tel" name="doctor_phone" placeholder="Phone Number" required>
                     <br>
-                    <select class="form-control" name="doctor_category" id="inlineFormCustomSelect" required>
+                    <select class="form-control" name="doctor_category" id="category_select_doctor" required>
                         <option value="" disabled selected>Select Category</option>
 
                         <?php
@@ -136,14 +136,9 @@ $services = getAllService();
                         } ?>
                     </select>
                     <br>
-                    <select class="form-control" name="doctor_service" id="exampleFormControlSelect1" required>
-                        <option value="" disabled selected>Select Service</option>
-                        <?php
-                        if ($services > 0) {
-                            foreach ($services as $service) {
-                                echo "<option>" . $service["service_name"] . "</option>";
-                            }
-                        } ?>
+                    <select class="form-control" name="doctor_service" id="service_select_doctor" required>
+                        <option value="" id="select_category_first" disabled selected>Select Service</option>
+
                     </select>
 
                     <br>
@@ -253,6 +248,66 @@ $services = getAllService();
 </script>
 <script>
     $(document).ready(function() {
+
+
+
+        var i = 0;
+        var category_val;
+        document.getElementById('service_select_doctor').disabled = true;
+        document.getElementById('select_category_first').innerHTML = "Select Category At First";
+
+        $('#category_select_doctor').on('change', function() {
+            category_val = $(this).val();
+
+            console.log(category_val);
+            if (category_val) {
+                //console.log(category_val);
+                $.ajax({
+                    url: "../../controller/Controller.php",
+                    method: "post",
+                    dataType: "json",
+                    data: {
+                        category_val: category_val
+                    },
+                    success: function(data) {
+
+                        document.getElementById('service_select_doctor').disabled = false;
+                        document.getElementById('select_category_first').innerHTML = "Select Service";
+
+
+                        $('#service_select_doctor').find('option').not(':selected').remove();
+                        if (data != null && data.length > 0) {
+                            for (i = 0; i < data.length; i++) {
+                                var opt = data[i].service_name;
+                                document.getElementById('service_select_doctor').innerHTML += "<option>" + opt + "</option>";
+                                //console.log(data[i].service_name);
+                            }
+                        } else {
+                            var opt = data.service_name;
+                            document.getElementById('service_select_doctor').innerHTML += "<option>" + opt + "</option>";
+                        }
+
+                    }
+
+                });
+
+
+
+
+            }
+
+        });
+
+
+
+
+
+
+
+
+
+
+
         $(".editDoctor_btn").click(function() {
             var doctor_id = $(this).attr("id");
             $.ajax({

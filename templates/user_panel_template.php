@@ -44,8 +44,7 @@ if ($_SESSION["logged_in"] && $_REQUEST["id"]) {
 
     </h1>
 
-    <div id="patient-panel-switcher">
-
+    <div id="user-panel-switcher">
 
 
       <div class="container d-flex justify-content-left patient-card">
@@ -90,10 +89,10 @@ if ($_SESSION["logged_in"] && $_REQUEST["id"]) {
           } ?>
         </div>
       </div>
+
+
+
     </div>
-
-
-
 
 
 

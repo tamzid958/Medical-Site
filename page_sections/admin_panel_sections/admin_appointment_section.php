@@ -147,7 +147,7 @@ $appointments = getAllAppointments();
 
                         </select>
                         <br>
-                        <select class="form-control" name="service_category" required>
+                        <select class="form-control" name="service_category" id="category_select_patient" required>
                             <option value="" disabled selected>Select Category</option>
                             <?php
                             if ($categories > 0) {
@@ -157,33 +157,20 @@ $appointments = getAllAppointments();
                             } ?>
                         </select>
                         <br>
-                        <select class="form-control" name="service_service" required>
-                            <option value="" disabled selected>Select Service</option>
-                            <?php
-                            if ($services > 0) {
-
-                                foreach ($services as $service) {
-                                    echo "<option>" . $service["service_name"] . "</option>";
-                                }
-                            } ?>
+                        <select class="form-control" name="service_service" id="service_select_patient" required>
+                            <option value="" id="select_category_first" disabled selected>Select Service</option>
 
                         </select>
                         <br>
-                        <select class="form-control" name="doctor_name" required>
-                            <option value="" disabled selected>Select Doctor</option>
+                        <select class="form-control" name="doctor_name" id="doctor_select_patient" required>
+                            <option value="" id="select_service_first" disabled selected>Select Doctor</option>
 
-                            <?php
-                            if ($doctors > 0) {
-                                foreach ($doctors as $doctor) {
-                                    echo "<option>" . $doctor["full_name"] . "</option>";
-                                }
-                            } ?>
                         </select>
 
                         <br>
-                        <input type="date" class="form-control form-trans" placeholder="Date" name="date" required>
+                        <input type="date" class="form-control form-trans" placeholder="Date" name="date" id="date_patient" required>
                         <br>
-                        <input type="time" class="form-control form-trans" name="time" placeholder="Time" required>
+                        <input type="time" class="form-control form-trans" name="time" placeholder="Time" id="time_patient" required>
                         <br>
                         <select class="form-control" name="status">
                             <option value="" disabled selected>Select Status</option>
@@ -199,8 +186,9 @@ $appointments = getAllAppointments();
                         <input type="text" class="form-control form-trans" placeholder="Transaciton ID" name="transaction_id" required>
                         <br>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button type="submit" name="appointment_create_admin" class="btn btn-primary">Create</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="unavailable">Cancel</button>
+                            <button type="submit" name="appointment_create_admin" class="btn btn-primary" id="payBtn">Create</button>
+
                         </div>
                     </div>
                 </form>
@@ -249,11 +237,10 @@ $appointments = getAllAppointments();
                     </select>
                     <br>
                     <select class="form-control" name="appointment_service_service_edit" value="" id="appointment_service_service_edit" required>
-                        <option value="" disabled selected>Select Service</option>
+                        <option value="" id="select_category_first_edit" disabled selected>Select Service</option>
                         <?php
                         if ($services > 0) {
-
-                            foreach ($services as $service) {
+                            foreach ($services  as $service) {
                                 echo "<option>" . $service["service_name"] . "</option>";
                             }
                         } ?>
@@ -261,13 +248,10 @@ $appointments = getAllAppointments();
                     </select>
                     <br>
                     <select class="form-control" name="appointment_doctor_name_edit" value="" id="appointment_doctor_name_edit" required>
-                        <option value="" disabled selected>Select Doctor</option>
-
+                        <option value="" id="select_service_first_edit" disabled selected>Select Doctor</option>
                         <?php
                         if ($doctors > 0) {
-
-
-                            foreach ($doctors as $doctor) {
+                            foreach ($doctors  as $doctor) {
                                 echo "<option>" . $doctor["full_name"] . "</option>";
                             }
                         } ?>
@@ -304,6 +288,151 @@ $appointments = getAllAppointments();
 
 <script>
     $(document).ready(function() {
+
+
+        $('#time_patient').on('change', function() {
+
+
+
+            var doctor_checker = $("#doctor_select_patient").val();
+            var date_checker = $("#date_patient").val();
+            var time_checker = $("#time_patient").val();
+
+            $.ajax({
+                    url: "../../controller/Controller.php",
+                    method: "post",
+                    dataType: "json",
+                    data: {
+                        doctor_checker: doctor_checker,
+                        date_checker: date_checker,
+                        time_checker: time_checker
+                    },
+                    success: function(data) {
+
+
+
+                        if (data.count != "0") {
+                            $('#payBtn').attr("disabled", "disabled");
+                            $('#payBtn').removeClass("btn-primary");
+                            $('#payBtn').addClass("btn-danger");
+                            $('#payBtn').text("This time is not available for this doctor");
+                        } else {
+                            $("#payBtn").removeAttr("disabled");
+                            $('#payBtn').removeClass("btn-danger");
+                            $('#payBtn').addClass("btn-primary");
+                            $('#payBtn').text("Create");
+                        }
+                    }
+                }
+
+            );
+        });
+
+
+        var i = 0;
+        var category_val;
+        var service_val;
+        document.getElementById('service_select_patient').disabled = true;
+        document.getElementById('select_category_first').innerHTML = "Select Category At First";
+
+        document.getElementById('doctor_select_patient').disabled = true;
+        document.getElementById('select_service_first').innerHTML = "Select Service At First";
+
+        var counter1 = 0;
+        $('#category_select_patient').on('change', function() {
+            category_val = $(this).val();
+            counter1++;
+            console.log(counter1);
+            if (counter1 > 1) {
+                location.reload();
+                return false;
+            }
+
+            if (category_val) {
+                //console.log(category_val);
+                $.ajax({
+                    url: "../../controller/Controller.php",
+                    method: "post",
+                    dataType: "json",
+                    data: {
+                        category_val: category_val
+                    },
+                    success: function(data) {
+
+                        document.getElementById('service_select_patient').disabled = false;
+                        document.getElementById('select_category_first').innerHTML = "Select Service";
+
+
+                        $('#service_select_patient').find('option').not(':selected').remove();
+                        if (data != null && data.length > 0) {
+                            for (i = 0; i < data.length; i++) {
+                                var opt = data[i].service_name;
+                                document.getElementById('service_select_patient').innerHTML += "<option>" + opt + "</option>";
+                                //console.log(data[i].service_name);
+                            }
+                        } else {
+                            var opt = data.service_name;
+                            document.getElementById('service_select_patient').innerHTML += "<option>" + opt + "</option>";
+                        }
+
+                    }
+
+                });
+
+
+
+
+            }
+
+        });
+
+
+        var counter2 = 0;
+        $('#service_select_patient').on('change', function() {
+            service_val = $(this).val();
+            counter2++;
+            console.log(counter2);
+            if (counter2 > 1) {
+                location.reload();
+                return false;
+            }
+
+
+            if (service_val) {
+
+                $.ajax({
+                    url: "../../controller/Controller.php",
+                    method: "post",
+                    dataType: "json",
+                    data: {
+                        service_val: service_val
+                    },
+                    success: function(data) {
+                        document.getElementById('doctor_select_patient').disabled = false;
+                        document.getElementById('select_service_first').innerHTML = "Select Doctor";
+
+                        $('#doctor_select_patient').find('option').not(':selected').remove();
+
+
+                        if (data != null && data.length > 0) {
+                            for (i = 0; i <= data.length; i++) {
+                                var opt = data[i].full_name;
+                                document.getElementById('doctor_select_patient').innerHTML += "<option>" + opt + "</option>";
+                                //console.log(data[i].full_name);
+                            }
+                        } else {
+                            var opt = data.full_name;
+                            document.getElementById('doctor_select_patient').innerHTML += "<option>" + opt + "</option>";
+
+                        }
+
+                    }
+
+                });
+            }
+        });
+
+
         $(".editAppointmentButton").click(function() {
             var appointment_id = $(this).attr("id");
             $.ajax({
