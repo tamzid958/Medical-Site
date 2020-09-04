@@ -108,7 +108,7 @@ $appointments = getAllAppointments();
           <div class="modal-footer">
 
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" value="1" class="btn btn-primary" name="continuebtn_index" id="continuebtn">Pay</button>
+            <button type="button" value="1" class="btn btn-primary" name="continuebtn_index" id="continuebtn">Pay</button>
           </div>
         </div>
       </form>
