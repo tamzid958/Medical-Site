@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 03, 2020 at 11:17 PM
+-- Generation Time: Sep 04, 2020 at 08:15 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -45,12 +45,13 @@ CREATE TABLE `appointment` (
 --
 
 INSERT INTO `appointment` (`appointment_id`, `patient_name`, `service_category`, `service_service`, `doctor_name`, `service_date`, `service_time`, `service_status`, `payment_number`, `transaction_id`) VALUES
-(4, 'Jose L. Gonzalez', 'HEART SPECIALIST', 'ARRHYTHMIA', 'Prof Dr Atahar Ali', '2020-09-16', '01:20', 'Approved', '4324305', '07bf647b-f114-4af4-a240-05095d83f6b8'),
+(4, 'Jose L. Gonzalez', 'EYE SPECIALIST', 'REFRACTIVE ERRORS', 'Dr. Refatullah', '2020-09-16', '01:20', 'Completed', '4324305', '07bf647b-f114-4af4-a240-05095d83f6b8'),
 (5, 'Umar Chichigov', 'EYE SPECIALIST', 'REFRACTIVE ERRORS', 'Dr. Refatullah', '2020-09-17', '05:21', 'Approved', '88014324305', '9bfb57b5-4dc2-4af6-a621-2e7b25a79771'),
-(12, 'Jose L. Gonzalez', 'HEART SPECIALIST', 'CARDIOMYOPATHY', 'Prof. Dr. AQM Reza', '2020-09-15', '03:02', 'Approved', '01521203280', '07bf647b-f114-4af4-a240-05095d83f6b8'),
-(13, 'Jose L. Gonzalez', 'HEART SPECIALIST', 'CARDIOMYOPATHY', 'Prof. Dr. AQM Reza', '2020-09-15', '03:02', 'Approved', '01521203280', '07bf647b-f114-4af4-a240-05095d83f6b8'),
-(14, 'Jose L. Gonzalez', 'HEART SPECIALIST', 'CARDIOMYOPATHY', 'Prof Dr Atahar Ali', '2020-09-10', '17:54', 'Approved', '88014324305', '07bf647b-f114-4af4-a240-05095d83f6b8'),
-(15, 'Jose L. Gonzalez', 'HEART SPECIALIST', 'REFRACTIVE ERRORS', 'Prof Dr Atahar Ali', '2020-09-16', '17:56', 'Approved', '88014324305', '07bf647b-f114-4af4-a240-05095d83f6b8');
+(12, 'Jose L. Gonzalez', 'HEART SPECIALIST', 'CARDIOMYOPATHY', 'Prof. Dr. AQM Reza', '2020-09-15', '03:02', 'Completed', '01521203280', '07bf647b-f114-4af4-a240-05095d83f6b8'),
+(13, 'Jose L. Gonzalez', 'HEART SPECIALIST', 'CARDIOMYOPATHY', 'Prof. Dr. AQM Reza', '2020-09-15', '03:02', 'Cancelled', '01521203280', '07bf647b-f114-4af4-a240-05095d83f6b8'),
+(14, 'Jose L. Gonzalez', 'HEART SPECIALIST', 'CARDIOMYOPATHY', 'Prof Dr Atahar Ali', '2020-09-10', '17:54', 'Completed', '88014324305', '07bf647b-f114-4af4-a240-05095d83f6b8'),
+(15, 'Jose L. Gonzalez', 'HEART SPECIALIST', 'REFRACTIVE ERRORS', 'Prof Dr Atahar Ali', '2020-09-16', '17:56', 'Cancelled', '88014324305', '07bf647b-f114-4af4-a240-05095d83f6b8'),
+(16, 'Jose L. Gonzalez', 'HEART SPECIALIST', 'CARDIOMYOPATHY', 'Prof Dr Atahar Ali', '2020-09-17', '18:22', 'Cancelled', '4324305', '07bf647b-f114-4af4-a240-05095d83f6b8');
 
 -- --------------------------------------------------------
 
@@ -69,8 +70,7 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`category_id`, `category_name`) VALUES
 (44, 'HEART SPECIALIST'),
-(45, 'EYE SPECIALIST'),
-(46, 'NOSE SPECIALIST');
+(45, 'EYE SPECIALIST');
 
 -- --------------------------------------------------------
 
@@ -223,7 +223,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -253,7 +253,7 @@ ALTER TABLE `subscribe`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
