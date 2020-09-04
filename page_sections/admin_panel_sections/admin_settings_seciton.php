@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 require_once '../../controller/Controller.php';
 ?>
 <div class="container">
