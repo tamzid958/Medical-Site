@@ -1,10 +1,20 @@
 <?php
 include('../includes/header.php');
 require_once '../controller/Controller.php';
-$doctor_id = $_REQUEST["id"];
-$doctor = getDoctor($doctor_id);
-$doctor_appointments = getDoctorAppointments($doctor_id);
-getDoctorNewAppointments($doctor_id);
+
+if ($_SESSION["logged_in"] && $_REQUEST['id']) {
+
+  $doctor_id = $_REQUEST["id"];
+  $doctor = getDoctor($doctor_id);
+  $doctor_appointments = getDoctorAppointments($doctor_id);
+  getDoctorNewAppointments($doctor_id);
+} else {
+  header("Location:/login.php");
+  exit();
+}
+
+
+
 ?>
 
 <body>

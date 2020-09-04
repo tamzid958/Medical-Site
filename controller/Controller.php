@@ -70,13 +70,16 @@ if (isset($_POST["forget_pass_btn"])) {
 
 if (isset($_POST["login_btn"])) {
     if (authenticate($_POST["email"], $_POST["password"])) {
-        $_SESSION["logged_in"] = true;
+
         $id = $_SESSION['id'];
         if ($_REQUEST['user_Type']  == "patient") {
+            $_SESSION["logged_in"] = true;
             header("Location: templates/user_panel_template.php?id=$id");
         } else if ($_REQUEST['user_Type']  == "doctor") {
+            $_SESSION["logged_in"] = true;
             header("Location: templates/doctor_panel_template.php?id=$id");
         } else if ($_REQUEST['user_Type']  == "admin") {
+            $_SESSION["logged_in"] = true;
             header("Location: templates/admin_panel_template.php?id=$id");
         } else {
             $err_invalid =  " Invalid Username password";

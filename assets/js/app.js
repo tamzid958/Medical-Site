@@ -65,7 +65,7 @@ $(document).ready(function () {
   });
 
   $(".btn-logout").click(function () {
-    window.open("/login.php", "_self");
+    window.open("/controller/sessionDie.php", "_self");
   });
 
   $("ul li a").click(function () {

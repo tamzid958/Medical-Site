@@ -1,11 +1,14 @@
 <?php
 session_start();
 require_once '../controller/Controller.php';
-//$admin_id = $_REQUEST['user_ID'];
-//if (!$_SESSION["logged_in"]) {
-// header("Location:/login.php");
-//exit();
-//}
+
+if ($_SESSION["logged_in"] && $_REQUEST['id']) {
+  $admin_id = $_REQUEST['id'];
+} else {
+  header("Location:/login.php");
+  exit();
+}
+
 ?>
 
 <!doctype html>
@@ -53,7 +56,7 @@ require_once '../controller/Controller.php';
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search" id="myInput" onkeyup="search()">
     <ul class="navbar-nav px-3">
       <li class="nav-item text-nowrap">
-        <a class="nav-link" href="/login.php">Sign out</a>
+        <a class="nav-link" href="../controller/sessionDie.php">Sign out</a>
       </li>
     </ul>
   </nav>
@@ -99,13 +102,13 @@ require_once '../controller/Controller.php';
         <div class="sidebar-sticky pt-3">
           <ul class="nav flex-column admin-panel-ul">
             <li class="nav-item">
-              <a class="nav-link active side-link" href="admin_panel_template.php">
+              <a class="nav-link active side-link" href="admin_panel_template.php?id=<?php echo $admin_id ?>">
                 <span data-feather="dashboard"></span>
                 <i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link admin-appointment-section-link side-link" href="#">
+              <a class="nav-link admin-appointment-section-link side-link">
                 <span data-feather="appointment"></span>
                 <i class="fa fa-file" aria-hidden="true"></i> Appointment
               </a>
