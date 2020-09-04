@@ -88,28 +88,30 @@ $appointments = getAllAppointments();
   <div class="modal fade pay-modal" id="myModal" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Proccess Payment <span class=lead>Powered by T&C <span></h4>
+      <form>
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Proccess Payment <span class=lead>Powered by T&C <span></h4>
+          </div>
+          <div class="modal-body">
+            <p class="lead"> Your bill : <span>$<b id="service_cost">00.00</b><span> <br>
+                  Please complete your payment at first. <br>
+                  Payment Number: 018999999127
+            </P> <br>
+            <input type="number" class="form-control pay-form" id="patient_payment_number" placeholder="Payment Number" required> <br>
+            <input type="text" class="form-control pay-form" id="patient_trans_id" placeholder="Transaction ID" required>
+
+
+
+          </div>
+          <div class="modal-footer">
+
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" value="1" class="btn btn-primary" name="continuebtn_index" id="continuebtn">Pay</button>
+          </div>
         </div>
-        <div class="modal-body">
-          <p class="lead"> Your bill : <span>$<b id="service_cost">00.00</b><span> <br>
-                Please complete your payment at first. <br>
-                Payment Number: 018999999127
-          </P> <br>
-          <input type="number" class="form-control pay-form" id="patient_payment_number" placeholder="Payment Number" required> <br>
-          <input type="text" class="form-control pay-form" id="patient_trans_id" placeholder="Transaction ID" required>
-
-
-
-        </div>
-        <div class="modal-footer">
-
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" value="1" class="btn btn-primary" name="continuebtn_index" id="continuebtn">Pay</button>
-        </div>
-      </div>
+      </form>
     </div>
   </div>
 
