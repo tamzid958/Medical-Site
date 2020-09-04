@@ -72,13 +72,13 @@ if (isset($_POST["login_btn"])) {
     if (authenticate($_POST["email"], $_POST["password"])) {
 
         $id = $_SESSION['id'];
-        if ($_REQUEST['user_Type']  == "patient") {
+        if ($_SESSION['user_Type']  == "patient") {
             $_SESSION["logged_in"] = true;
             header("Location: templates/user_panel_template.php?id=$id");
-        } else if ($_REQUEST['user_Type']  == "doctor") {
+        } else if ($_SESSION['user_Type']  == "doctor") {
             $_SESSION["logged_in"] = true;
             header("Location: templates/doctor_panel_template.php?id=$id");
-        } else if ($_REQUEST['user_Type']  == "admin") {
+        } else if ($_SESSION['user_Type']  == "admin") {
             $_SESSION["logged_in"] = true;
             header("Location: templates/admin_panel_template.php?id=$id");
         } else {
@@ -373,10 +373,10 @@ function authenticate($email, $password)
     $query = "SELECT `id`, `email`,`user_type` from `user` WHERE `email`='$email' and `password`='$password'";
     $user = getArray($query);
     if (!empty($user['user_type'])) {
-        $_REQUEST['user_Type'] = $user['user_type'];
+        $_SESSION['user_Type'] = $user['user_type'];
         $_SESSION['id'] = $user['id'];
     } else {
-        $_REQUEST['user_Type'] = null;
+        $_SESSION['user_Type'] = null;
     }
     return $user;
 }
