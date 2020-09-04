@@ -259,7 +259,7 @@ function updateAppointmentStatusbyDoc($appointment_id, $appoint_status)
 function createAppointmentfromPatientIfmailExist($category, $service, $doctor, $patient_name, $phone_number, $email, $date, $time, $payment_number, $trans_id)
 {
 
-    $query = "INSERT INTO `appointment`(`appointment_id`, `patient_name`, `service_category`, `service_service`, `doctor_name`, `service_date`, `service_time`, `service_status`, `payment_number`, `transaction_id`) VALUES (NULL,'$patient_name','$category','$service','$doctor','$date','$time','approved','$payment_number','$trans_id')";
+    $query = "INSERT INTO `appointment`(`appointment_id`, `patient_name`, `service_category`, `service_service`, `doctor_name`, `service_date`, `service_time`, `service_status`, `payment_number`, `transaction_id`) VALUES (NULL,'$patient_name','$category','$service','$doctor','$date','$time','Approved','$payment_number','$trans_id')";
     execute($query);
 }
 
@@ -277,7 +277,7 @@ function createAppointmentfromPatient($category, $service, $doctor, $patient_nam
     $email_body = "Your Password is $password";
     //mail($to, $email_subject, $email_body);
 
-    $query = "INSERT INTO `appointment`(`appointment_id`, `patient_name`, `service_category`, `service_service`, `doctor_name`, `service_date`, `service_time`, `service_status`, `payment_number`, `transaction_id`) VALUES (NULL,'$patient_name','$category','$service','$doctor','$date','$time','approved','$payment_number','$trans_id')";
+    $query = "INSERT INTO `appointment`(`appointment_id`, `patient_name`, `service_category`, `service_service`, `doctor_name`, `service_date`, `service_time`, `service_status`, `payment_number`, `transaction_id`) VALUES (NULL,'$patient_name','$category','$service','$doctor','$date','$time','Approved','$payment_number','$trans_id')";
     execute($query);
 }
 
