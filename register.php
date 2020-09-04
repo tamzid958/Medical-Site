@@ -31,7 +31,11 @@ require_once 'controller/Controller.php';
 
     </div>
   </div>
+  <script>
+    $(document).ready(function() {
 
+    });
+  </script>
   <style>
     /* STRUCTURE */
 
