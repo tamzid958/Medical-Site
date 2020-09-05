@@ -347,15 +347,15 @@ $appointments = getAllAppointments();
             }
           });
         }
-        if (payment_number == null || payment_number == "", trans_id == null || trans_id == "", payment_verify == null || payment_verify == "") {
-          return false;
-        } else {
-          $('#continuebtn').click(function() {
-            var payment_verify = $('#continuebtn').val();
-            var payment_number = $('#patient_payment_number').val();
-            var trans_id = $('#patient_trans_id').val();
 
+        $('#continuebtn').click(function() {
+          var payment_verify = $('#continuebtn').val();
+          var payment_number = $('#patient_payment_number').val();
+          var trans_id = $('#patient_trans_id').val();
 
+          if (payment_number == null || payment_number == "", trans_id == null || trans_id == "", payment_verify == null || payment_verify == "") {
+            return false;
+          } else {
             $.ajax({
               url: "./controller/Controller.php",
               method: "post",
@@ -387,13 +387,13 @@ $appointments = getAllAppointments();
 
             })
 
+          }
+
+
+        });
 
 
 
-          });
-
-
-        }
       });
 
     });
