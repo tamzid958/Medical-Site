@@ -112,7 +112,7 @@ $services = getAllService();
             <div class="row">
               <div class="col-12">
                 <div class="table-responsive">
-                  <table class="table" id="myTable">
+                  <table class="table">
                     <thead>
                       <tr>
                         <td>CATEGORY ID</td>
@@ -186,7 +186,7 @@ $services = getAllService();
           <div class="row">
             <div class="col-12">
               <div class="table-responsive">
-                <table class="table" id="myTable">
+                <table class="table">
                   <thead>
                     <tr>
                       <td>SERVICE ID</td>
@@ -197,7 +197,7 @@ $services = getAllService();
                     </tr>
                   </thead>
 
-                  <tbody id="admin-service-service">
+                  <tbody id="myTable">
                     <?php
                     if ($services > 0) {
                       foreach ($services as $service) {

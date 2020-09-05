@@ -17,7 +17,7 @@ $patients = getAllPatients();
                 <div class="row">
                     <div class="col-12">
                         <div class="table-responsive">
-                            <table class="table" id="myTable">
+                            <table class="table">
                                 <thead>
                                     <tr>
                                         <td>#ID</td>
@@ -28,7 +28,7 @@ $patients = getAllPatients();
                                     </tr>
                                 </thead>
 
-                                <tbody>
+                                <tbody id="myTable">
                                     <?php
                                     if ($patients > 0) {
                                         foreach ($patients as $patient) {

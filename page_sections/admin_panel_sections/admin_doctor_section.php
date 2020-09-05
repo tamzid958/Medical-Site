@@ -24,7 +24,7 @@ $services = getAllService();
         <div class="row">
 
             <div class="col-md-6">
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="exampleFormControlSelect1" id="filterdoctor1">
                     <option value="" disabled selected>Select Service</option>
                     <?php
                     if ($services > 0) {
@@ -49,7 +49,7 @@ $services = getAllService();
             <div class="row">
                 <div class="col-12">
                     <div class="table-responsive">
-                        <table class="table" id="myTable">
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <td>#ID</td>
@@ -62,7 +62,7 @@ $services = getAllService();
                                 </tr>
                             </thead>
 
-                            <tbody>
+                            <tbody id="myTable">
 
                                 <?php
                                 if ($doctors > 0) {
@@ -234,22 +234,48 @@ $services = getAllService();
 
 
 
-<script>
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
 
-            reader.onload = function(e) {
-                $(' #blah').attr('src', e.target.result);
-            };
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-</script>
+
+
 <script>
     $(document).ready(function() {
+        $('#filterdoctor1').on('change', function() {
+            search(1);
+        });
 
+        function search(filter_var) {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("filterappoinment1");
+            console.log(input);
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
 
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[filter_var];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $(' #blah').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
 
         var i = 0;
         var category_val;

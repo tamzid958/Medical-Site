@@ -24,7 +24,7 @@ $appointments = getAllAppointments();
         <div class="">
             <div class="row">
                 <div class="col-md-12">
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <select class="form-control" id="filterappoinment1">
                         <option value="" disabled selected>Select Patient</option>
 
                         <?php
@@ -45,10 +45,10 @@ $appointments = getAllAppointments();
             <div class="row">
 
                 <div class="col-md-4">
-                    <input type="date" class="form-control form-trans" placeholder="Date">
+                    <input type="date" class="form-control form-trans" placeholder="Date" id="filterappoinment2">
                 </div>
                 <div class="col-md-4">
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <select class="form-control" id="exampleFormControlSelect1" id="filterappoinment3">
                         <option value="" disabled selected>Select Doctor</option>
 
                         <?php
@@ -60,7 +60,7 @@ $appointments = getAllAppointments();
                     </select>
                 </div>
                 <div class="col-md-4">
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <select class="form-control" id="filterappoinment4">
                         <option value="" disabled selected>Select Status</option>
                         <option>Approved</option>
                         <option>Pending</option>
@@ -78,7 +78,7 @@ $appointments = getAllAppointments();
                 <div class="row">
                     <div class="col-12">
                         <div class="table-responsive">
-                            <table class="table" id="myTable">
+                            <table class="table">
                                 <thead>
                                     <tr>
                                         <td>#ID</td>
@@ -92,7 +92,7 @@ $appointments = getAllAppointments();
                                     </tr>
                                 </thead>
 
-                                <tbody>
+                                <tbody id="myTable">
 
                                     <?php
                                     if ($appointments > 0) {
@@ -286,8 +286,51 @@ $appointments = getAllAppointments();
 </div>
 
 
+
+
 <script>
     $(document).ready(function() {
+
+        $('#filterappoinment1').on('change', function() {
+            search(1);
+        });
+        $('#filterappoinment2').on('change', function() {
+            search(4);
+        });
+        $('#filterappoinment3').on('change', function() {
+            search(2);
+        });
+        $('#filterappoinment4').on('change', function() {
+            search(6);
+        });
+
+        function search(filter_var) {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("filterappoinment1");
+            console.log(input);
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[filter_var];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+
+
+
+
 
 
         $('#time_patient').on('change', function() {
