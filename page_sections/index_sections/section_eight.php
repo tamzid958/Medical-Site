@@ -192,7 +192,6 @@ $appointments = getAllAppointments();
       day = '0' + day.toString();
 
     var maxDate = year + '-' + month + '-' + day;
-    alert(maxDate);
     $('#date_patient').attr('min', maxDate);
 
     $('#time_patient').on('change', function() {
