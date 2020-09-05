@@ -197,10 +197,4 @@ body {
     margin-left: -15px !important;
     margin-top: 5px;
   }
-  .admin-add-new-service-btn,
-  .admin-add-new-post-btn {
-    padding: 1px;
-    padding-left: 3px;
-    padding-right: 2px;
-  }
 }

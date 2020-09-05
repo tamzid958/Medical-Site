@@ -26,11 +26,23 @@ $services = getAllService();
 
 
   <div id="right">
+    <div class="container">
 
-    <a href="#" class="btn btn-primary btn-lg active admin-add-new-service-btn" role="button" aria-pressed="true" data-toggle="modal" data-target="#exampleModalLong"> + Add New Service </a>
-    <button type="button" class="btn btn-primary btn-lg active" data-toggle="modal" data-target="#exampleModal">
-      Create New Category
-    </button>
+      <div class="row">
+        <div class="col-md-6">
+          <a class="btn btn-primary  active admin-add-new-service-btn" role="button" aria-pressed="true" data-toggle="modal" data-target="#exampleModalLong"> + Add New Service </a>
+          <br><br>
+        </div>
+        <div class="col-md-6">
+          <a class="btn btn-primary active" data-toggle="modal" role="button" aria-pressed="true" data-target="#exampleModal">
+            Create New Category
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+
   </div>
 
 

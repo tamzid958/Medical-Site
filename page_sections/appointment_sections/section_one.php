@@ -153,7 +153,7 @@ $appointments = getAllAppointments();
 
               if (data.count != "0") {
                 $('#payBtn').attr("disabled", "disabled");
-                $('#payBtn').removeClass("btn-primary");
+                $('#payBtn').removeClass("btn-outline-light");
                 $('#payBtn').addClass("btn-danger");
                 $('#payDiv').removeClass("col-md-6");
                 $('#payDiv').addClass("col-md-12");
@@ -162,7 +162,7 @@ $appointments = getAllAppointments();
               } else {
                 $("#payBtn").removeAttr("disabled");
                 $('#payBtn').removeClass("btn-danger");
-                $('#payBtn').addClass("btn-primary");
+                $('#payBtn').addClass("btn-outline-light");
                 $('#payDiv').removeClass("col-md-12");
                 $('#payDiv').addClass("col-md-6");
                 $('#payBtn').text("Book an Appointment");
