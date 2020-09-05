@@ -2,7 +2,7 @@
 include('../includes/header.php');
 require_once '../controller/Controller.php';
 
-if ($_SESSION["logged_in"] && $_REQUEST['id']) {
+if ($_SESSION["logged_in"] && $_REQUEST['id'] && $_SESSION['user_Type'] == 'doctor') {
 
   $doctor_id = $_REQUEST["id"];
   $doctor = getDoctor($doctor_id);

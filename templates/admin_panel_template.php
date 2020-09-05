@@ -3,7 +3,7 @@ session_start();
 ob_start();
 require_once '../controller/Controller.php';
 
-if ($_SESSION["logged_in"] && $_REQUEST['id']) {
+if ($_SESSION["logged_in"] && $_REQUEST['id'] && $_SESSION['user_Type'] == 'admin') {
   $admin_id = $_REQUEST['id'];
 } else {
   header("Location:/login.php");
