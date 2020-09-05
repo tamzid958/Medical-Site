@@ -54,9 +54,8 @@ $appointments = getAllAppointments();
             <div class="col-md-6">
               <input type="time" class="form-control form-trans" name="time" id="time_patient" required>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" id="payDiv">
               <button type="button" class="btn btn-outline-light" id="payBtn">Book an Appointment</button>
-              <button type="button" name="unavailable" class="btn btn-outline-light" id="unavailable" disabled hidden>This time is not available for this doctor</button>
             </div>
 
         </form>
@@ -200,17 +199,22 @@ $appointments = getAllAppointments();
           },
           success: function(data) {
 
-            console.log(typeof(data.count), data.count);
 
             if (data.count != "0") {
               $('#payBtn').attr("disabled", "disabled");
-              $('#payBtn').attr("hidden", "hidden");
-              $('#unavailable').removeAttr("hidden");
-
+              $('#payBtn').removeClass("btn-primary");
+              $('#payBtn').addClass("btn-danger");
+              $('#payDiv').removeClass("col-md-6");
+              $('#payDiv').addClass("col-md-12");
+              $('#payBtn').text("This time is not available for this doctor");
             } else {
               $("#payBtn").removeAttr("disabled");
-              $('#payBtn').removeAttr("hidden");
-              $('#unavailable').attr("hidden", "hidden");
+              $('#payBtn').removeClass("btn-danger");
+              $('#payBtn').addClass("btn-primary");
+              $('#payDiv').removeClass("col-md-12");
+              $('#payDiv').addClass("col-md-6");
+              $('#payBtn').text("Book an Appointment");
+
             }
           }
         }
@@ -325,7 +329,6 @@ $appointments = getAllAppointments();
         });
       }
     });
-
 
 
 
