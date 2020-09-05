@@ -220,7 +220,7 @@ if (isset($_POST["time_checker"])) {
 
 function duplicateAppointment($doctor_name, $date, $time)
 {
-    $query = "SELECT COUNT(*) as count FROM `appointment` WHERE `service_date` = '$date' AND `service_time` ='$time' AND `doctor_name` ='$doctor_name'";
+    $query = "SELECT COUNT(*) as count FROM `appointment` WHERE `service_date` = '$date' AND `service_time` ='$time' AND `doctor_name` ='$doctor_name' AND `service_status` != 'Cancelled'";
     $duplicate_appointment = getArray($query);
     $_SESSION['DuplicateAppointment'] = $duplicate_appointment['count'];
     echo json_encode($duplicate_appointment);
