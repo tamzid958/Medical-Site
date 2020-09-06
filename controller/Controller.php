@@ -217,6 +217,14 @@ if (isset($_POST["time_checker"])) {
     duplicateAppointment($_POST["doctor_checker"], $_POST["date_checker"], $_POST["time_checker"]);
 }
 
+if (isset($_POST["doctor_id_status"])) {
+    doctorStatusChange($_POST["doctor_id_status"], $_POST["active_status"]);
+}
+function doctorStatusChange($doctor_id, $active_status)
+{
+    $query = "UPDATE `user` SET `active_status`= '$active_status' WHERE `id` = '$doctor_id' ";
+    execute($query);
+}
 
 function duplicateAppointment($doctor_name, $date, $time)
 {

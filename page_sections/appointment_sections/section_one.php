@@ -341,7 +341,7 @@ $appointments = getAllAppointments();
             },
             success: function(data) {
               //console.log(data.cost);
-              document.getElementById('service_cost').innerHTML = data.cost;
+              document.getElementById('service_cost').innerHTML = data[0].cost;
               //$("#service_cost").innerHTML(data.cost);
               $('#myModal').modal('toggle');
             }

@@ -49,9 +49,6 @@ if ($_SESSION["logged_in"] && $_REQUEST['id'] && $_SESSION['user_Type'] == 'doct
     </h1>
 
     <div id="doctor-panel-switcher">
-
-
-
       <div class="container d-flex justify-content-left patient-card">
         <div class="row">
           <?php
@@ -118,6 +115,7 @@ include('../includes/footer.php');
 
 <script>
   $(document).ready(function() {
+
     var appointment_status;
 
 

@@ -371,8 +371,8 @@ $appointments = getAllAppointments();
             service: service,
           },
           success: function(data) {
-            console.log(data[0].cost);
-            document.getElementById('service_cost').innerHTML = data.cost;
+            console.log(data.cost);
+            document.getElementById('service_cost').innerHTML = data[0].cost;
 
             $('#myModal').modal('toggle');
           }
