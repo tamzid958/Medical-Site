@@ -359,7 +359,7 @@ function forgotPassword($email)
 {
     $query = "SELECT `password` FROM `user` WHERE `email`= '$email'";
     $password = getArray($query);
-    $password = $password['password'];
+    $password = $password[0]['password'];
     $password = base64_decode($password);
     $to = $email;
     $email_subject = "Forget Password | OSCA";
