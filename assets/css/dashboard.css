@@ -62,9 +62,17 @@ body {
 .post_admin_loop {
   margin-right: 7px;
 }
+
 .single-blog-direct-loop {
-  min-height: 410px !important;
+  cursor: pointer;
+  min-height: 400px !important;
+  max-height: 400px !important;
 }
+.single-blog-direct-loop img {
+  min-height: 200px !important;
+  max-height: 200px !important;
+}
+
 .doctor-avatar {
   border-radius: 50% !important;
   height: 64px !important;

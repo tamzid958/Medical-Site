@@ -345,14 +345,14 @@ $services = getAllService();
                 },
                 success: function(data) {
                     console.log(doctor_id);
-                    $('#doctor_edit_id').val(data.id);
-                    $('#doctor_edit_name').val(data.full_name);
-                    $('#doctor_edit_email').val(data.email);
-                    $('#doctor_edit_phone').val(data.phone);
-                    $('#doctor_edit_category').val(data.category);
-                    $('#doctor_edit_service').val(data.service);
+                    $('#doctor_edit_id').val(data[0].id);
+                    $('#doctor_edit_name').val(data[0].full_name);
+                    $('#doctor_edit_email').val(data[0].email);
+                    $('#doctor_edit_phone').val(data[0].phone);
+                    $('#doctor_edit_category').val(data[0].category);
+                    $('#doctor_edit_service').val(data[0].service);
                     // $('#doctor_edit_pic').val(data.profile_picture);
-                    $('#doctor_edit_description').val(data.description);
+                    $('#doctor_edit_description').val(data[0].description);
                     $("#doctorEditModal").modal("show");
                 }
             });

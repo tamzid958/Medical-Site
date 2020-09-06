@@ -328,8 +328,8 @@ $services = getAllService();
           category_id: category_id,
         },
         success: function(data) {
-          $('#category_edit_id').val(data.category_id);
-          $('#category_edit_name').val(data.category_name);
+          $('#category_edit_id').val(data[0].category_id);
+          $('#category_edit_name').val(data[0].category_name);
           $("#exampleeditCategoryModal").modal("show");
         }
       });
@@ -363,10 +363,10 @@ $services = getAllService();
         },
         success: function(data) {
           //console.log(service_id);
-          $('#service_edit_id').val(data.service_ID);
-          $('#service_edit_name').val(data.service_name);
-          $('#service_edit_category').val(data.category_name);
-          $('#service_edit_cost').val(data.cost);
+          $('#service_edit_id').val(data[0].service_ID);
+          $('#service_edit_name').val(data[0].service_name);
+          $('#service_edit_category').val(data[0].category_name);
+          $('#service_edit_cost').val(data[0].cost);
           $("#exampleeditServiceModal").modal("show");
         }
       });

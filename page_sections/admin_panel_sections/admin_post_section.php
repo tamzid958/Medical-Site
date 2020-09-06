@@ -147,9 +147,9 @@ if ($posts > 0) {
           post_edit_id: post_edit_id,
         },
         success: function(data) {
-          $('#post_id_edit').val(data.post_id);
-          $('#post_title_edit').val(data.post_title);
-          $('#post_description_edit').val(data.post_description);
+          $('#post_id_edit').val(data[0].post_id);
+          $('#post_title_edit').val(data[0].post_title);
+          $('#post_description_edit').val(data[0].post_description);
 
           $('#exampleEditModalLongpost').modal('show');
         }

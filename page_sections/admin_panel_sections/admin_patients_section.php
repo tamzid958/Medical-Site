@@ -126,10 +126,10 @@ $patients = getAllPatients();
                     patient_id: patient_id,
                 },
                 success: function(data) {
-                    $('#patient_id').val(data.id);
-                    $('#edit_name').val(data.full_name);
-                    $('#edit_mail').val(data.email);
-                    $('#edit_tel').val(data.phone);
+                    $('#patient_id').val(data[0].id);
+                    $('#edit_name').val(data[0].full_name);
+                    $('#edit_mail').val(data[0].email);
+                    $('#edit_tel').val(data[0].phone);
                     $("#exampleEditModalLongpatient").modal("show");
 
                 }

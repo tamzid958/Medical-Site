@@ -295,20 +295,20 @@ $appointments = getAllAppointments();
             search(1);
         });
         $('#filterappoinment2').on('change', function() {
-            search(4);
+            search(1);
         });
         $('#filterappoinment3').on('change', function() {
-            search(2);
+            search(1);
         });
         $('#filterappoinment4').on('change', function() {
-            search(6);
+            search(1);
         });
 
         function search(filter_var) {
             // Declare variables
             var input, filter, table, tr, td, i, txtValue;
             input = document.getElementById("filterappoinment1");
-            console.log(input);
+            //console.log(input);
             filter = input.value.toUpperCase();
             table = document.getElementById("myTable");
             tr = table.getElementsByTagName("tr");
@@ -363,9 +363,9 @@ $appointments = getAllAppointments();
                     },
                     success: function(data) {
 
+                        console.log(data[0].count);
 
-
-                        if (data.count != "0") {
+                        if (data[0].count != "0") {
                             $('#payBtn').attr("disabled", "disabled");
                             $('#payBtn').removeClass("btn-primary");
                             $('#payBtn').addClass("btn-danger");
@@ -396,7 +396,7 @@ $appointments = getAllAppointments();
         $('#category_select_patient').on('change', function() {
             category_val = $(this).val();
             counter1++;
-            console.log(counter1);
+            //console.log(counter1);
             if (counter1 > 1) {
                 location.reload();
                 return false;
@@ -425,7 +425,7 @@ $appointments = getAllAppointments();
                                 //console.log(data[i].service_name);
                             }
                         } else {
-                            var opt = data.service_name;
+                            var opt = "NO SERVICE AVAILABLE FOR THIS CATEGORY";
                             document.getElementById('service_select_patient').innerHTML += "<option>" + opt + "</option>";
                         }
 
@@ -466,17 +466,15 @@ $appointments = getAllAppointments();
                         document.getElementById('select_service_first').innerHTML = "Select Doctor";
 
                         $('#doctor_select_patient').find('option').not(':selected').remove();
-
-
                         if (data != null && data.length > 0) {
-                            for (i = 0; i <= data.length; i++) {
+                            for (i = 0; i < data.length; i++) {
                                 var opt = data[i].full_name;
                                 document.getElementById('doctor_select_patient').innerHTML += "<option>" + opt + "</option>";
                                 //console.log(data[i].full_name);
                             }
                         } else {
-                            var opt = data.full_name;
-                            document.getElementById('doctor_select_patient').innerHTML += "<option>" + opt + "</option>";
+                            var opt = "NO DOCTOR AVAILABLE FOR THIS SERVICE";
+                            document.getElementById('doctor_select_patient').innerHTML += "<option disabled>" + opt + "</option>";
 
                         }
 
@@ -497,16 +495,16 @@ $appointments = getAllAppointments();
                     appointment_id: appointment_id,
                 },
                 success: function(data) {
-                    $('#appointment_edit_id').val(data.appointment_id);
-                    $('#appointment_patient_name_edit').val(data.patient_name);
-                    $('#appointment_service_category_edit').val(data.service_category);
-                    $('#appointment_service_service_edit').val(data.service_service);
-                    $('#appointment_doctor_name_edit').val(data.doctor_name);
-                    $('#appointment_date_edit').val(data.service_date);
-                    $('#appointment_time_edit').val(data.service_time);
-                    $('#appointment_status_edit').val(data.service_status);
-                    $('#appoint_payment_number_edit').val(data.payment_number);
-                    $('#appointment_transaction_id_edit').val(data.transaction_id);
+                    $('#appointment_edit_id').val(data[0].appointment_id);
+                    $('#appointment_patient_name_edit').val(data[0].patient_name);
+                    $('#appointment_service_category_edit').val(data[0].service_category);
+                    $('#appointment_service_service_edit').val(data[0].service_service);
+                    $('#appointment_doctor_name_edit').val(data[0].doctor_name);
+                    $('#appointment_date_edit').val(data[0].service_date);
+                    $('#appointment_time_edit').val(data[0].service_time);
+                    $('#appointment_status_edit').val(data[0].service_status);
+                    $('#appoint_payment_number_edit').val(data[0].payment_number);
+                    $('#appointment_transaction_id_edit').val(data[0].transaction_id);
 
 
                     $("#appointEditModal").modal("show");

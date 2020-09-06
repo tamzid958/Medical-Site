@@ -256,6 +256,12 @@ a {
 .single-doctor-direct-loop {
   cursor: pointer;
   min-height: 400px !important;
+  max-height: 400px !important;
+}
+.single-blog-direct-loop img,
+.single-doctor-direct-loop img {
+  min-height: 200px !important;
+  max-height: 200px !important;
 }
 .blog-post-p,
 .doctor-post-p,

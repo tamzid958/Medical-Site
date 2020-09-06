@@ -21,7 +21,7 @@ if ($_SESSION["logged_in"] && $_REQUEST["id"] && $_SESSION['user_Type'] == 'pati
 
   <div class="container">
 
-    <h1 class="display-4 patient-post-title "><?php echo $patient["full_name"] ?>
+    <h1 class="display-4 patient-post-title "><?php echo $patient[0]["full_name"] ?>
 
 
 

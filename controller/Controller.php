@@ -222,7 +222,7 @@ function duplicateAppointment($doctor_name, $date, $time)
 {
     $query = "SELECT COUNT(*) as count FROM `appointment` WHERE `service_date` = '$date' AND `service_time` ='$time' AND `doctor_name` ='$doctor_name' AND `service_status` != 'Cancelled'";
     $duplicate_appointment = getArray($query);
-    $_SESSION['DuplicateAppointment'] = $duplicate_appointment['count'];
+    $_SESSION['DuplicateAppointment'] = $duplicate_appointment[0]['count'];
     echo json_encode($duplicate_appointment);
 }
 
@@ -351,7 +351,7 @@ function duplicateSearch($email)
 {
     $query = "SELECT COUNT(*) as count FROM `user` WHERE `email` = '$email' ";
     $duplicate = getArray($query);
-    $_SESSION['Duplicate'] = $duplicate['count'];
+    $_SESSION['Duplicate'] = $duplicate[0]['count'];
     return $duplicate;
 }
 
@@ -366,7 +366,7 @@ function forgotPassword($email)
     $email_body = "Your Password is $password";
     //mail($to, $email_subject, $email_body);
 }
-function authenticate($email, $password)
+/*function authenticate($email, $password)
 {
 
     $password = base64_encode($password);
@@ -378,6 +378,24 @@ function authenticate($email, $password)
     } else {
         $_SESSION['user_Type'] = null;
     }
+    return $user;
+}*/
+function authenticate($email, $password)
+{
+
+    $password = base64_encode($password);
+    $query = "SELECT `id`, `email`,`user_type` from `user` WHERE `email`='$email' AND `password`='$password'";
+    $user = getArray($query);
+    if ($user) {
+        $user = $user[0];
+        if (!empty($user['user_type'])) {
+            $_SESSION['user_Type'] = $user['user_type'];
+            $_SESSION['id'] = $user['id'];
+        } else {
+            $_SESSION['user_Type'] = null;
+        }
+    }
+
     return $user;
 }
 function randomPassword()
@@ -410,7 +428,7 @@ function getAllPatients()
     $patients = getArray($query);
     $query = "SELECT COUNT(*) as count FROM `user` WHERE `user_type` = 'patient' ";
     $patientsCounter = getArray($query);
-    $_SESSION['patientsCounter'] = $patientsCounter['count'];
+    $_SESSION['patientsCounter'] = $patientsCounter[0]['count'];
     return $patients;
 }
 
@@ -420,7 +438,7 @@ function getAllDoctors()
     $doctors = getArray($query);
     $query = "SELECT COUNT(*) as count FROM `user` WHERE `user_type` = 'doctor' ";
     $doctorsCounter = getArray($query);
-    $_SESSION['doctorsCounter'] = $doctorsCounter['count'];
+    $_SESSION['doctorsCounter'] = $doctorsCounter[0]['count'];
     return $doctors;
 }
 
@@ -437,7 +455,7 @@ function getAllCategory()
     $categories = getArray($query);
     $query = "SELECT COUNT(*) as count FROM `category` ";
     $categoriesCounter = getArray($query);
-    $_SESSION['categoriesCounter'] = $categoriesCounter['count'];
+    $_SESSION['categoriesCounter'] = $categoriesCounter[0]['count'];
     return $categories;
 }
 
@@ -452,7 +470,7 @@ function getAllService()
     $services = getArray($query);
     $query = "SELECT COUNT(*) as count FROM `service` ";
     $serviceCounter = getArray($query);
-    $_SESSION['serviceCounter'] = $serviceCounter['count'];
+    $_SESSION['serviceCounter'] = $serviceCounter[0]['count'];
     return $services;
 }
 function createPost($post_pic, $post_title, $post_description)
@@ -466,7 +484,7 @@ function getAllPost()
     $posts = getArray($query);
     $query = "SELECT COUNT(*) as count FROM `post` ";
     $postCounter = getArray($query);
-    $_SESSION['postCounter'] = $postCounter['count'];
+    $_SESSION['postCounter'] = $postCounter[0]['count'];
     return $posts;
 }
 function createAppointment($patient_name, $service_category, $service_service, $doctor_name, $date, $time, $status, $payment_number, $transaction_id)
@@ -485,7 +503,7 @@ function getAllAppointments()
     $appointments = getArray($query);
     $query = "SELECT COUNT(*) as count FROM `appointment` ";
     $appointmentCounter = getArray($query);
-    $_SESSION['appointmentCounter'] = $appointmentCounter['count'];
+    $_SESSION['appointmentCounter'] = $appointmentCounter[0]['count'];
     return $appointments;
 }
 
@@ -551,7 +569,7 @@ function delete_category($category_delete_id)
 {
     $query = "SELECT `category_name` FROM `category` WHERE `category_id`= '$category_delete_id'";
     $category_name = getArray($query);
-    $category_name = $category_name["category_name"];
+    $category_name = $category_name[0]["category_name"];
 
     $query = "DELETE  FROM `service` WHERE `category_name`= '$category_name'";
     execute($query);
@@ -594,7 +612,7 @@ function getDoctorAppointments($doctor_id)
 {
     $query = "SELECT * FROM `user` WHERE `id` = '$doctor_id' ";
     $doctor = getArray($query);
-    $doctor = $doctor['full_name'];
+    $doctor = $doctor[0]['full_name'];
     $query = "SELECT * FROM `appointment` WHERE `doctor_name` = '$doctor'";
     $DoctorAppointments = getArray($query);
     return $DoctorAppointments;
@@ -604,7 +622,7 @@ function getPatientAppointments($patient_id)
 {
     $query = "SELECT * FROM `user` WHERE `id` = '$patient_id' ";
     $patient = getArray($query);
-    $patient = $patient['full_name'];
+    $patient = $patient[0]['full_name'];
     $query = "SELECT * FROM `appointment` WHERE `patient_name` = '$patient'";
     $PatientAppointments = getArray($query);
     return $PatientAppointments;
@@ -613,36 +631,36 @@ function getDoctorNewAppointments($doctor_id)
 {
     $query = "SELECT * FROM `user` WHERE `id` = '$doctor_id' ";
     $doctor = getArray($query);
-    $doctor = $doctor['full_name'];
+    $doctor = $doctor[0]['full_name'];
 
     $query = "SELECT COUNT(*) as count FROM `appointment`  WHERE `doctor_name` = '$doctor' AND `service_status` = 'Approved' ";
     $appointmentNewCounter = getArray($query);
-    $_SESSION['appointmentNewCounter'] = $appointmentNewCounter['count'];
+    $_SESSION['appointmentNewCounter'] = $appointmentNewCounter[0]['count'];
 
     $query = "SELECT COUNT(*) as count FROM `appointment`  WHERE `doctor_name` = '$doctor' AND `service_status` = 'Completed' ";
     $appointmentCompletedCounter = getArray($query);
-    $_SESSION['appointmentCompletedCounter'] = $appointmentCompletedCounter['count'];
+    $_SESSION['appointmentCompletedCounter'] = $appointmentCompletedCounter[0]['count'];
 
     $query = "SELECT COUNT(*) as count FROM `appointment`  WHERE `doctor_name` = '$doctor' AND `service_status` = 'Cancelled' ";
     $appointmentCancelledCounter = getArray($query);
-    $_SESSION['appointmentCancelledCounter'] = $appointmentCancelledCounter['count'];
+    $_SESSION['appointmentCancelledCounter'] = $appointmentCancelledCounter[0]['count'];
 }
 
 function getPatientNewAppointments($patient_id)
 {
     $query = "SELECT * FROM `user` WHERE `id` = '$patient_id' ";
     $patient = getArray($query);
-    $patient = $patient['full_name'];
+    $patient = $patient[0]['full_name'];
 
     $query = "SELECT COUNT(*) as count FROM `appointment`  WHERE `patient_name` = '$patient' AND `service_status` = 'Approved' ";
     $appointmentNewCounter = getArray($query);
-    $_SESSION['pappointmentNewCounter'] = $appointmentNewCounter['count'];
+    $_SESSION['pappointmentNewCounter'] = $appointmentNewCounter[0]['count'];
 
     $query = "SELECT COUNT(*) as count FROM `appointment`  WHERE `patient_name` = '$patient' AND `service_status` = 'Completed' ";
     $appointmentCompletedCounter = getArray($query);
-    $_SESSION['pappointmentCompletedCounter'] = $appointmentCompletedCounter['count'];
+    $_SESSION['pappointmentCompletedCounter'] = $appointmentCompletedCounter[0]['count'];
 
     $query = "SELECT COUNT(*) as count FROM `appointment`   WHERE `patient_name` = '$patient' AND `service_status` = 'Cancelled' ";
     $appointmentCancelledCounter = getArray($query);
-    $_SESSION['pappointmentCancelledCounter'] = $appointmentCancelledCounter['count'];
+    $_SESSION['pappointmentCancelledCounter'] = $appointmentCancelledCounter[0]['count'];
 }

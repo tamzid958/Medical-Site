@@ -162,9 +162,9 @@ $appointments = getAllAppointments();
             },
             success: function(data) {
 
-              console.log(typeof(data.count), data.count);
+              //console.log(typeof(data.count), data.count);
 
-              if (data.count != "0") {
+              if (data[0].count != "0") {
                 $('#payBtn').attr("disabled", "disabled");
                 $('#payBtn').removeClass("btn-outline-light");
                 $('#payBtn').addClass("btn-danger");
@@ -244,8 +244,8 @@ $appointments = getAllAppointments();
                   //console.log(data[i].service_name);
                 }
               } else {
-                var opt = data.service_name;
-                document.getElementById('service_select_patient').innerHTML += "<option>" + opt + "</option>";
+                var opt = "NO SERVICE AVAILABLE FOR THIS CATEGORY";
+                document.getElementById('service_select_patient').innerHTML += "<option disabled>" + opt + "</option>";
               }
 
             }
@@ -289,14 +289,14 @@ $appointments = getAllAppointments();
 
 
               if (data != null && data.length > 0) {
-                for (i = 0; i <= data.length; i++) {
+                for (i = 0; i < data.length; i++) {
                   var opt = data[i].full_name;
                   document.getElementById('doctor_select_patient').innerHTML += "<option>" + opt + "</option>";
                   //console.log(data[i].full_name);
                 }
               } else {
-                var opt = data.full_name;
-                document.getElementById('doctor_select_patient').innerHTML += "<option>" + opt + "</option>";
+                var opt = "NO DOCTOR AVAILABLE FOR THIS SERVICE";
+                document.getElementById('doctor_select_patient').innerHTML += "<option disabled>" + opt + "</option>";
 
               }
 
