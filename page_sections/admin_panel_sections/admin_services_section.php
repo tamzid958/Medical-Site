@@ -205,7 +205,7 @@ $services = getAllService();
                         echo "<td>" . $service["service_ID"] . "</td>";
                         echo "<td>" . $service["service_name"] . "</td>";
                         echo "<td>" . $service["category_name"] . "</td>";
-                        echo "<td>" . $service["cost"] . "</td>";
+                        echo "<td>$ " . $service["cost"] . "</td>";
                         echo "                      <td>
                       <button type='button' class='btn btn-warning edit_service_btn' id=" . $service["service_ID"] . " data-toggle='modal'><i class='fa fa-pencil' aria-hidden='true'></i></button>
                       <button type='button' class='btn btn-danger delete_service_btn' id=" . $service["service_ID"] . "><i class='fa fa-trash' aria-hidden='true'></i></button>
