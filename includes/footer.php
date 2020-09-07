@@ -101,7 +101,7 @@ if (file_exists('/controller/Controller.php')) {
   </section>
   <div class="bg-dark">
     <br>
-    <p class="text-center text-light ledby">Developed by Tamzid Ahmed, Arifulislam Anik and Saiful Dewan .This project led by <a style="color:#FF8838;" href="https://www.linkedin.com/in/tamzid-ahmed958/" target="_blank">Tamzid Ahmed</a>.</p>
+    <p class="text-center text-light ledby">Developed by Tamzid Ahmed, Arifulislam Anik and Dewan Saiful .This project led by <a style="color:#FF8838;" href="https://www.linkedin.com/in/tamzid-ahmed958/" target="_blank">Tamzid Ahmed</a>.</p>
     <br>
   </div>
   <button onclick="topFunction(1000)" id="scrollTop" title="Go to top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></button>
