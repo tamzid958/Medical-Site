@@ -15,7 +15,7 @@ $doctor = getDoctor($doctor_id);
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4 doctor-post-title"><?php echo $doctor[0]["full_name"] ?></h1>
-      <p class="lead doctor-post-p"> <?php echo $doctor[0]["description"] ?> </p>
+      <p class="lead doctor-post-p" style="white-space: pre-wrap;"> <?php echo $doctor[0]["description"] ?> </p>
       <a href="mailto:<?php echo $doctor[0]["email"] ?> ">
         <button type="button" class="btn btn-primary "><?php echo $doctor[0]["email"] ?> </button></a>
       <a href="tel:<?php echo $doctor["phone"] ?> ">

@@ -15,7 +15,7 @@ $post = getPost($post_id);
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4 blog-post-tile"><?php echo $post[0]["post_title"] ?></h1>
-      <p class="lead blog-post-p">
+      <p class="lead blog-post-p" style="white-space: pre-wrap;">
         <?php echo $post[0]["post_description"] ?>
       </p>
       <!-- AddToAny BEGIN -->
