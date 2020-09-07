@@ -351,35 +351,44 @@ $appointments = getAllAppointments();
             var doctor_checker = $("#doctor_select_patient").val();
             var date_checker = $("#date_patient").val();
             var time_checker = $("#time_patient").val();
+            no_doctor_available = parseInt(time_checker);
+            if (no_doctor_available > 8 && no_doctor_available < 23) {
 
-            $.ajax({
-                    url: "../../controller/Controller.php",
-                    method: "post",
-                    dataType: "json",
-                    data: {
-                        doctor_checker: doctor_checker,
-                        date_checker: date_checker,
-                        time_checker: time_checker
-                    },
-                    success: function(data) {
+                $.ajax({
+                        url: "../../controller/Controller.php",
+                        method: "post",
+                        dataType: "json",
+                        data: {
+                            doctor_checker: doctor_checker,
+                            date_checker: date_checker,
+                            time_checker: time_checker
+                        },
+                        success: function(data) {
 
-                        console.log(data[0].count);
+                            console.log(data[0].count);
 
-                        if (data[0].count != "0") {
-                            $('#payBtn').attr("disabled", "disabled");
-                            $('#payBtn').removeClass("btn-primary");
-                            $('#payBtn').addClass("btn-danger");
-                            $('#payBtn').text("This time is not available for this doctor");
-                        } else {
-                            $("#payBtn").removeAttr("disabled");
-                            $('#payBtn').removeClass("btn-danger");
-                            $('#payBtn').addClass("btn-primary");
-                            $('#payBtn').text("Create");
+                            if (data[0].count != "0") {
+                                $('#payBtn').attr("disabled", "disabled");
+                                $('#payBtn').removeClass("btn-primary");
+                                $('#payBtn').addClass("btn-danger");
+                                $('#payBtn').text("This time is not available for this doctor");
+                            } else {
+                                $("#payBtn").removeAttr("disabled");
+                                $('#payBtn').removeClass("btn-danger");
+                                $('#payBtn').addClass("btn-primary");
+                                $('#payBtn').text("Create");
+                            }
                         }
                     }
-                }
 
-            );
+                );
+            } else {
+                $('#payBtn').attr("disabled", "disabled");
+                $('#payBtn').removeClass("btn-outline-light");
+                $('#payBtn').addClass("btn-info");
+                $('#payBtn').text("All Doctor will be available from 9AM - 10 PM");
+
+            }
         });
 
 

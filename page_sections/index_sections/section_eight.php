@@ -201,39 +201,49 @@ $appointments = getAllAppointments();
       var doctor_checker = $("#doctor_select_patient").val();
       var date_checker = $("#date_patient").val();
       var time_checker = $("#time_patient").val();
+      no_doctor_available = parseInt(time_checker);
+      if (no_doctor_available > 8 && no_doctor_available < 23) {
+        $.ajax({
+            url: "./controller/Controller.php",
+            method: "post",
+            dataType: "json",
+            data: {
+              doctor_checker: doctor_checker,
+              date_checker: date_checker,
+              time_checker: time_checker
+            },
+            success: function(data) {
 
-      $.ajax({
-          url: "./controller/Controller.php",
-          method: "post",
-          dataType: "json",
-          data: {
-            doctor_checker: doctor_checker,
-            date_checker: date_checker,
-            time_checker: time_checker
-          },
-          success: function(data) {
 
+              if (data[0].count != "0") {
+                $('#payBtn').attr("disabled", "disabled");
+                $('#payBtn').removeClass("btn-outline-light");
+                $('#payBtn').addClass("btn-danger");
+                $('#payDiv').removeClass("col-md-6");
+                $('#payDiv').addClass("col-md-12");
+                $('#payBtn').text("This time is not available for this doctor");
+              } else {
+                $("#payBtn").removeAttr("disabled");
+                $('#payBtn').removeClass("btn-danger");
+                $('#payBtn').addClass("btn-outline-light");
+                $('#payDiv').removeClass("col-md-12");
+                $('#payDiv').addClass("col-md-6");
+                $('#payBtn').text("Book an Appointment");
 
-            if (data[0].count != "0") {
-              $('#payBtn').attr("disabled", "disabled");
-              $('#payBtn').removeClass("btn-outline-light");
-              $('#payBtn').addClass("btn-danger");
-              $('#payDiv').removeClass("col-md-6");
-              $('#payDiv').addClass("col-md-12");
-              $('#payBtn').text("This time is not available for this doctor");
-            } else {
-              $("#payBtn").removeAttr("disabled");
-              $('#payBtn').removeClass("btn-danger");
-              $('#payBtn').addClass("btn-outline-light");
-              $('#payDiv').removeClass("col-md-12");
-              $('#payDiv').addClass("col-md-6");
-              $('#payBtn').text("Book an Appointment");
-
+              }
             }
           }
-        }
 
-      );
+        );
+      } else {
+        $('#payBtn').attr("disabled", "disabled");
+        $('#payBtn').removeClass("btn-outline-light");
+        $('#payBtn').addClass("btn-info");
+        $('#payDiv').removeClass("col-md-6");
+        $('#payDiv').addClass("col-md-12");
+        $('#payBtn').text("All Doctor will be available from 9AM - 10 PM");
+
+      }
     });
 
 
