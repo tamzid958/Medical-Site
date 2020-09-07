@@ -1,5 +1,11 @@
 OSCA OSCA | Hospital Appointment System
 
+Designed by HTML, BOOTSTRAP, JQUERY.
+Developed by Ajax and PHP.
+Database: MySQL.
+
+** Test admin, patient, and doctor Login Details on Login Page. **
+
 Introduction: OSCA Is a booking system to manage doctor
 patients scheduling their appointment from time to time. It
 will make patients and doctors well-oriented, which Is
@@ -58,6 +64,9 @@ Patient's Feature:
 . can cancel appointments directly.
 . can see completed and cancelled appointments.
 
+Appointment Verification:
+The doctor can't be booked twice if the time and data of that doctor are booked by another patient.
+
 Impact of this project:
 
 We can feel the pain of waiting just before the chamber of a doctor. Doctors sometimes
@@ -88,7 +97,6 @@ Possible Future Improvements:
 Skills.
 
 4.Powerful Calendar System and CRON job will be integrated.
-
 5. Will be able to create events like blood or organ donation event.
 
 6.Call ambulance system will be integrated.
