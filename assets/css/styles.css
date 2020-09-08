@@ -954,6 +954,7 @@ a {
 
 @media screen and (min-width: 481px) and (max-width: 992px) {
   .navbar {
+    background-color: #0f2027 !important;
     padding-left: 10px;
     padding-right: 40px;
   }
@@ -961,10 +962,10 @@ a {
     margin-top: 0px;
   }
   .nav-link {
-    color: #0f0402 !important;
+    color: white !important;
   }
   .btn-contact {
-    color: black;
+    color: white;
   }
   .btn-contact:hover,
   .btn-contact:active {
@@ -1071,6 +1072,7 @@ a {
 
 @media screen and (max-width: 480px) {
   .navbar {
+    background-color: #0f2027 !important;
     padding-left: 10px;
     padding-right: 40px;
   }
@@ -1078,10 +1080,10 @@ a {
     margin-top: 0px;
   }
   .nav-link {
-    color: #0f0402 !important;
+    color: white !important;
   }
   .btn-contact {
-    color: black;
+    color: white;
   }
   .btn-contact:hover,
   .btn-contact:active {
