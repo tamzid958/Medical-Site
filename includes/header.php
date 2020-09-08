@@ -27,7 +27,7 @@ ob_start();
   <!-- stylesheet connected-->
 
   <link rel="stylesheet" href="/assets/css/styles.css">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="sticky-nav-color">
     <a class="navbar-brand desktop_logo" href="/index.php"><img src="/assets/images/white_logo.png"></a>
     <a class="navbar-brand mobile_logo" href="/index.php"><img src="/assets/images/black_logo.png"></a>
 
@@ -67,3 +67,22 @@ ob_start();
 
   ?>
 </head>
+<script>
+  $(document).ready(function() {
+
+    var nav_color = document.getElementById("sticky-nav-color");
+
+
+    $(window).on("scroll", function() {
+      if ($(window).scrollTop() > 50) {
+        nav_color.style.setProperty("background-color", "#0f2027", "important");
+      } else {
+
+        nav_color.style.setProperty("background-color", "transparent", "important");
+      }
+    });
+
+
+
+  });
+</script>

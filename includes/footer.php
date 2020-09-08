@@ -104,8 +104,9 @@ if (file_exists('/controller/Controller.php')) {
     <p class="text-center text-light ledby">Developed by Tamzid Ahmed, Arifulislam Anik and Saiful Dewan .This project led by <a style="color:#FF8838;" href="https://www.linkedin.com/in/tamzid-ahmed958/" target="_blank">Tamzid Ahmed</a>.</p>
     <br>
   </div>
-  <button onclick="topFunction(1000)" id="scrollTop" title="Go to top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></button>
-
+  <a href="#">
+    <button id="scrollTop" title="Go to top"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></button>
+  </a>
   <script>
     $(document).ready(function() {
 
@@ -126,11 +127,7 @@ if (file_exists('/controller/Controller.php')) {
       }
 
       // When the user clicks on the button, scroll to the top of the document
-      function topFunction() {
 
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      }
     });
   </script>
 
