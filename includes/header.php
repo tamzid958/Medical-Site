@@ -29,7 +29,7 @@ ob_start();
   <link rel="stylesheet" href="/assets/css/styles.css">
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="sticky-nav-color">
     <a class="navbar-brand desktop_logo" href="/index.php"><img src="/assets/images/white_logo.png"></a>
-    <a class="navbar-brand mobile_logo" href="/index.php"><img src="/assets/images/black_logo.png"></a>
+    <a class="navbar-brand mobile_logo" href="/index.php"><img id="mobile_logo" src="/assets/images/black_logo.png"></a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -76,9 +76,11 @@ ob_start();
     $(window).on("scroll", function() {
       if ($(window).scrollTop() > 50) {
         nav_color.style.setProperty("background-color", "#0f2027", "important");
+        $("#mobile_logo").attr("src", "/assets/images/white_logo.png");
       } else {
 
         nav_color.style.setProperty("background-color", "transparent", "important");
+        $("#mobile_logo").attr("src", "/assets/images/black_logo.png");
       }
     });
 
