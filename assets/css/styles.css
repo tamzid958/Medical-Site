@@ -255,8 +255,9 @@ a {
 .single-blog-direct-loop,
 .single-doctor-direct-loop {
   cursor: pointer;
-  min-height: 400px !important;
-  max-height: 400px !important;
+  min-height: 420px !important;
+  max-height: 420px !important;
+  margin-bottom: 20px;
 }
 .single-blog-direct-loop img,
 .single-doctor-direct-loop img {
