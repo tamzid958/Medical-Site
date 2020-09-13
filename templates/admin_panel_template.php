@@ -2,16 +2,13 @@
 session_start();
 ob_start();
 require_once '../controller/Controller.php';
-
 if ($_SESSION["logged_in"] && $_REQUEST['id'] && $_SESSION['user_Type'] == 'admin') {
   $admin_id = $_REQUEST['id'];
 } else {
   header("Location:/login.php");
   exit();
 }
-
 ?>
-
 <!doctype html>
 <html lang="en">
 
@@ -19,12 +16,9 @@ if ($_SESSION["logged_in"] && $_REQUEST['id'] && $_SESSION['user_Type'] == 'admi
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
   <title>OCAS HOSPITAL CENTER</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
   <meta name="theme-color" content="#00c4cc">
   <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
@@ -61,7 +55,6 @@ if ($_SESSION["logged_in"] && $_REQUEST['id'] && $_SESSION['user_Type'] == 'admi
       </li>
     </ul>
   </nav>
-
   <script>
     function search() {
       // Declare variables
@@ -70,7 +63,6 @@ if ($_SESSION["logged_in"] && $_REQUEST['id'] && $_SESSION['user_Type'] == 'admi
       filter = input.value.toUpperCase();
       table = document.getElementById("myTable");
       tr = table.getElementsByTagName("tr");
-
       // Loop through all table rows, and hide those who don't match the search query
       for (i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[1];
@@ -85,12 +77,6 @@ if ($_SESSION["logged_in"] && $_REQUEST['id'] && $_SESSION['user_Type'] == 'admi
       }
     }
   </script>
-
-
-
-
-
-
 
 
 
@@ -132,14 +118,12 @@ if ($_SESSION["logged_in"] && $_REQUEST['id'] && $_SESSION['user_Type'] == 'admi
                 <i class="fa fa-user" aria-hidden="true"></i> Patients
               </a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link admin-post-section-link side-link">
                 <span data-feather="Patients"></span>
                 <i class="fa fa-newspaper-o" aria-hidden="true"></i> Posts
               </a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link admin-settings-section-link side-link">
                 <span data-feather="Settings"></span>
@@ -147,15 +131,11 @@ if ($_SESSION["logged_in"] && $_REQUEST['id'] && $_SESSION['user_Type'] == 'admi
               </a>
             </li>
 
-
           </ul>
-
 
         </div>
       </nav>
-
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-
 
         <div id="admin-panel-switcher">
           <div>
@@ -163,20 +143,15 @@ if ($_SESSION["logged_in"] && $_REQUEST['id'] && $_SESSION['user_Type'] == 'admi
               <canvas id="myChart" max-width="100%" min-height="650px"></canvas>
           </div>
         </div>
-
       </main>
     </div>
   </div>
-
 
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js" integrity="sha512-G8JE1Xbr0egZE5gNGyUm1fF764iHVfRXshIoUWCTPAbKkkItp/6qal5YAHXrxEu4HNfPTQs6HOu3D5vCGS1j3w==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js" integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg==" crossorigin="anonymous"></script>
-
   <script src="/assets/js/dashboard.js"></script>
 </body>
-
-
 
 </html>

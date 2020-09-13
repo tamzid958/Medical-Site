@@ -2,16 +2,12 @@
 require_once './controller/Controller.php';
 $posts = getAllPost();
 
-
 ?>
-
 <section>
-
 
   <div class="container news-cour">
     <div class="row">
       <div class="col-sm side-news">
-
         <ul class="list-group list-group-flush news-cat">
           <li class="list-group-item cat-main-news">Featured News</li>
           <?php
@@ -26,16 +22,12 @@ $posts = getAllPost();
               $limit++;
             }
           } ?>
-
         </ul>
       </div>
-
       <div class="col-sm">
-
 
         <div class="container cour-news ">
           <div class="row  ">
-
 
             <?php
             $limit = 0;
@@ -60,8 +52,6 @@ $posts = getAllPost();
                 $limit++;
               }
             } ?>
-
-
 
           </div>
         </div>

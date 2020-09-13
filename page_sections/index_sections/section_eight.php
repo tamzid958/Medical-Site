@@ -35,16 +35,13 @@ $appointments = getAllAppointments();
               <select class="custom-select mr-sm-2 form-trans" id="doctor_select_patient" required>
                 <option value="" id="select_service_first" disabled selected>Select Doctor</option>
               </select>
-
             </div>
-
             <div class="col-md-6">
               <input type="text" class="form-control form-trans" placeholder="Full name" id="patient_name_patient" required>
             </div>
             <div class="col-md-6">
               <input type="tel" class="form-control form-trans" placeholder="Phone number" id="phone_number_patient" required>
             </div>
-
             <div class="col-md-6">
               <input type="email" class="form-control form-trans" placeholder="Email Address" id="email_patient" required>
             </div>
@@ -57,7 +54,6 @@ $appointments = getAllAppointments();
             <div class="col-md-6" id="payDiv">
               <button type="button" class="btn btn-outline-light" id="payBtn">Book an Appointment</button>
             </div>
-
         </form>
       </div>
     </div>
@@ -74,7 +70,6 @@ $appointments = getAllAppointments();
               </button>
             </h2>
           </div>
-
           <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div class="card-body">
               Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
@@ -110,10 +105,8 @@ $appointments = getAllAppointments();
           </div>
         </div>
       </div>
-
     </div>
   </div>
-
 </section>
 <section class="brand-section">
   <h4 class="partner prof">Partners</h4>
@@ -129,8 +122,6 @@ $appointments = getAllAppointments();
 </section>
 
 
-
-
 <!-- Modal -->
 <div class="modal fade pay-modal" id="myModal" role="dialog">
   <div class="modal-dialog">
@@ -138,7 +129,6 @@ $appointments = getAllAppointments();
     <form>
       <div class="modal-content">
         <div class="modal-header">
-
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Proccess Payment <span class=lead>Powered by T&C <span></h4>
         </div>
@@ -150,20 +140,15 @@ $appointments = getAllAppointments();
           <input type="number" class="form-control pay-form" id="patient_payment_number" placeholder="Payment Number" required> <br>
           <input type="text" class="form-control pay-form" id="patient_trans_id" placeholder="Transaction ID" required>
 
-
-
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           <button type="button" value="1" class="btn btn-primary" name="continuebtn_index" id="continuebtn">Pay</button>
-
         </div>
-
       </div>
     </form>
   </div>
 </div>
-
 
 <style>
   .pay-modal {
@@ -175,14 +160,10 @@ $appointments = getAllAppointments();
   }
 </style>
 
-
-
 <script>
   $('document').ready(function() {
 
-
     var dtToday = new Date();
-
     var month = dtToday.getMonth() + 1;
     var day = dtToday.getDate();
     var year = dtToday.getFullYear();
@@ -190,13 +171,9 @@ $appointments = getAllAppointments();
       month = '0' + month.toString();
     if (day < 10)
       day = '0' + day.toString();
-
     var maxDate = year + '-' + month + '-' + day;
     $('#date_patient').attr('min', maxDate);
-
     $('#time_patient').on('change', function() {
-
-
 
       var doctor_checker = $("#doctor_select_patient").val();
       var date_checker = $("#date_patient").val();
@@ -204,37 +181,33 @@ $appointments = getAllAppointments();
       no_doctor_available = parseInt(time_checker);
       if (no_doctor_available > 8 && no_doctor_available < 23) {
         $.ajax({
-            url: "./controller/Controller.php",
-            method: "post",
-            dataType: "json",
-            data: {
-              doctor_checker: doctor_checker,
-              date_checker: date_checker,
-              time_checker: time_checker
-            },
-            success: function(data) {
+          url: "./controller/Controller.php",
+          method: "post",
+          dataType: "json",
+          data: {
+            doctor_checker: doctor_checker,
+            date_checker: date_checker,
+            time_checker: time_checker
+          },
+          success: function(data) {
 
-
-              if (data[0].count != "0") {
-                $('#payBtn').attr("disabled", "disabled");
-                $('#payBtn').removeClass("btn-outline-light");
-                $('#payBtn').addClass("btn-danger");
-                $('#payDiv').removeClass("col-md-6");
-                $('#payDiv').addClass("col-md-12");
-                $('#payBtn').text("This time is not available for this doctor");
-              } else {
-                $("#payBtn").removeAttr("disabled");
-                $('#payBtn').removeClass("btn-danger");
-                $('#payBtn').addClass("btn-outline-light");
-                $('#payDiv').removeClass("col-md-12");
-                $('#payDiv').addClass("col-md-6");
-                $('#payBtn').text("Book an Appointment");
-
-              }
+            if (data[0].count != "0") {
+              $('#payBtn').attr("disabled", "disabled");
+              $('#payBtn').removeClass("btn-outline-light");
+              $('#payBtn').addClass("btn-danger");
+              $('#payDiv').removeClass("col-md-6");
+              $('#payDiv').addClass("col-md-12");
+              $('#payBtn').text("This time is not available for this doctor");
+            } else {
+              $("#payBtn").removeAttr("disabled");
+              $('#payBtn').removeClass("btn-danger");
+              $('#payBtn').addClass("btn-outline-light");
+              $('#payDiv').removeClass("col-md-12");
+              $('#payDiv').addClass("col-md-6");
+              $('#payBtn').text("Book an Appointment");
             }
           }
-
-        );
+        });
       } else {
         $('#payBtn').attr("disabled", "disabled");
         $('#payBtn').removeClass("btn-outline-light");
@@ -242,12 +215,8 @@ $appointments = getAllAppointments();
         $('#payDiv').removeClass("col-md-6");
         $('#payDiv').addClass("col-md-12");
         $('#payBtn').text("All Doctor will be available from 9AM - 10 PM");
-
       }
     });
-
-
-
 
 
     var i = 0;
@@ -255,14 +224,11 @@ $appointments = getAllAppointments();
     var service_val;
     document.getElementById('service_select_patient').disabled = true;
     document.getElementById('select_category_first').innerHTML = "Select Category At First";
-
     document.getElementById('doctor_select_patient').disabled = true;
     document.getElementById('select_service_first').innerHTML = "Select Service At First";
-
     var counter1 = 0;
     $('#category_select_patient').on('change', function() {
       category_val = $(this).val();
-
       counter1++;
       console.log(counter1);
       if (counter1 > 1) {
@@ -279,10 +245,8 @@ $appointments = getAllAppointments();
             category_val: category_val
           },
           success: function(data) {
-
             document.getElementById('service_select_patient').disabled = false;
             document.getElementById('select_category_first').innerHTML = "Select Service";
-
 
             $('#service_select_patient').find('option').not(':selected').remove();
             if (data != null && data.length > 0) {
@@ -295,33 +259,23 @@ $appointments = getAllAppointments();
               var opt = "NO SERVICE AVAILABLE FOR THIS CATEGORY";
               document.getElementById('service_select_patient').innerHTML += "<option disabled>" + opt + "</option>";
             }
-
           }
-
         });
 
 
-
-
       }
-
     });
 
-
     var counter2 = 0;
-
     $('#service_select_patient').on('change', function() {
       service_val = $(this).val();
-
       counter2++;
       console.log(counter2);
       if (counter2 > 1) {
         location.reload();
         return false;
       }
-
       if (service_val) {
-
         $.ajax({
           url: "./controller/Controller.php",
           method: "post",
@@ -332,9 +286,7 @@ $appointments = getAllAppointments();
           success: function(data) {
             document.getElementById('doctor_select_patient').disabled = false;
             document.getElementById('select_service_first').innerHTML = "Select Doctor";
-
             $('#doctor_select_patient').find('option').not(':selected').remove();
-
 
             if (data != null && data.length > 0) {
               for (i = 0; i < data.length; i++) {
@@ -345,19 +297,13 @@ $appointments = getAllAppointments();
             } else {
               var opt = "NO DOCTOR AVAILABLE FOR THIS SERVICE";
               document.getElementById('doctor_select_patient').innerHTML += "<option disabled>" + opt + "</option>";
-
             }
-
           }
-
         });
       }
     });
 
-
-
     $('#payBtn').on('click', function(e) {
-
       e.preventDefault();
       var category = $("#category_select_patient").val();
       var service = $("#service_select_patient").val();
@@ -368,10 +314,8 @@ $appointments = getAllAppointments();
       var date = $("#date_patient").val();
       var time = $("#time_patient").val();
       if (category == null || category == "", service == null || service == "", doctor == null || doctor == "", phone_number == null || phone_number == "", email == null || email == "", date == null || date == "" || time == null || time == "") {
-
         return false;
       } else {
-
 
         $.ajax({
           url: "./controller/Controller.php",
@@ -383,18 +327,15 @@ $appointments = getAllAppointments();
           success: function(data) {
             console.log(data.cost);
             document.getElementById('service_cost').innerHTML = data[0].cost;
-
             $('#myModal').modal('toggle');
           }
         });
       }
 
-
       $('#continuebtn').click(function() {
         var payment_verify = $('#continuebtn').val();
         var payment_number = $('#patient_payment_number').val();
         var trans_id = $('#patient_trans_id').val();
-
         if (payment_number == null || payment_number == "", trans_id == null || trans_id == "", payment_verify == null || payment_verify == "") {
           return false;
         } else {
@@ -418,21 +359,14 @@ $appointments = getAllAppointments();
               $('form').submit();
               //console.log(category, service, doctor, patient_name, phone_number, email, date, time);
               //console.log(payment_verify, payment_number, trans_id);
-
             }
-
-
 
 
           })
         }
 
-
       });
 
-
-
     });
-
   });
 </script>

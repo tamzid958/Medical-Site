@@ -7,12 +7,9 @@ require_once 'controller/Controller.php';
   <div class="wrapper fadeInDown">
     <div id="formContent">
 
-
-
       <div class="fadeIn first">
         <img src="/assets/images/black_logo.png" id="icon" alt="" />
       </div>
-
 
       <form action="" method="POST">
         <input type="mail2" id="forget" class="fadeIn second forget-field" name="forget_mail" placeholder="email address" required>
@@ -20,21 +17,16 @@ require_once 'controller/Controller.php';
         <input type="submit" name="forget_pass_btn" class="fadeIn fourth" value="Reset">
       </form>
 
-
       <div id="formFooter">
         <a class="underlineHover alignright" href="login.php">Back to Login Page</a>
       </div>
-
     </div>
   </div>
   <script>
-    $(document).ready(function() {
-
-    });
+    $(document).ready(function() {});
   </script>
   <style>
     /* STRUCTURE */
-
     .wrapper {
       display: flex;
       align-items: center;
@@ -49,7 +41,6 @@ require_once 'controller/Controller.php';
     }
 
     #formContent {
-
       border-radius: 10px 10px 10px 10px;
       background: #fff;
       padding: 30px;
@@ -71,12 +62,8 @@ require_once 'controller/Controller.php';
     }
 
     .forget-field::placeholder {
-
       color: #00c4cc !important;
-
     }
-
-
 
 
     input[type=button],
@@ -95,7 +82,6 @@ require_once 'controller/Controller.php';
       transition: all 0.3s ease-in-out;
       border-radius: 5px 5px 5px 5px;
       margin: 5px 20px 40px 20px;
-
     }
 
     input[type=button]:hover,
@@ -131,7 +117,6 @@ require_once 'controller/Controller.php';
       border-bottom: 2px solid #00c4cc;
     }
 
-
     .underlineHover {
       padding-bottom: 20px;
     }
@@ -152,9 +137,7 @@ require_once 'controller/Controller.php';
     }
   </style>
 
-
 </body>
-
 <?php
 include('includes/footer.php');
 ?>

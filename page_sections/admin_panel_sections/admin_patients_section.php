@@ -27,12 +27,10 @@ $patients = getAllPatients();
                                         <td></td>
                                     </tr>
                                 </thead>
-
                                 <tbody id="myTable">
                                     <?php
                                     if ($patients > 0) {
                                         foreach ($patients as $patient) {
-
                                             echo "<tr>";
                                             echo "<td>" . $patient["id"] . "</td>";
                                             echo "<td>" . $patient["full_name"] . "</td>";
@@ -80,7 +78,6 @@ $patients = getAllPatients();
             </div>
         </div>
     </div>
-
 
     <div class="modal fade" id="exampleEditModalLongpatient">
         <div class="modal-dialog" role="document">
@@ -131,7 +128,6 @@ $patients = getAllPatients();
                     $('#edit_mail').val(data[0].email);
                     $('#edit_tel').val(data[0].phone);
                     $("#exampleEditModalLongpatient").modal("show");
-
                 }
             });
         });

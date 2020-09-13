@@ -4,7 +4,6 @@
   padding: 0;
   color: #0f0402;
 }
-
 /* color to be used mandatory
 address bar color = #00c4cc
 .Blue-Sky-1-hex { color: #16193B; }
@@ -12,7 +11,6 @@ address bar color = #00c4cc
 .Blue-Sky-3-hex { color: #4E7AC7; }
 .Blue-Sky-4-hex { color: #7FB2F0; }
 .Blue-Sky-5-hex { color: #ADD5F7; }
-
 
 .Blue-Sky-1-rgba { color: rgba(21, 24, 58, 1); }
 .Blue-Sky-2-rgba { color: rgba(53, 70, 140, 1); }
@@ -43,7 +41,6 @@ a {
   background-color: white;
   color: #00c4cc;
 }
-
 .nav-link {
   color: white !important;
   font-size: 17px;
@@ -56,7 +53,6 @@ a {
   color: rgb(155, 155, 155) !important;
   cursor: pointer;
 }
-
 .carousel {
   margin-top: -120px;
   overflow: hidden;
@@ -70,13 +66,11 @@ a {
   z-index: -1;
   opacity: 0.5;
 }
-
 .blurb {
   max-width: 100%;
   padding-bottom: 80px;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
 }
-
 .appointment-blurb {
   padding-bottom: 30px;
   margin-bottom: 30px;
@@ -91,74 +85,60 @@ a {
 .card-title {
   font-weight: 300;
 }
-
 .fa {
   padding-top: 20px;
   padding-left: 65%;
   color: #00c4cc;
 }
-
 .fa-envelope {
   color: #4e7ac7;
 }
-
 .fa-map-marker {
   color: #35478c;
 }
-
 .card_box {
   min-height: 285px;
 }
-
 .card_box_1 {
   background-color: #4e7ac7;
 }
 .card_box_2 {
   background-color: #35478c;
 }
-
 .card_box_3,
 .list-group-flush {
   background-color: #16193b !important;
   color: whitesmoke !important;
   width: 100% !important;
 }
-
 .card-body-title,
 .card-body-text,
 .card-body-title2 {
   color: whitesmoke !important;
 }
-
 .card-body-title {
   padding-bottom: 10%;
 }
-
 .box_card {
   max-width: 70%;
 }
-
 .card-body-text-li {
   border-bottom-style: solid;
   border-bottom-color: whitesmoke;
 }
-
 .alignleft {
   float: left;
 }
 .alignright {
   float: right;
 }
-
 .box-col {
   padding-left: 0px;
   padding-right: 0px;
 }
-
 .jumbtron-head {
   color: #35478c;
 }
-
 .jumbotron-fluid {
   background-color: transparent !important;
 }
@@ -180,7 +160,6 @@ a {
 .four-blurb-contain {
   max-width: 70%;
 }
-
 .news-cour {
   padding-top: 40px;
   margin-bottom: 40px;
@@ -194,7 +173,6 @@ a {
   padding-top: 5%;
   max-width: 25%;
 }
-
 .side-news li {
   background-color: #16193b !important;
   color: whitesmoke;
@@ -208,11 +186,9 @@ a {
 .news-serv {
   margin-top: -35px;
 }
-
 .news-head {
   color: #35478c;
 }
-
 .parallax {
   /* The image used */
   background-image: url("/assets/images/health-workers-wearing-face-mask-3957987.jpg");
@@ -226,7 +202,6 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 .single-blog-hero,
 .single-doctor-hero {
   min-height: 700px;
@@ -242,7 +217,6 @@ a {
   min-height: 200px;
   margin-top: -120px;
 }
-
 ::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
@@ -269,7 +243,6 @@ a {
 .patient-post-p {
   text-align: justify;
 }
-
 .blog-post-share {
   margin-top: 50px;
 }
@@ -283,7 +256,6 @@ a {
 .testi-head-sec {
   padding-bottom: 40px;
 }
-
 .testimonials {
   max-width: 1080px;
   margin: -10px auto;
@@ -364,7 +336,6 @@ a {
   display: block;
   color: white;
 }
-
 .fullWidth {
   width: 100% !important;
   display: table;
@@ -374,41 +345,34 @@ a {
   height: 100%;
   position: relative;
 }
-
 .projectFactsWrap {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-
 #projectFacts .fullWidth {
   padding: 0;
 }
-
 .projectFactsWrap .item {
   width: 25%;
   height: 100%;
   padding: 10px 0px;
   text-align: center;
 }
-
 .projectFactsWrap {
   background-color: #00c4cc;
 }
-
 .projectFactsWrap .item p.number {
   font-size: 40px;
   padding: 0;
   font-weight: bold;
 }
-
 .projectFactsWrap .item p {
   color: rgba(255, 255, 255, 0.8);
   font-size: 18px;
   margin: 0;
   padding: 10px;
 }
-
 .projectFactsWrap .item span {
   width: 60px;
   background: rgba(255, 255, 255, 0.8);
@@ -416,13 +380,11 @@ a {
   display: block;
   margin: 0 auto;
 }
-
 .projectFactsWrap .item i {
   vertical-align: middle;
   font-size: 50px;
   color: rgba(255, 255, 255, 0.8);
 }
-
 .fa-smile-o,
 .fa-hospital-o,
 .fa-users,
@@ -433,30 +395,24 @@ a {
 .projectFactsWrap .item:hover p {
   color: white;
 }
-
 .projectFactsWrap .item:hover span {
   background: white;
 }
-
 @media (max-width: 786px) {
   .projectFactsWrap .item {
     flex: 0 0 50%;
   }
 }
-
 .doctor-container {
   margin-top: 80px;
 }
-
 .doctor-section {
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
   padding-bottom: 30px;
 }
-
 .prof {
   color: #35478c;
 }
-
 .form-section {
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
   padding-bottom: 50px;
@@ -471,22 +427,18 @@ a {
   padding-top: 70px;
   padding-bottom: 70px;
 }
-
 .form-trans {
   background-color: transparent !important;
   margin-bottom: 30px;
   color: white;
 }
-
 ::placeholder {
   color: white !important;
 }
-
 .appointment-head {
   color: white;
   padding-bottom: 50px;
 }
-
 .brand {
   display: flex;
   justify-content: center;
@@ -501,7 +453,6 @@ a {
   padding-bottom: 2%;
   padding-left: 220px;
 }
-
 .subscriber-section {
   padding-top: 30px;
   background-color: #00c4cc;
@@ -513,22 +464,18 @@ a {
 .mailchimp {
   display: flex;
 }
-
 .prefooter {
   padding-top: 50px;
   padding-bottom: 50px;
   background-color: #16193b;
 }
-
 .footer-li {
   color: white;
   background-color: transparent;
 }
-
 .footer-form-col {
   padding-top: 30px;
 }
-
 .copyright {
   border-top: 2px solid whitesmoke;
   background-color: #24201a;
@@ -537,7 +484,6 @@ a {
   padding-top: 10px;
   color: white;
 }
-
 #scrollTop {
   display: none;
   position: fixed;
@@ -549,7 +495,6 @@ a {
   background-color: #00c4cc;
   color: white;
   cursor: pointer;
-
   border-radius: 4px;
 }
 .fa-angle-up {
@@ -562,7 +507,6 @@ a {
 #scrollTop:hover {
   background-color: #555;
 }
-
 .important-links a,
 .social-links a {
   text-decoration: none;
@@ -574,7 +518,6 @@ a {
 .social-links a:active {
   color: rgb(202, 199, 199);
 }
-
 .about-hero {
   background-image: url("/assets/images/technology-lens-laboratory-medical-60022.jpg");
   opacity: 1;
@@ -601,7 +544,6 @@ a {
   background-size: cover;
   margin-top: -120px;
 }
-
 .posts-hero {
   background-image: url("/assets/images/2632475-min.jpg");
   opacity: 1;
@@ -628,7 +570,6 @@ a {
   background-size: cover;
   margin-top: -120px;
 }
-
 .appointment-hero {
   background-image: url("/assets/images/blue-and-silver-stetoscope-40568.jpg");
   opacity: 1;
@@ -642,7 +583,6 @@ a {
   background-size: cover;
   margin-top: -120px;
 }
-
 .appointment-form {
   margin-top: 100px;
   float: left !important;
@@ -651,36 +591,30 @@ a {
   padding-top: 70px;
   color: white;
 }
-
 .about-hero-title {
   padding-top: 100px;
   color: white;
 }
-
 .about-hero-p {
   padding-top: 60px;
   color: white;
   text-align: justify;
 }
-
 .about-lottie {
   max-width: 600px;
   max-height: 600px;
   margin-top: -100px;
   margin-bottom: -100px;
 }
-
 .about-us-sec {
   max-width: 65%;
   margin-bottom: 40px;
   overflow: hidden;
 }
-
 .about-section-four {
   max-width: 600px;
   text-align: justify;
 }
-
 #myImg,
 #myImg2,
 #myImg3 {
@@ -688,7 +622,6 @@ a {
   cursor: pointer;
   transition: 0.3s;
 }
-
 #myImg:hover {
   opacity: 0.7;
 }
@@ -698,7 +631,6 @@ a {
 #myImg3:hover {
   opacity: 0.7;
 }
-
 /* The Modal (background) */
 .modal,
 .modal2,
@@ -715,7 +647,6 @@ a {
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
 }
-
 /* Modal Content (Image) */
 .modal-content,
 .modal-content2,
@@ -725,7 +656,6 @@ a {
   width: 80%;
   max-width: 700px;
 }
-
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
 #caption,
 #caption2,
@@ -739,7 +669,6 @@ a {
   padding: 10px 0;
   height: 150px;
 }
-
 /* Add Animation - Zoom in the Modal */
 .modal-content,
 .modal-content2,
@@ -750,7 +679,6 @@ a {
   animation-name: zoom;
   animation-duration: 0.6s;
 }
-
 @keyframes zoom {
   from {
     transform: scale(0);
@@ -759,7 +687,6 @@ a {
     transform: scale(1);
   }
 }
-
 /* The Close Button */
 .close {
   position: absolute;
@@ -770,7 +697,6 @@ a {
   font-weight: bold;
   transition: 0.3s;
 }
-
 .close:hover,
 .close:focus {
   color: #bbb;
@@ -789,14 +715,12 @@ a {
     width: 100%;
   }
 }
-
 .mobile-timetable-text {
   color: #0f0402 !important;
 }
 .mobile_timetable {
   display: none;
 }
-
 .pc-timetable-sction {
   width: 60%;
   margin: 50px auto;
@@ -904,7 +828,6 @@ a {
   grid-row: 9/11;
   grid-column: 6/7;
 }
-
 .timetable-box-week {
   width: auto;
   display: block;
@@ -935,24 +858,20 @@ a {
   width: 400px;
   box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
 }
-
 .text-dark {
   font-weight: bold;
   margin-top: 8px;
   font-size: 13px;
   letter-spacing: 0.5px;
 }
-
 .patient-single-card-bottom {
   background: #3e454d;
   border-radius: 6px;
   margin-bottom: 10px;
 }
-
 #blah {
   max-width: 900px;
 }
-
 @media screen and (min-width: 481px) and (max-width: 992px) {
   .navbar {
     background-color: #0f2027 !important;
@@ -979,7 +898,6 @@ a {
   .mobile_logo {
     display: inline-block !important;
   }
-
   .fa {
     padding-top: 0px;
     padding-left: 20px;
@@ -996,11 +914,9 @@ a {
   .jumbotron-contain {
     max-width: 100%;
   }
-
   .four-blurb-contain {
     max-width: 100%;
   }
-
   .side-news {
     display: none;
   }
@@ -1010,7 +926,6 @@ a {
   .brand-section {
     display: none;
   }
-
   .testimonials {
     margin: -10px auto;
     padding-left: 10vw;
@@ -1024,7 +939,6 @@ a {
   p {
     margin-bottom: 0 !important;
   }
-
   .partner {
     padding-bottom: 2%;
     padding-left: 70px;
@@ -1065,12 +979,10 @@ a {
     min-height: 300px;
     background-attachment: fixed;
   }
-
   #blah {
     max-width: 500px;
   }
 }
-
 @media screen and (max-width: 480px) {
   .navbar {
     background-color: #0f2027 !important;
@@ -1113,19 +1025,15 @@ a {
   .jumbotron-contain {
     max-width: 100%;
   }
-
   .four-blurb-contain {
     max-width: 100%;
   }
-
   .side-news {
     display: none;
   }
-
   .news-head {
     display: none;
   }
-
   .parallax {
     background-attachment: scroll;
   }
@@ -1181,7 +1089,6 @@ a {
     min-height: 200px;
     background-attachment: scroll;
   }
-
   .blog-post-tile,
   .doctor-post-title,
   .patient-post-title {
@@ -1192,7 +1099,6 @@ a {
   .patient-post-p {
     font-size: 16px !important;
   }
-
   #blah {
     max-width: 450px;
   }

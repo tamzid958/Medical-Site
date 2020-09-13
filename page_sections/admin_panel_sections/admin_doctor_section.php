@@ -4,25 +4,19 @@ $doctors = getAllDoctors();
 $categories = getAllCategory();
 $services = getAllService();
 ?>
-
 <div class="card">
     <div class="card-body">
         <div class="">
             <div class="row">
                 <div class="col-md-10">
                     <h3 class="total-admin-badge">Doctors <span class="badge badge-dark"> <?php echo $_SESSION['doctorsCounter'] ?></span> Total </h3>
-
                 </div>
                 <div class="col-md-2">
                     <button type="submit" class="btn btn-primary my-1" data-toggle="modal" data-target="#doctorModal">Create New Doctor</button>
                 </div>
             </div>
-
         </div>
-
-
         <div class="row">
-
             <div class="col-md-6">
                 <select class="form-control" id="exampleFormControlSelect1" id="filterdoctor1">
                     <option value="" disabled selected>Select Service</option>
@@ -41,10 +35,7 @@ $services = getAllService();
                 </select>
             </div>
         </div>
-
         <br>
-
-
         <div>
             <div class="row">
                 <div class="col-12">
@@ -57,13 +48,10 @@ $services = getAllService();
                                     <td>SERVICE</td>
                                     <td>EMAIL</td>
                                     <td>PHONE NUMBER</td>
-
                                     <td></td>
                                 </tr>
                             </thead>
-
                             <tbody id="myTable">
-
                                 <?php
                                 if ($doctors > 0) {
                                     foreach ($doctors as $doctor) {
@@ -81,7 +69,6 @@ $services = getAllService();
                                         echo "</form>";
                                     }
                                 } ?>
-
                             </tbody>
                         </table>
                     </div>
@@ -90,8 +77,6 @@ $services = getAllService();
         </div>
     </div>
 </div>
-
-
 <!-- Modal -->
 <div class="modal fade" id="doctorModal" tabindex="-1" role="dialog" aria-labelledby="doctorModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -113,21 +98,17 @@ $services = getAllService();
                                 <input type="file" class="custom-file-input" name="doctor_pic" id="inputGroupFile02" placeholder="Featured Image" onchange="readURL(this);" required>
                                 <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
                             </div>
-
                         </div>
                     </div>
                     <br><br>
                     <input class="form-control" type="text" name="doctor_name" placeholder="Doctor Name" required>
-
                     <br>
-
                     <input class="form-control" type="email" name="doctor_email" placeholder="Email Address" required>
                     <br>
                     <input class="form-control" type="tel" name="doctor_phone" placeholder="Phone Number" required>
                     <br>
                     <select class="form-control" name="doctor_category" id="category_select_doctor" required>
                         <option value="" disabled selected>Select Category</option>
-
                         <?php
                         if ($categories > 0) {
                             foreach ($categories as $category) {
@@ -138,9 +119,7 @@ $services = getAllService();
                     <br>
                     <select class="form-control" name="doctor_service" id="service_select_doctor" required>
                         <option value="" id="select_category_first" disabled selected>Select Service</option>
-
                     </select>
-
                     <br>
                     <textarea id="" class="form-control" name="doctor_description" rows="5" cols="5" placeholder="Doctor Description" required></textarea>
                     <br>
@@ -153,14 +132,6 @@ $services = getAllService();
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
 <!-- Modal -->
 <div class="modal fade" id="doctorEditModal" tabindex="-1" role="dialog" aria-labelledby="doctorModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -173,15 +144,11 @@ $services = getAllService();
             </div>
             <div class="modal-body">
                 <form action="" method="post" enctype="multipart/form-data">
-
                     <div class="form-row">
                         <input type="hidden" name="id" id="doctor_edit_id" value="">
-
                     </div>
                     <input class="form-control" type="text" name="doctor_name" id="doctor_edit_name" value="" placeholder="Doctor Name" required>
-
                     <br>
-
                     <input class="form-control" type="email" name="doctor_email" id="doctor_edit_email" value="" placeholder="Email Address" required>
                     <br>
                     <input class="form-control" type="tel" name="doctor_phone" id="doctor_edit_phone" value="" placeholder="Phone Number" required>
@@ -214,7 +181,6 @@ $services = getAllService();
                             }
                         } ?>
                     </select>
-
                     <br>
                     <textarea id="doctor_edit_description" class="form-control" name="doctor_description" value="" rows="5" cols="5" placeholder="Doctor Description" required></textarea>
                     <br>
@@ -227,16 +193,6 @@ $services = getAllService();
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
 <script>
     $(document).ready(function() {
         $('#filterdoctor1').on('change', function() {
@@ -251,7 +207,6 @@ $services = getAllService();
             filter = input.value.toUpperCase();
             table = document.getElementById("myTable");
             tr = table.getElementsByTagName("tr");
-
             // Loop through all table rows, and hide those who don't match the search query
             for (i = 0; i < tr.length; i++) {
                 td = tr[i].getElementsByTagName("td")[filter_var];
@@ -269,22 +224,18 @@ $services = getAllService();
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
-
                 reader.onload = function(e) {
                     $(' #blah').attr('src', e.target.result);
                 };
                 reader.readAsDataURL(input.files[0]);
             }
         }
-
         var i = 0;
         var category_val;
         document.getElementById('service_select_doctor').disabled = true;
         document.getElementById('select_category_first').innerHTML = "Select Category At First";
-
         $('#category_select_doctor').on('change', function() {
             category_val = $(this).val();
-
             console.log(category_val);
             if (category_val) {
                 //console.log(category_val);
@@ -296,11 +247,8 @@ $services = getAllService();
                         category_val: category_val
                     },
                     success: function(data) {
-
                         document.getElementById('service_select_doctor').disabled = false;
                         document.getElementById('select_category_first').innerHTML = "Select Service";
-
-
                         $('#service_select_doctor').find('option').not(':selected').remove();
                         if (data != null && data.length > 0) {
                             for (i = 0; i < data.length; i++) {
@@ -312,28 +260,10 @@ $services = getAllService();
                             var opt = data.service_name;
                             document.getElementById('service_select_doctor').innerHTML += "<option>" + opt + "</option>";
                         }
-
                     }
-
                 });
-
-
-
-
             }
-
         });
-
-
-
-
-
-
-
-
-
-
-
         $(".editDoctor_btn").click(function() {
             var doctor_id = $(this).attr("id");
             $.ajax({

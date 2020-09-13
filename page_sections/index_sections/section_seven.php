@@ -2,9 +2,7 @@
 require_once './controller/Controller.php';
 $doctors = getAllDoctors();
 
-
 ?>
-
 
 <section class="doctor-section">
   <div class="container doctor-container">
@@ -12,7 +10,6 @@ $doctors = getAllDoctors();
       <h4>Our Doctors</h4>
     </h6>
     <div class="row">
-
       <?php
       $limit = 0;
       if ($doctors > 0) {
@@ -38,8 +35,6 @@ $doctors = getAllDoctors();
           $limit++;
         }
       } ?>
-
     </div>
   </div>
-
 </section>

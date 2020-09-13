@@ -4,13 +4,11 @@ $(document).ready(function () {
       "/page_sections/admin_panel_sections/admin_appointment_section.php"
     );
   });
-
   $(".admin-services-section-link").click(function () {
     $("#admin-panel-switcher").load(
       "/page_sections/admin_panel_sections/admin_services_section.php"
     );
   });
-
   $(".admin-doctors-section-link").click(function () {
     $("#admin-panel-switcher").load(
       "/page_sections/admin_panel_sections/admin_doctor_section.php"
@@ -21,29 +19,24 @@ $(document).ready(function () {
       "/page_sections/admin_panel_sections/admin_patients_section.php"
     );
   });
-
   $(".admin-post-section-link").click(function () {
     $("#admin-panel-switcher").load(
       "/page_sections/admin_panel_sections/admin_post_section.php"
     );
   });
-
   $(".admin-settings-section-link").click(function () {
     $("#admin-panel-switcher").load(
       "/page_sections/admin_panel_sections/admin_settings_seciton.php"
     );
   });
-
   $("ul li a").click(function () {
     $("li a").removeClass("active");
     $(this).addClass("active");
   });
-
   var ctx = document.getElementById("myChart").getContext("2d");
   var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: "line",
-
     // The data for our dataset
     data: {
       labels: [

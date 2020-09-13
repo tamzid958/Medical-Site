@@ -6,12 +6,10 @@ $doctor = getDoctor($doctor_id);
 ?>
 
 <body>
-
   <div class="jumbotron jumbotron-fluid single-doctor-hero" style="background-image:linear-gradient(9deg, rgba(24,25,28,1) 0%, rgba(25,26,30,0.5578606442577031) 100%),url(/assets/images/uploaded_images/doctor_images/<?php echo $doctor[0]["profile_picture"] ?>)">
     <div class="container">
     </div>
   </div>
-
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4 doctor-post-title"><?php echo $doctor[0]["full_name"] ?></h1>
@@ -33,12 +31,9 @@ $doctor = getDoctor($doctor_id);
       <!-- AddToAny END -->
     </div>
 
-
   </div>
 
-
 </body>
-
 <?php
 include('../includes/footer.php');
 ?>

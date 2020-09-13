@@ -14,29 +14,23 @@ ob_start();
   <!-- bootstrap link connected-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <!-- chrome browser address bar color-->
-
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
   <script type="text/JavaScript" src="https://MomentJS.com/downloads/moment.js"></script>
-
   <meta name="theme-color" content="#00c4cc">
   <!-- favicon-->
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
-
   <!-- stylesheet connected-->
-
   <link rel="stylesheet" href="/assets/css/styles.css">
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="sticky-nav-color">
     <a class="navbar-brand desktop_logo" href="/index.php"><img src="/assets/images/white_logo.png"></a>
     <a class="navbar-brand mobile_logo" href="/index.php"><img id="mobile_logo" src="/assets/images/white_logo.png"></a>
-
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto" id="nav">
-
         <li class="nav-item">
           <a class="nav-link" href="/about.php">About</a>
         </li>
@@ -59,32 +53,25 @@ ob_start();
         </li>
       </ul>
     </div>
-
   </nav>
   <?php
-
   echo "<title> OSCA | Hospital Center</title>";
-
   ?>
 </head>
 <script>
   $(document).ready(function() {
     var x = window.matchMedia("(min-width: 992px)");
     var nav_color = document.getElementById("sticky-nav-color");
-
     if (x.matches) {
       $(window).on("scroll", function() {
         if ($(window).scrollTop() > 50) {
           nav_color.style.setProperty("background-color", "#0f2027", "important");
           //$("#mobile_logo").attr("src", "/assets/images/white_logo.png");
         } else {
-
           nav_color.style.setProperty("background-color", "transparent", "important");
           //$("#mobile_logo").attr("src", "/assets/images/black_logo.png");
         }
       });
-
     }
-
   });
 </script>

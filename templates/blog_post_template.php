@@ -6,12 +6,10 @@ $post = getPost($post_id);
 ?>
 
 <body>
-
   <div class="jumbotron jumbotron-fluid single-blog-hero" style="background-image:linear-gradient(9deg, rgba(24,25,28,1) 0%, rgba(25,26,30,0.5578606442577031) 100%),url(/assets/images/uploaded_images/post_images/<?php echo $post[0]["post_dir"] ?>)">
     <div class="container">
     </div>
   </div>
-
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4 blog-post-tile"><?php echo $post[0]["post_title"] ?></h1>
@@ -28,13 +26,9 @@ $post = getPost($post_id);
       <!-- AddToAny END -->
     </div>
 
-
   </div>
 
-
-
 </body>
-
 <?php
 include('../includes/footer.php');
 ?>

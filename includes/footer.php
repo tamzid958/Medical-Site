@@ -3,31 +3,25 @@
 if (file_exists('./controller/Controller.php')) {
   require_once './controller/Controller.php';
 }
-
 if (file_exists('/controller/Controller.php')) {
   require_once '/controller/Controller.php';
 }
-
 ?>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js" integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg==" crossorigin="anonymous"></script>
 <script language="JavaScript" type="text/javascript" src="/assets/js/app.js"></script>
-
 <footer>
   <section class="subscriber-section">
     <div class="container ">
-
       <div class="row">
         <div class="col-sm-6">
           <p>Subscribe to Newsletter <br>
             Get healthy news and solutions to your problems from our experts!</p>
         </div>
         <div class="col-sm-6">
-
           <form class="form-inline" action="" method="post">
             <div class="form-group mb-2">
-
             </div>
             <div class="form-group mx-sm-3 mb-2">
               <input type="email" name="sub_mail" id="sub_mail" class="form-control mailchimp" placeholder="Email">
@@ -38,10 +32,8 @@ if (file_exists('/controller/Controller.php')) {
       </div>
     </div>
   </section>
-
   <section class="prefooter">
     <div class="container">
-
       <div class="row">
         <div class="col-sm">
           <h5 style="color:white"> Important Links </h5>
@@ -75,7 +67,6 @@ if (file_exists('/controller/Controller.php')) {
               </div>
             </div>
 
-
             <button type="submit" name="contact_btn" class="btn btn-primary">ASK FOR CONTACT</button>
         </div>
       </div>
@@ -83,18 +74,14 @@ if (file_exists('/controller/Controller.php')) {
     </div>
     </div>
     </div>
-
   </section>
-
   <section class="copyright">
     <div class="container">
-
       <div class="row">
         <div class="col-sm-6">
           <p>Copyright &copy; by OSCA Hospital Center</p>
         </div>
         <div class="col-sm-6">
-
         </div>
       </div>
     </div>
@@ -109,10 +96,8 @@ if (file_exists('/controller/Controller.php')) {
   </a>
   <script>
     $(document).ready(function() {
-
       //Get the button
       var mybutton = document.getElementById("scrollTop");
-
       // When the user scrolls down 20px from the top of the document, show the button
       window.onscroll = function() {
         scrollFunction()
@@ -125,12 +110,9 @@ if (file_exists('/controller/Controller.php')) {
           mybutton.style.display = "none";
         }
       }
-
       // When the user clicks on the button, scroll to the top of the document
-
     });
   </script>
-
 </footer>
 
 </html>

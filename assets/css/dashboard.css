@@ -1,17 +1,14 @@
 body {
   font-size: 0.875rem;
 }
-
 .feather {
   width: 16px;
   height: 16px;
   vertical-align: text-bottom;
 }
-
 /*
  * Sidebar
  */
-
 .sidebar {
   position: fixed;
   top: 0;
@@ -20,7 +17,6 @@ body {
   z-index: 100; /* Behind the navbar */
   padding: 48px 0 0; /* Height of navbar */
 }
-
 .admin-doctor-section {
   width: 100%;
 }
@@ -29,11 +25,9 @@ body {
     top: 5rem;
   }
 }
-
 .sidebar-sticky {
   position: relative;
   top: 0;
-
   background: linear-gradient(145deg, #e5e5e5, #c1c1c1);
   box-shadow: 20px 20px 60px #b6b6b6, -20px -20px 60px #f6f6f6;
   height: calc(100vh - 48px);
@@ -41,20 +35,17 @@ body {
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
-
 @supports ((position: -webkit-sticky) or (position: sticky)) {
   .sidebar-sticky {
     position: -webkit-sticky;
     position: sticky;
   }
 }
-
 .sidebar .nav-link {
   font-weight: 500;
   color: #333;
   padding: 10px;
 }
-
 .sidebar .nav-link .feather {
   margin-right: 4px;
   color: #999;
@@ -62,7 +53,6 @@ body {
 .post_admin_loop {
   margin-right: 7px;
 }
-
 .single-blog-direct-loop {
   cursor: pointer;
   min-height: 400px !important;
@@ -72,7 +62,6 @@ body {
   min-height: 200px !important;
   max-height: 200px !important;
 }
-
 .doctor-avatar {
   border-radius: 50% !important;
   height: 64px !important;
@@ -89,7 +78,6 @@ body {
 .doctor-details-btn {
   margin-top: 20px !important;
 }
-
 .nav-link {
   cursor: pointer;
   font-size: 20px;
@@ -100,7 +88,6 @@ body {
   padding-left: 50px;
   transform: scale(1.09);
 }
-
 .admin-panel-ul {
   margin-top: 55px;
 }
@@ -108,38 +95,31 @@ body {
 .sidebar .nav-link.active .feather {
   color: #999;
 }
-
 .sidebar-heading {
   font-size: 0.75rem;
   text-transform: uppercase;
 }
-
 /*
  * Navbar
  */
-
 .navbar-brand {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
-
 .navbar .navbar-toggler {
   top: 0.25rem;
   right: 1rem;
 }
-
 .navbar .form-control {
   padding: 0.75rem 1rem;
   border-width: 0;
   border-radius: 0;
 }
-
 .form-control-dark {
   color: #fff;
   background-color: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.1);
 }
-
 .form-control-dark:focus {
   border-color: transparent;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
@@ -152,7 +132,6 @@ body {
   color: #fff !important;
   transform: scale(1);
 }
-
 #admin-panel-switcher {
   max-width: 100%;
   min-height: 820px;
@@ -163,7 +142,6 @@ body {
   box-shadow: 20px 20px 60px #b6b6b6, -20px -20px 60px #f6f6f6;
   overflow-x: hidden;
 }
-
 #admin-new-service,
 #old-post-list {
   width: 98%;
@@ -171,11 +149,9 @@ body {
 #old-post-list {
   margin-top: 60px;
 }
-
 #left {
   float: left;
 }
-
 #right {
   float: right;
 }
@@ -183,11 +159,9 @@ body {
   margin-top: 80px;
   width: 100%;
 }
-
 #blah {
   max-width: 450px;
 }
-
 #myChart {
   padding-right: 30px;
 }
@@ -195,11 +169,9 @@ body {
   #blah {
     max-width: 320px;
   }
-
   .admin-service-category {
     margin-left: -20px;
   }
-
   .total-admin-badge {
     font-size: 15px !important;
     margin-left: -15px !important;

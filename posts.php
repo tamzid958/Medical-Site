@@ -6,20 +6,16 @@ $posts = getAllPost();
 
 <body>
 
-
   <section>
     <div class="jumbotron jumbotron-fluid posts-hero">
       <div class="container">
-
       </div>
     </div>
-
     <div class="container">
       <div class="row row-eq-height ">
         <?php
         if ($posts > 0) {
           foreach ($posts as $post) {
-
             echo "<div class='col-sm-3'>";
             echo "<div class='grid-loop'>";
             echo "<a href='templates/blog_post_template.php?id=" . $post["post_id"] . "'  name='id'>";
@@ -36,16 +32,12 @@ $posts = getAllPost();
         </div>";
           }
         } ?>
-
       </div>
     </div>
     </div>
 
 
-
-
 </body>
-
 <?php
 include('includes/footer.php');
 ?>

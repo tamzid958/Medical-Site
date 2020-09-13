@@ -2,9 +2,7 @@
 require_once './controller/Controller.php';
 $doctors = getAllDoctors();
 
-
 ?>
-
 
 <section class="doctor-section">
   <div class="container doctor-container">
@@ -37,8 +35,6 @@ $doctors = getAllDoctors();
           $limit++;
         }
       } ?>
-
     </div>
   </div>
-
 </section>

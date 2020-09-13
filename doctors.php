@@ -6,27 +6,20 @@ $doctors = getAllDoctors();
 
 <body>
 
-
   <section>
     <div class="jumbotron jumbotron-fluid doctors-hero">
       <div class="container">
         <h1 class="display-4 about-hero-title">Our Doctors</h1>
-
       </div>
     </div>
 
 
 
-
-
-
     <div class="container">
-
       <div class="row">
         <?php
         if ($doctors > 0) {
           foreach ($doctors as $doctor) {
-
             echo "<div class='col-sm-4'>";
             echo "<a href='templates/doctor_profile_template.php?id=" . $doctor["id"] . "'  name='id'>";
             echo "<div class='card single-doctor-direct-loop'>";
@@ -46,7 +39,6 @@ $doctors = getAllDoctors();
           }
         } ?>
 
-
       </div>
     </div>
     </div>
@@ -55,11 +47,7 @@ $doctors = getAllDoctors();
 
 
 
-
-
-
 </body>
-
 <?php
 include('includes/footer.php');
 ?>

@@ -7,12 +7,9 @@ require_once 'controller/Controller.php';
   <div class="wrapper fadeInDown">
     <div id="formContent">
 
-
-
       <div class="fadeIn first">
         <img src="/assets/images/black_logo.png" id="icon" alt="" />
       </div>
-
 
       <form action="" method="post">
         <input type="text2" id="register" class="fadeIn second register-field" name="name" placeholder="Full Name" required>
@@ -21,24 +18,18 @@ require_once 'controller/Controller.php';
         <input type="password" id="register" class="fadeIn third register-field" name="password" placeholder="password" required>
         <p style="color:red"><?php echo $err_invalid; ?></p>
         <input type="submit" name="register_btn" class="fadeIn fourth" value="Register">
-
       </form>
-
 
       <div id="formFooter">
         <a class="underlineHover" href="login.php">Have an account?</a>
       </div>
-
     </div>
   </div>
   <script>
-    $(document).ready(function() {
-
-    });
+    $(document).ready(function() {});
   </script>
   <style>
     /* STRUCTURE */
-
     .wrapper {
       display: flex;
       align-items: center;
@@ -53,7 +44,6 @@ require_once 'controller/Controller.php';
     }
 
     #formContent {
-
       border-radius: 10px 10px 10px 10px;
       background: #fff;
       padding: 30px;
@@ -75,12 +65,8 @@ require_once 'controller/Controller.php';
     }
 
     .register-field::placeholder {
-
       color: #00c4cc !important;
-
     }
-
-
 
 
     input[type=button],
@@ -99,7 +85,6 @@ require_once 'controller/Controller.php';
       transition: all 0.3s ease-in-out;
       border-radius: 5px 5px 5px 5px;
       margin: 5px 20px 40px 20px;
-
     }
 
     input[type=button]:hover,
@@ -141,7 +126,6 @@ require_once 'controller/Controller.php';
       border-bottom: 2px solid #00c4cc;
     }
 
-
     .underlineHover {
       padding-bottom: 20px;
     }
@@ -162,9 +146,7 @@ require_once 'controller/Controller.php';
     }
   </style>
 
-
 </body>
-
 <?php
 include('includes/footer.php');
 ?>

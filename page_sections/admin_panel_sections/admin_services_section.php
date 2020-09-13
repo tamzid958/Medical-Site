@@ -15,19 +15,13 @@ $services = getAllService();
     Successfully Deleted
   </div>
 </div>
-
 <div id="admin-new-service">
-
   <div id="left">
-
     <h3 class="total-admin-badge">Services <span class="badge badge-dark"><?php echo  $_SESSION['serviceCounter'] ?></span> Total </h3>
-
   </div>
-
 
   <div id="right">
     <div class="container">
-
       <div class="row">
         <div class="col-md-6">
           <a class="btn btn-primary  active admin-add-new-service-btn" role="button" aria-pressed="true" data-toggle="modal" data-target="#exampleModalLong"> + Add New Service </a>
@@ -39,14 +33,9 @@ $services = getAllService();
           </a>
         </div>
       </div>
-
     </div>
 
-
   </div>
-
-
-
 
 
   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -66,21 +55,15 @@ $services = getAllService();
               <option value="" disabled selected>Select Category</option>
               <?php
               if ($categories > 0) {
-
                 foreach ($categories as $category) {
                   echo "<option>" . $category["category_name"] . "</option>";
                 }
               } ?>
-
             </select>
-
             <br>
-
             <input class="form-control" name="service_cost" type="number" placeholder="Cost" required>
 
-
             <br>
-
 
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -94,17 +77,11 @@ $services = getAllService();
 
 
 
-
-
-
-
 </div>
-
 <div class="container admin-service-category col-sm-12">
   <hr>
   <div class="row">
     <div class="col-sm">
-
       <h4>Categories</h4>
       <div class="card">
         <div class="card-body">
@@ -120,11 +97,9 @@ $services = getAllService();
                         <td>EDIT / DELETE</td>
                       </tr>
                     </thead>
-
                     <tbody>
                       <?php
                       if ($categories > 0) {
-
                         foreach ($categories as $category) {
                           echo "<tr>";
                           echo " <td>" . $category["category_id"] . "</td>";
@@ -142,11 +117,8 @@ $services = getAllService();
               </div>
             </div>
           </div>
-
         </div>
       </div>
-
-
 
       <!-- Modal -->
       <form method="post" action="">
@@ -160,25 +132,19 @@ $services = getAllService();
                 </button>
               </div>
               <div class="modal-body">
-
                 <input class="form-control" type="text" name="category_name" placeholder="Category Name" required>
-
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   <button type="submit" name="category_create_btn" class="btn btn-primary">Create</button>
                 </div>
-
               </div>
             </div>
-
           </div>
         </div>
       </form>
     </div>
-
   </div>
   <div class="col-sm">
-
     <h4>All Services</h4>
     <div class="card">
       <div class="card-body">
@@ -196,7 +162,6 @@ $services = getAllService();
                       <td>EDIT / DELETE</td>
                     </tr>
                   </thead>
-
                   <tbody id="myTable">
                     <?php
                     if ($services > 0) {
@@ -219,16 +184,12 @@ $services = getAllService();
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
-
   </div>
-
 </div>
 </div>
-
 
 <div class="modal fade" id="exampleeditCategoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -241,10 +202,8 @@ $services = getAllService();
       </div>
       <div class="modal-body">
         <form method="post" action="">
-
           <input type="hidden" id="category_edit_id" name="id" value="" required>
           <input class="form-control" id="category_edit_name" type="text" name="category_name" value="" placeholder="Category Name" required>
-
 
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -253,12 +212,8 @@ $services = getAllService();
         </form>
       </div>
     </div>
-
   </div>
 </div>
-
-
-
 
 
 <div class="modal fade" id="exampleeditServiceModal">
@@ -287,16 +242,11 @@ $services = getAllService();
                 }
               }
             } ?>
-
           </select>
-
           <br>
-
           <input class="form-control" id="service_edit_cost" name="service_edit_cost" type="number" placeholder="Cost" required>
 
-
           <br>
-
 
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -307,11 +257,6 @@ $services = getAllService();
     </div>
   </div>
 </div>
-
-
-
-
-
 
 
 
@@ -335,8 +280,6 @@ $services = getAllService();
       });
     });
 
-
-
     $(".category_delete_btn").click(function() {
       var category_delete_id = $(this).attr("id");
       $.ajax({
@@ -351,7 +294,6 @@ $services = getAllService();
         }
       });
     });
-
     $(".edit_service_btn").click(function() {
       var service_id = $(this).attr("id");
       $.ajax({
@@ -373,9 +315,6 @@ $services = getAllService();
     });
 
 
-
-
-
     $(".delete_service_btn").click(function() {
       var service_delete_id = $(this).attr("id");
       $.ajax({
@@ -390,8 +329,6 @@ $services = getAllService();
         }
       });
     });
-
-
 
   });
 </script>
