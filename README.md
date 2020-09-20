@@ -2,7 +2,7 @@ Appointment System Development Complete.
 
 "Pre Alpha Release of OSCA appointment System."
 
-Demo Website - https://mrtvirushub.com/
+Demo Website - https://osca.mrtvirushub.com/
 
 ** Test admin, patient, and doctor Login Details on Login Page. **
 
