@@ -1,6 +1,21 @@
 <?php
 include('includes/header.php');
 require_once 'controller/Controller.php';
+
+if (isset($_COOKIE["cookie_id"]) && isset($_COOKIE["PHPSESSID"])   &&  isset($_COOKIE["cookie_user_type"])) {
+  $id = $_COOKIE["cookie_id"];
+
+  if ($_COOKIE["cookie_user_type"]  == "patient") {
+    $_SESSION["logged_in"] = $_COOKIE["PHPSESSID"];
+    header("Location: templates/user_panel_template.php?id=$id");
+  } else if ($_COOKIE["cookie_user_type"]  == "doctor") {
+    $_SESSION["logged_in"] =  $_COOKIE["PHPSESSID"];
+    header("Location: templates/doctor_panel_template.php?id=$id");
+  } else if ($_COOKIE["cookie_user_type"]  == "admin") {
+    $_SESSION["logged_in"] = $_COOKIE["PHPSESSID"];
+    header("Location: templates/admin_panel_template.php?id=$id");
+  }
+}
 ?>
 
 <body>

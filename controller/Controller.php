@@ -1,6 +1,7 @@
 <?php
 require_once 'config.inc.php';
 $err_invalid = "";
+
 if (isset($_POST["register_btn"])) {
     duplicateSearch($_POST["email"]);
     if ($_SESSION['Duplicate'] > 0) {
@@ -59,15 +60,25 @@ if (isset($_POST["forget_pass_btn"])) {
 }
 if (isset($_POST["login_btn"])) {
     if (authenticate($_POST["email"], $_POST["password"])) {
+
         $id = $_SESSION['id'];
+        $userType = $_SESSION['user_Type'];
+        $email = $_SESSION['email'];
+
+        setcookie("cookie_id", $id, time() + (86400 * 30), "/");
+        setcookie("cookie_email", $email, time() + (86400 * 30), "/");
+        setcookie("cookie_user_type", $userType, time() + (86400 * 30), "/");
+
+
+
         if ($_SESSION['user_Type']  == "patient") {
-            $_SESSION["logged_in"] = true;
+            $_SESSION["logged_in"] = $_COOKIE["PHPSESSID"];
             header("Location: templates/user_panel_template.php?id=$id");
         } else if ($_SESSION['user_Type']  == "doctor") {
-            $_SESSION["logged_in"] = true;
+            $_SESSION["logged_in"] =  $_COOKIE["PHPSESSID"];
             header("Location: templates/doctor_panel_template.php?id=$id");
         } else if ($_SESSION['user_Type']  == "admin") {
-            $_SESSION["logged_in"] = true;
+            $_SESSION["logged_in"] = $_COOKIE["PHPSESSID"];
             header("Location: templates/admin_panel_template.php?id=$id");
         } else {
             $err_invalid =  " Invalid Username password";
@@ -327,14 +338,18 @@ function forgotPassword($email)
 }*/
 function authenticate($email, $password)
 {
+
+
     $password = base64_encode($password);
     $query = "SELECT `id`, `email`,`user_type` from `user` WHERE `email`='$email' AND `password`='$password'";
     $user = getArray($query);
     if ($user) {
         $user = $user[0];
         if (!empty($user['user_type'])) {
+
             $_SESSION['user_Type'] = $user['user_type'];
             $_SESSION['id'] = $user['id'];
+            $_SESSION['email'] = $user['email'];
         } else {
             $_SESSION['user_Type'] = null;
         }
