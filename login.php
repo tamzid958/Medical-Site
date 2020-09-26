@@ -2,7 +2,7 @@
 include('includes/header.php');
 require_once 'controller/Controller.php';
 
-if (isset($_COOKIE["cookie_id"]) && isset($_COOKIE["PHPSESSID"])   &&  isset($_COOKIE["cookie_user_type"])) {
+if (isset($_COOKIE["cookie_id"]) && isset($_COOKIE["cookie_user_type"])) {
   $id = $_COOKIE["cookie_id"];
 
   if ($_COOKIE["cookie_user_type"]  == "patient") {
