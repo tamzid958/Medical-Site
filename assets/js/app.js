@@ -1,56 +1,59 @@
 $(document).ready(function () {
- $("input").on("keydown",function(){
-   var inputtype = $(this).attr("type");
- var presentchecking =$(this).val();
- if(inputtype === "text"){
-   checktext(presentchecking);
- }
- else if(inputtype ==="email"){
-   checkmail(presentchecking);
- }else if(inputtype ==="tel"){
-   checktel(presentchecking);
- }
- else if(inputtype ==="password"){
-   checkpass(presentchecking);
- }
- else if(inputtype === "date"){
-  
- }else if(inputtype ==="time"){
-  
- }
+  $("input").on("keydown", function () {
+    var inputtype = $(this).attr("type");
+    var presentchecking = $(this).val();
+    if (inputtype === "text") {
+      checktext(presentchecking);
+    } else if (inputtype === "email") {
+      checkmail(presentchecking);
+    } else if (inputtype === "tel") {
+      checktel(presentchecking);
+    } else if (inputtype === "password") {
+      checkpass(presentchecking);
+    } else if (inputtype === "date") {
+    } else if (inputtype === "time") {
+    }
 
- function checktext(presentchecking){
-  if (presentchecking==null || presentchecking==""){  
-  //console.log("Name can't be blank");  
-  return false;  
-}
- }
- function checkmail(presentchecking){
-  var x=presentchecking;
-  var atposition=x.indexOf("@");  
-  var dotposition=x.lastIndexOf(".");
-  if (presentchecking==null || presentchecking==""||atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
-  //console.log("Please enter a valid email address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
-  return false;  
-  } 
+    function checktext(presentchecking) {
+      if (presentchecking == null || presentchecking == "") {
+        console.log("Name can't be blank");
+        return false;
+      }
+    }
+    function checkmail(presentchecking) {
+      var x = presentchecking;
+      var atposition = x.indexOf("@");
+      var dotposition = x.lastIndexOf(".");
+      if (
+        presentchecking == null ||
+        presentchecking == "" ||
+        atposition < 1 ||
+        dotposition < atposition + 2 ||
+        dotposition + 2 >= x.length
+      ) {
+        console.log(
+          "Please enter a valid email address \n atpostion:" +
+            atposition +
+            "\n dotposition:" +
+            dotposition
+        );
+        return false;
+      }
+    }
+    function checktel(presentchecking) {
+      if (presentchecking == null || presentchecking == "") {
+        console.log("Phone can't be blank");
+        return false;
+      }
+    }
 
-}
-function checktel(presentchecking){
-  if (presentchecking==null || presentchecking==""){  
-  //console.log("Phone can't be blank");  
-  return false;  
-}
-}
-
-function checkpass(presentchecking){
-  if(presentchecking.length<6){  
-  //console.log("Password must be at least 6 characters long.");  
-  return false;  
-  } 
-}
-
-
-}); 
+    function checkpass(presentchecking) {
+      if (presentchecking.length < 6) {
+        console.log("Password must be at least 6 characters long.");
+        return false;
+      }
+    }
+  });
 
   var modal = document.getElementById("myModal");
   var modal2 = document.getElementById("myModal2");
