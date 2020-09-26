@@ -722,7 +722,7 @@ a {
   display: none;
 }
 .pc-timetable-sction {
-  width: 60%;
+  width: 100%;
   margin: 50px auto;
   border: 1px solid white;
   display: grid;
